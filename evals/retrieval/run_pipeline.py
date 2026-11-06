@@ -17,7 +17,8 @@ from copilot.llm.embeddings import embed
 from evals.common import load_questions
 from copilot.retrieval.pipeline import K, VERSIONS, Retriever
 
-CLASSES = ["capability", "exact_token", "tier_gated", "temporal", "non_official", "ALL"]
+CLASSES = ["capability", "exact_token", "tier_gated", "temporal", "multi_hop", "synthesis",
+           "conflict", "injection", "non_official", "ALL"]
 OUT = RESULTS_DIR / "pipeline_v1_v4.json"
 
 

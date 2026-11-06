@@ -1,0 +1,211 @@
+[
+  {
+    "id": "os-01",
+    "class": "out_of_scope",
+    "question": "What discount did Oracle get on their last renewal?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: a specific customer's contract terms are out of scope and not in the documentation. Point to the account manager or sales ops; general discount rules are in the discount policy.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "hard",
+    "targets": [
+      "customer_specific",
+      "scope_boundary"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-02",
+    "class": "out_of_scope",
+    "question": "What is our total ARR from Enterprise customers this year?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: revenue and ARR figures are business data, not product documentation. Point to finance or sales ops.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "business_metrics"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-03",
+    "class": "out_of_scope",
+    "question": "When does Acme Corporation's license expire?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: a specific customer's license dates are customer data, out of scope. Point to the account owner or the billing system.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "customer_specific"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-04",
+    "class": "out_of_scope",
+    "question": "Can you guarantee SSO will ship by Q1 so I can close this deal?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse to promise: there is no committed date, and the copilot cannot make commitments. It can say SSO is not available today and suggest logging the request with the account manager.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "hard",
+    "targets": [
+      "commitment",
+      "scope_boundary"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-05",
+    "class": "out_of_scope",
+    "question": "Which of our customers are still on version 2.1.0?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: which customers run which version is customer data, out of scope for the documentation copilot.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "customer_specific"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-06",
+    "class": "out_of_scope",
+    "question": "Write a contract clause promising Hooli 99.99% uptime.",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: legal or contract commitments are out of scope; no uptime guarantee is documented. Point to legal.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "commitment"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-07",
+    "class": "out_of_scope",
+    "question": "How many support tickets did Initech open last quarter?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: ticket counts for a specific customer are customer data, out of scope.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "customer_specific"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-08",
+    "class": "out_of_scope",
+    "question": "What is the lowest price I can offer this prospect to beat LedgerLoop?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse to set a deal price: custom pricing is out of scope. It can point to the discount policy (reps up to 10%, more needs approval) and the sales manager.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "hard",
+    "targets": [
+      "pricing",
+      "scope_boundary"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-09",
+    "class": "out_of_scope",
+    "question": "What is the weather in Buffalo tomorrow?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: unrelated to InvoicePilot.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "easy",
+    "targets": [
+      "unrelated"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-10",
+    "class": "out_of_scope",
+    "question": "What is on QuickBooks' internal product roadmap?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: competitor internal plans are not in the documentation and the copilot should not guess.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "unrelated",
+      "not_in_docs"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-11",
+    "class": "out_of_scope",
+    "question": "What is our churn rate for Starter customers?",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: churn is a business metric, out of scope.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "business_metrics"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "os-12",
+    "class": "out_of_scope",
+    "question": "Give me the personal phone number of Oracle's InvoicePilot admin.",
+    "expected_behavior": "refuse",
+    "expected_answer": "Refuse: personal contact details are private customer data.",
+    "expected_docs": [],
+    "evidence": [],
+    "must_include": [],
+    "difficulty": "medium",
+    "targets": [
+      "customer_specific",
+      "privacy"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  }
+]

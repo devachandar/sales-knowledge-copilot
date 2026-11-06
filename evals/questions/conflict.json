@@ -1,0 +1,261 @@
+[
+  {
+    "id": "cf-01",
+    "class": "conflict",
+    "question": "How often do bank feeds sync?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "Every 4 hours since 2.3.0 (before that, once a day). The bank feed FAQ still says once a day; it is out of date. Flag the conflict and cite each page for its own claim.",
+    "expected_docs": [
+      "bank-reconciliation/bank-feed-sync",
+      "bank-reconciliation/bank-feed-faq"
+    ],
+    "evidence": [
+      "Since 2.3.0, connected bank feeds sync every 4 hours. Before 2.3.0 they synced once a day.",
+      "Bank feeds sync once a day, usually overnight. Transactions from today will appear tomorrow."
+    ],
+    "must_include": [
+      "4 hours"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "hidden_conflict",
+      "wrong_attribution"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-02",
+    "class": "conflict",
+    "question": "Which time zone are recurring invoice schedules calculated in?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "UTC internally since 2.3.1 (shown in local time). An older page says local time zone; it describes versions before 2.3.1. Flag the conflict.",
+    "expected_docs": [
+      "recurring-invoices/recurring-invoice-timezones",
+      "recurring-invoices/recurring-schedule-local-time"
+    ],
+    "evidence": [
+      "Starting in 2.3.1, recurring invoice schedules are calculated in UTC internally. Send times are still shown in your organization's local time zone.",
+      "Recurring invoice schedules are calculated in your organization's local time zone, set under Settings > Organization."
+    ],
+    "must_include": [
+      "UTC"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "hidden_conflict",
+      "version_competition"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-03",
+    "class": "conflict",
+    "question": "Which API should a new integration start with?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "API v2. The 2025 quickstart still calls the v1 API the recommended way; API overview says new integrations should use v2 and v1 is legacy. Flag the conflict.",
+    "expected_docs": [
+      "api/api-overview",
+      "api/api-quickstart-2025"
+    ],
+    "evidence": [
+      "New integrations should use v2. Existing v1 integrations keep working and do not need to migrate right away.",
+      "The InvoicePilot API is the recommended way to integrate with InvoicePilot. All endpoints live under https://api.invoicepilot.example/v1."
+    ],
+    "must_include": [
+      "v2"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "hidden_conflict"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-04",
+    "class": "conflict",
+    "question": "How many invoices can I select in one bulk action?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "Up to 100. A community post says 50; it is not official and is wrong. Flag the disagreement.",
+    "expected_docs": [
+      "invoicing/bulk-invoice-actions",
+      "community/bulk-send-tips"
+    ],
+    "evidence": [
+      "You can select up to 100 invoices per bulk action. To act on more, filter the list and repeat.",
+      "We send about 300 invoices at month end. Bulk actions only let you pick 50 at a time, so filter by customer group and do it in batches of 50."
+    ],
+    "must_include": [
+      "100"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "hidden_conflict",
+      "low_authority_source"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-05",
+    "class": "conflict",
+    "question": "How many bank feeds does Professional include? Our LedgerLoop battlecard says 5.",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "10. The 2025 battlecard (archived) says 5; plans and limits says 10 on Professional. Flag that the battlecard is out of date.",
+    "expected_docs": [
+      "account-billing/plans-and-limits",
+      "sales/battlecard-ledgerloop-2025"
+    ],
+    "evidence": [
+      "| Connected bank feeds | 2 | 10 | Unlimited |",
+      "- Professional includes 5 bank feeds"
+    ],
+    "must_include": [
+      "10"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "hidden_conflict",
+      "stale_source"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-06",
+    "class": "conflict",
+    "question": "What does Enterprise cost per seat? I have a pricing sheet that says $36.",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "$40 per seat per year. $36 is from the archived 2025 launch pricing sheet; the 2026 pricing sheet and plans page say $40. Flag the conflict.",
+    "expected_docs": [
+      "account-billing/plans-and-limits",
+      "sales/pricing-sheet-2025"
+    ],
+    "evidence": [
+      "| Enterprise | $40 |",
+      "| Enterprise | $36 |"
+    ],
+    "must_include": [
+      "$40"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "hidden_conflict",
+      "stale_source"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-07",
+    "class": "conflict",
+    "question": "Our roles messaging doc says Professional customers can create custom roles. Is that right?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "No. Custom roles are Enterprise only. The roles messaging doc is a draft and is wrong. Flag the conflict.",
+    "expected_docs": [
+      "account-billing/roles-and-audit-log",
+      "sales/draft-roles-messaging"
+    ],
+    "evidence": [
+      "Enterprise organizations can build custom roles and see an audit log of every change, kept for 13 months.",
+      "Professional and Enterprise customers can create custom roles to control exactly who sees what."
+    ],
+    "must_include": [
+      "Enterprise"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "hidden_conflict",
+      "stale_source"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-08",
+    "class": "conflict",
+    "question": "How many times is a failed webhook delivery retried?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "Up to 8 times over 24 hours (since 2026-07-20). A community post says 5; that was the old behavior. Flag the disagreement.",
+    "expected_docs": [
+      "api/webhook-retries",
+      "community/webhook-retries-5"
+    ],
+    "evidence": [
+      "Failed deliveries are retried up to 8 times over 24 hours with exponential backoff: after 1 minute, 5 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 8 hours, and 8 hours.",
+      "Webhooks retry 5 times then give up."
+    ],
+    "must_include": [
+      "8"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "hidden_conflict",
+      "low_authority_source"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-09",
+    "class": "conflict",
+    "question": "Can InvoicePilot add late fees to overdue invoices automatically?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "Not in 2.x. Automatic late fees were a Classic (1.x) feature; the Classic page describing them is legacy. In 2.x, add a late fee as a line item. Flag that the Classic page is outdated.",
+    "expected_docs": [
+      "invoicing/late-fees-in-2x",
+      "legacy/classic-late-fees"
+    ],
+    "evidence": [
+      "Automatic late fees were part of InvoicePilot Classic (1.x). They were not carried over to 2.0.0.",
+      "Classic can add a late fee to overdue invoices automatically: a fixed amount or a percentage of the subtotal."
+    ],
+    "must_include": [
+      "line item"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "hidden_conflict",
+      "stale_source"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cf-10",
+    "class": "conflict",
+    "question": "Is the InvoicePilot API limited to 30 requests per minute?",
+    "expected_behavior": "flag_conflict",
+    "expected_answer": "No. On 2.x the limits are 60, 300, or 1,000 per minute by plan. 30 per minute was the Classic (1.x) API limit. Flag the outdated page.",
+    "expected_docs": [
+      "api/api-rate-limits",
+      "legacy/classic-api"
+    ],
+    "evidence": [
+      "| Starter | 60 |",
+      "Errors are plain text messages with no error codes. Rate limit: 30 requests per minute on every plan."
+    ],
+    "must_include": [
+      "60"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "hidden_conflict",
+      "stale_source"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  }
+]

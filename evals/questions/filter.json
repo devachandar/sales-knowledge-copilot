@@ -2,101 +2,258 @@
   {
     "id": "f-01",
     "class": "tier_gated",
-    "filter_test": "plan filter should HURT: the answer page is labeled Professional/Enterprise only",
     "question": "Can a Starter customer add their logo to the client portal?",
+    "expected_behavior": "answer",
     "expected_answer": "No. Client portal branding (logo and accent color) is available on Professional and Enterprise. Starter portals use the default InvoicePilot look.",
-    "expected_docs": ["client-portal/portal-branding", "account-billing/plans-and-limits"],
-    "must_include": ["Professional"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "client-portal/portal-branding",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "> Note: Portal branding is available on Professional and Enterprise. Starter portals use the default InvoicePilot look."
+    ],
+    "must_include": [
+      "Professional"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "plan_gating",
+      "plan_filter_removes_evidence"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "plan filter should HURT: the answer page is labeled Professional/Enterprise only",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-02",
     "class": "tier_gated",
-    "filter_test": "plan filter should HURT: the answer page is labeled Professional/Enterprise only",
     "question": "Can a Starter customer schedule a report to be emailed every Monday?",
+    "expected_behavior": "answer",
     "expected_answer": "No. Scheduled report emails are available on Professional and Enterprise only.",
-    "expected_docs": ["reports/report-schedules", "account-billing/plans-and-limits"],
-    "must_include": ["Professional"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "reports/report-schedules",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "> Note: Scheduled report emails are available on Professional and Enterprise."
+    ],
+    "must_include": [
+      "Professional"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "plan_gating",
+      "plan_filter_removes_evidence"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "plan filter should HURT: the answer page is labeled Professional/Enterprise only",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-03",
     "class": "tier_gated",
-    "filter_test": "control: plan filter matches the answer page, should not hurt",
     "question": "Can an Enterprise customer add their logo to the client portal?",
+    "expected_behavior": "answer",
     "expected_answer": "Yes. Client portal branding is available on Professional and Enterprise.",
-    "expected_docs": ["client-portal/portal-branding", "account-billing/plans-and-limits"],
-    "must_include": ["Enterprise"],
-    "difficulty": "medium"
+    "expected_docs": [
+      "client-portal/portal-branding",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "> Note: Portal branding is available on Professional and Enterprise. Starter portals use the default InvoicePilot look."
+    ],
+    "must_include": [
+      "Enterprise"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "control: plan filter matches the answer page, should not hurt",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-04",
     "class": "temporal",
-    "filter_test": "version filter removes bank-feed-sync (2.3.0+) but keeps the FAQ (2.0.0+), which is correct for 2.1.0",
     "question": "How often did bank feeds sync for a customer on 2.1.0?",
+    "expected_behavior": "answer",
     "expected_answer": "Once a day. Every-4-hours sync arrived in 2.3.0.",
-    "expected_docs": ["bank-reconciliation/bank-feed-sync", "release-notes/v2.3.0", "bank-reconciliation/bank-feed-faq"],
-    "must_include": ["once"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "bank-reconciliation/bank-feed-sync",
+      "release-notes/v2.3.0",
+      "bank-reconciliation/bank-feed-faq"
+    ],
+    "evidence": [
+      "Since 2.3.0, connected bank feeds sync every 4 hours. Before 2.3.0 they synced once a day."
+    ],
+    "must_include": [
+      "once"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter removes bank-feed-sync (2.3.0+) but keeps the FAQ (2.0.0+), which is correct for 2.1.0",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-05",
     "class": "temporal",
-    "filter_test": "version filter MIGHT HELP: removes the 2.3.1 UTC page that competes",
     "question": "On 2.1.0, how were recurring invoice schedules calculated?",
+    "expected_behavior": "answer",
     "expected_answer": "In the organization's local time zone. They moved to UTC in 2.3.1.",
-    "expected_docs": ["recurring-invoices/recurring-schedule-local-time", "release-notes/v2.1.0", "recurring-invoices/skipped-recurring-cycle"],
-    "must_include": ["local"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "recurring-invoices/recurring-schedule-local-time",
+      "release-notes/v2.1.0",
+      "recurring-invoices/skipped-recurring-cycle"
+    ],
+    "evidence": [
+      "Recurring invoice schedules created in 2.1.0 are calculated in your organization's local timezone; see Known Issues below for a daylight-saving edge case."
+    ],
+    "must_include": [
+      "local"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter MIGHT HELP: removes the 2.3.1 UTC page that competes",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-06",
     "class": "temporal",
-    "filter_test": "version filter keeps report-exports (2.0.0+), removes the 2.3.0 notes",
     "question": "What export formats did reports support for a customer on 2.2.0?",
+    "expected_behavior": "answer",
     "expected_answer": "PDF and CSV. XLSX export arrived in 2.3.0.",
-    "expected_docs": ["reports/report-exports"],
-    "must_include": ["CSV"],
-    "difficulty": "medium"
+    "expected_docs": [
+      "reports/report-exports"
+    ],
+    "evidence": [
+      "Before 2.3.0, reports exported to PDF and CSV only."
+    ],
+    "must_include": [
+      "CSV"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter keeps report-exports (2.0.0+), removes the 2.3.0 notes",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-07",
     "class": "temporal",
-    "filter_test": "version filter keeps both api-overview (2.2.0+) and the stale v1 quickstart (2.0.0+)",
     "question": "On 2.2.0, which API version should a new integration use?",
+    "expected_behavior": "answer",
     "expected_answer": "API v2, introduced in 2.2.0. API v1 is legacy but still available.",
-    "expected_docs": ["api/api-overview", "release-notes/v2.2.0"],
-    "must_include": ["v2"],
-    "difficulty": "medium"
+    "expected_docs": [
+      "api/api-overview",
+      "release-notes/v2.2.0"
+    ],
+    "evidence": [
+      "- API v1 remains available but is now considered legacy; new integrations should use v2."
+    ],
+    "must_include": [
+      "v2"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "version_competition",
+      "low_authority_source"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter keeps both api-overview (2.2.0+) and the stale v1 quickstart (2.0.0+)",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-08",
     "class": "temporal",
-    "filter_test": "version filter keeps 2.3.1 pages; removes earlier-version pages that compete",
     "question": "What bug was fixed in 2.3.1?",
+    "expected_behavior": "answer",
     "expected_answer": "BUG-2100-02: recurring invoices skipping a cycle across daylight-saving changes. Schedules now use UTC internally.",
-    "expected_docs": ["release-notes/v2.3.1", "recurring-invoices/skipped-recurring-cycle", "recurring-invoices/recurring-invoice-timezones", "support/known-issues"],
-    "must_include": ["BUG-2100-02"],
-    "difficulty": "medium"
+    "expected_docs": [
+      "release-notes/v2.3.1",
+      "recurring-invoices/skipped-recurring-cycle",
+      "recurring-invoices/recurring-invoice-timezones",
+      "support/known-issues"
+    ],
+    "evidence": [
+      "| BUG-2100-02 | Recurring invoices skip a cycle across DST changes | 2.1.0 | 2.3.1 | High | Fixed |"
+    ],
+    "must_include": [
+      "BUG-2100-02"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter keeps 2.3.1 pages; removes earlier-version pages that compete",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-09",
     "class": "temporal",
-    "filter_test": "version filter MIGHT HELP: removes the 2.3.1 notes, whose bug table competes",
     "question": "What known issue does version 2.3.0 have?",
+    "expected_behavior": "answer",
     "expected_answer": "BUG-2300-01: reports spanning more than 3 years of transactions time out instead of paginating. It is open.",
-    "expected_docs": ["release-notes/v2.3.0", "reports/large-date-ranges", "reports/custom-report-builder", "support/known-issues"],
-    "must_include": ["BUG-2300-01"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "release-notes/v2.3.0",
+      "reports/large-date-ranges",
+      "reports/custom-report-builder",
+      "support/known-issues"
+    ],
+    "evidence": [
+      "> Known issue: BUG-2300-01 (Open): Reports spanning more than 3 years of transactions time out instead of paginating results."
+    ],
+    "must_include": [
+      "BUG-2300-01"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter MIGHT HELP: removes the 2.3.1 notes, whose bug table competes",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "f-10",
     "class": "temporal",
-    "filter_test": "version filter MIGHT HELP: removes the auto-match pages (2.3.0+)",
     "question": "How did a customer on 2.0.0 reconcile bank transactions?",
+    "expected_behavior": "answer",
     "expected_answer": "Manually: match each uncategorized transaction to an invoice or expense, or categorize it. Auto-match only arrived in 2.3.0.",
-    "expected_docs": ["bank-reconciliation/manual-reconciliation"],
-    "must_include": ["manual"],
-    "difficulty": "medium"
+    "expected_docs": [
+      "bank-reconciliation/manual-reconciliation"
+    ],
+    "evidence": [
+      "Manual reconciliation has been available since 2.0.0 and is still the fallback when auto-match cannot find a match."
+    ],
+    "must_include": [
+      "manual"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version filter MIGHT HELP: removes the auto-match pages (2.3.0+)",
+    "verified_by": "claude-review-2026-11-06"
   }
 ]

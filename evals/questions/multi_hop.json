@@ -1,0 +1,307 @@
+[
+  {
+    "id": "mh-01",
+    "class": "multi_hop",
+    "question": "A customer is on the release that introduced API v2. Do API responses on that release include the X-RateLimit headers?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. API v2 arrived in 2.2.0, and in 2.2.0 the X-RateLimit headers were missing (BUG-2200-02). They were fixed in 2.3.0.",
+    "expected_docs": [
+      "api/api-overview",
+      "api/api-rate-limits"
+    ],
+    "evidence": [
+      "| Introduced | 2.0.0 | 2.2.0 |",
+      "Note: in 2.2.0 these headers were missing (BUG-2200-02). Fixed in 2.3.0."
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-02",
+    "class": "multi_hop",
+    "question": "We signed on 2026-04-01 and got the release that was current that day. Could we use automatic bank matching right away?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. Auto-match was added in 2.3.0, released 2026-05-11, so the release current on 2026-04-01 (the 2.2.x line) did not have it.",
+    "expected_docs": [
+      "support/version-history",
+      "bank-reconciliation/auto-match"
+    ],
+    "evidence": [
+      "| 2.3.0 | Aurora | 2026-05-11 | Automatic bank-reconciliation matching and a custom report builder. |",
+      "Added in 2.3.0. Auto-match compares incoming bank transactions with recorded invoices and expenses and suggests matches."
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop",
+      "version_competition"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-03",
+    "class": "multi_hop",
+    "question": "Which release fixed the Safari client portal login loop, and was API v2 available in that release?",
+    "expected_behavior": "answer",
+    "expected_answer": "The loop (BUG-2200-01) was fixed within 2.2.0, and API v2 was introduced in 2.2.0, so yes.",
+    "expected_docs": [
+      "client-portal/safari-login-loop",
+      "api/api-overview"
+    ],
+    "evidence": [
+      "This affected 2.2.0 and was fixed in a hotfix within 2.2.0. No action needed.",
+      "| Introduced | 2.0.0 | 2.2.0 |"
+    ],
+    "must_include": [
+      "2.2.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-04",
+    "class": "multi_hop",
+    "question": "The release that fixed recurring invoices skipping a cycle: did it also fix the long-invoice PDF problem?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. 2.3.1 fixed the skipped cycle (BUG-2100-02), but the long-invoice PDF bug (BUG-2310-02) is a known issue in 2.3.1 and is still open.",
+    "expected_docs": [
+      "release-notes/v2.3.1"
+    ],
+    "evidence": [
+      "BUG-2100-02 — Recurring invoices skip a cycle across DST changes",
+      "| BUG-2310-02 | High | Open | Invoices with more than 25 line items export as a single-page PDF, silently dropping remaining line items. |"
+    ],
+    "must_include": [
+      "open"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-05",
+    "class": "multi_hop",
+    "question": "A Professional customer hit their per-minute API limit. What is that limit, and which error code did they get?",
+    "expected_behavior": "answer",
+    "expected_answer": "300 requests per minute on Professional; going over returns HTTP 429 with IP-4290 and a Retry-After header.",
+    "expected_docs": [
+      "api/api-rate-limits",
+      "api/api-errors"
+    ],
+    "evidence": [
+      "| Professional | 300 |",
+      "| 429 | IP-4290 | Rate limit exceeded; wait for Retry-After | Yes |"
+    ],
+    "must_include": [
+      "300",
+      "IP-4290"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-06",
+    "class": "multi_hop",
+    "question": "Which release has the codename Meridian, and could a customer on it export reports to Excel?",
+    "expected_behavior": "answer",
+    "expected_answer": "Meridian is 2.2.0. XLSX export arrived in 2.3.0, so on 2.2.0 reports export to PDF and CSV only.",
+    "expected_docs": [
+      "support/version-history",
+      "reports/report-exports"
+    ],
+    "evidence": [
+      "| 2.2.0 | Meridian | 2026-01-20 | Redesigned client portal, bulk invoice actions, and API v2. |",
+      "Before 2.3.0, reports exported to PDF and CSV only."
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-07",
+    "class": "multi_hop",
+    "question": "A customer moved from InvoicePilot Classic 1.9.0. Did their late-fee settings carry over, and what can they do instead?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. Late fee settings do not move, because 2.x has no automatic late fees. They can add a late fee as a separate line item or invoice.",
+    "expected_docs": [
+      "legacy/classic-migration",
+      "invoicing/late-fees-in-2x"
+    ],
+    "evidence": [
+      "2. Late fee settings do not move, because 2.x has no automatic late fees.",
+      "In 2.x, add a late fee as a separate line item or a new invoice. Payment reminders can mention your late-fee terms."
+    ],
+    "must_include": [
+      "line item"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-08",
+    "class": "multi_hop",
+    "question": "An integration got IP-4091. What should it do, and will the Python SDK retry it automatically?",
+    "expected_behavior": "answer",
+    "expected_answer": "Wait about 1 second and retry: the first request with that Idempotency-Key is still running. The Python SDK auto-retries IP-4290, IP-4291, IP-5000, and IP-5030, so IP-4091 is not in its list; handle it yourself.",
+    "expected_docs": [
+      "api/api-error-subcodes",
+      "api/sdk-python"
+    ],
+    "evidence": [
+      "| 409 | IP-4091 | A request with this Idempotency-Key is still being processed | Yes, after 1 second |",
+      "The SDK retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff, up to max_retries times (default 2). It never retries 4xx validation errors."
+    ],
+    "must_include": [
+      "1 second"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop",
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-09",
+    "class": "multi_hop",
+    "question": "A Starter customer wants webhooks. What is the cheapest plan that includes them, and what does it cost per seat?",
+    "expected_behavior": "answer",
+    "expected_answer": "Professional, at $25 per seat per year (5 webhook endpoints).",
+    "expected_docs": [
+      "api/webhooks-overview",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "| Professional | 5 |",
+      "| Professional | $25 |"
+    ],
+    "must_include": [
+      "Professional",
+      "$25"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "multi_hop",
+      "plan_gating"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-10",
+    "class": "multi_hop",
+    "question": "Which release introduced credit notes, and could a customer on that release export reports to XLSX?",
+    "expected_behavior": "answer",
+    "expected_answer": "Credit notes came in 2.2.0. XLSX export arrived in 2.3.0, so no.",
+    "expected_docs": [
+      "invoicing/credit-notes",
+      "reports/report-exports"
+    ],
+    "evidence": [
+      "Credit notes were added in 2.2.0 and are available on every plan.",
+      "Before 2.3.0, reports exported to PDF and CSV only."
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-11",
+    "class": "multi_hop",
+    "question": "We signed on 2025-10-01 and were on the current release that day. Could our clients have received the same payment reminder twice?",
+    "expected_behavior": "answer",
+    "expected_answer": "Yes. On 2025-10-01 the current release was 2.1.0 (2025-09-16), which had BUG-2100-04: reminders with a send window crossing midnight UTC were sent twice. Fixed in 2.1.1.",
+    "expected_docs": [
+      "support/version-history",
+      "invoicing/duplicate-payment-reminders"
+    ],
+    "evidence": [
+      "| 2.1.0 | Solstice | 2025-09-16 | Automated recurring invoices and receipt-scanning for expenses. |",
+      "This is BUG-2100-04 (Medium). It affected 2.1.0. It was fixed in 2.1.1."
+    ],
+    "must_include": [
+      "2.1.1"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop",
+      "version_competition"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "mh-12",
+    "class": "multi_hop",
+    "question": "A customer's webhook endpoint was down for 2 days. Was the endpoint disabled, and will the events from the first day be resent?",
+    "expected_behavior": "answer",
+    "expected_answer": "Not disabled: that happens after 3 days of failures. But retries only run for 24 hours (8 attempts), so events from the first day that failed every attempt are not resent.",
+    "expected_docs": [
+      "api/webhook-retries"
+    ],
+    "evidence": [
+      "If every delivery to an endpoint fails for 3 days, the endpoint is disabled and admins get an email. Re-enable it under Settings > Developer > Webhooks.",
+      "Failed deliveries are retried up to 8 times over 24 hours with exponential backoff: after 1 minute, 5 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 8 hours, and 8 hours."
+    ],
+    "must_include": [
+      "3 days",
+      "24 hours"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "multi_hop"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  }
+]

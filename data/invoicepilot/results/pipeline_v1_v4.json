@@ -10,15 +10,21 @@
     "hard.json",
     "filter.json",
     "exact.json",
-    "non_official.json"
+    "non_official.json",
+    "core_v2.json",
+    "multi_hop.json",
+    "synthesis.json",
+    "out_of_scope.json",
+    "conflict.json",
+    "injection.json"
   ],
   "table": {
     "V1": {
       "capability": {
-        "n": 14,
-        "r@1": 0.5714285714285714,
-        "r@5": 0.9285714285714286,
-        "mrr": 0.7285714285714285
+        "n": 16,
+        "r@1": 0.625,
+        "r@5": 0.9375,
+        "mrr": 0.7625
       },
       "exact_token": {
         "n": 20,
@@ -27,36 +33,60 @@
         "mrr": 0.26
       },
       "tier_gated": {
-        "n": 12,
+        "n": 15,
         "r@1": 0.6666666666666666,
-        "r@5": 0.8333333333333334,
-        "mrr": 0.75
+        "r@5": 0.8666666666666667,
+        "mrr": 0.7555555555555556
       },
       "temporal": {
-        "n": 15,
-        "r@1": 0.3333333333333333,
+        "n": 16,
+        "r@1": 0.3125,
+        "r@5": 0.625,
+        "mrr": 0.4010416666666667
+      },
+      "multi_hop": {
+        "n": 6,
+        "r@1": 0.16666666666666666,
+        "r@5": 0.3333333333333333,
+        "mrr": 0.19999999999999998
+      },
+      "synthesis": {
+        "n": 5,
+        "r@1": 0.4,
         "r@5": 0.6,
-        "mrr": 0.41111111111111115
+        "mrr": 0.5
+      },
+      "conflict": {
+        "n": 5,
+        "r@1": 0.6,
+        "r@5": 0.8,
+        "mrr": 0.65
+      },
+      "injection": {
+        "n": 4,
+        "r@1": 0.0,
+        "r@5": 0.5,
+        "mrr": 0.20833333333333331
       },
       "non_official": {
-        "n": 7,
-        "r@1": 0.42857142857142855,
-        "r@5": 0.7142857142857143,
-        "mrr": 0.5476190476190477
+        "n": 8,
+        "r@1": 0.5,
+        "r@5": 0.75,
+        "mrr": 0.6041666666666666
       },
       "ALL": {
-        "n": 68,
-        "r@1": 0.39705882352941174,
-        "r@5": 0.6764705882352942,
-        "mrr": 0.5058823529411764
+        "n": 95,
+        "r@1": 0.4,
+        "r@5": 0.6736842105263158,
+        "mrr": 0.5028070175438596
       }
     },
     "V2": {
       "capability": {
-        "n": 14,
-        "r@1": 0.5714285714285714,
-        "r@5": 0.7142857142857143,
-        "mrr": 0.6428571428571429
+        "n": 16,
+        "r@1": 0.625,
+        "r@5": 0.75,
+        "mrr": 0.6875
       },
       "exact_token": {
         "n": 20,
@@ -65,36 +95,60 @@
         "mrr": 0.24666666666666667
       },
       "tier_gated": {
-        "n": 12,
+        "n": 15,
         "r@1": 0.6666666666666666,
-        "r@5": 0.8333333333333334,
-        "mrr": 0.7361111111111112
+        "r@5": 0.8666666666666667,
+        "mrr": 0.7555555555555556
       },
       "temporal": {
-        "n": 15,
-        "r@1": 0.3333333333333333,
-        "r@5": 0.6666666666666666,
-        "mrr": 0.46111111111111114
+        "n": 16,
+        "r@1": 0.3125,
+        "r@5": 0.6875,
+        "mrr": 0.44479166666666664
+      },
+      "multi_hop": {
+        "n": 6,
+        "r@1": 0.16666666666666666,
+        "r@5": 0.16666666666666666,
+        "mrr": 0.16666666666666666
+      },
+      "synthesis": {
+        "n": 5,
+        "r@1": 0.2,
+        "r@5": 0.6,
+        "mrr": 0.4
+      },
+      "conflict": {
+        "n": 5,
+        "r@1": 0.6,
+        "r@5": 1.0,
+        "mrr": 0.8
+      },
+      "injection": {
+        "n": 4,
+        "r@1": 0.0,
+        "r@5": 0.5,
+        "mrr": 0.16666666666666666
       },
       "non_official": {
-        "n": 7,
-        "r@1": 0.7142857142857143,
-        "r@5": 0.7142857142857143,
-        "mrr": 0.7142857142857143
+        "n": 8,
+        "r@1": 0.75,
+        "r@5": 0.75,
+        "mrr": 0.75
       },
       "ALL": {
-        "n": 68,
-        "r@1": 0.4264705882352941,
-        "r@5": 0.6470588235294118,
-        "mrr": 0.5100490196078431
+        "n": 95,
+        "r@1": 0.4105263157894737,
+        "r@5": 0.6526315789473685,
+        "mrr": 0.5057894736842105
       }
     },
     "V3": {
       "capability": {
-        "n": 14,
-        "r@1": 0.6428571428571429,
-        "r@5": 0.7142857142857143,
-        "mrr": 0.6785714285714286
+        "n": 16,
+        "r@1": 0.6875,
+        "r@5": 0.75,
+        "mrr": 0.71875
       },
       "exact_token": {
         "n": 20,
@@ -103,36 +157,60 @@
         "mrr": 0.24916666666666668
       },
       "tier_gated": {
-        "n": 12,
+        "n": 15,
         "r@1": 0.6666666666666666,
-        "r@5": 0.8333333333333334,
-        "mrr": 0.75
+        "r@5": 0.8666666666666667,
+        "mrr": 0.7666666666666667
       },
       "temporal": {
-        "n": 15,
-        "r@1": 0.4666666666666667,
-        "r@5": 0.7333333333333333,
-        "mrr": 0.5833333333333334
+        "n": 16,
+        "r@1": 0.4375,
+        "r@5": 0.75,
+        "mrr": 0.559375
+      },
+      "multi_hop": {
+        "n": 6,
+        "r@1": 0.16666666666666666,
+        "r@5": 0.16666666666666666,
+        "mrr": 0.16666666666666666
+      },
+      "synthesis": {
+        "n": 5,
+        "r@1": 0.2,
+        "r@5": 0.6,
+        "mrr": 0.4
+      },
+      "conflict": {
+        "n": 5,
+        "r@1": 0.6,
+        "r@5": 1.0,
+        "mrr": 0.8
+      },
+      "injection": {
+        "n": 4,
+        "r@1": 0.0,
+        "r@5": 0.5,
+        "mrr": 0.16666666666666666
       },
       "non_official": {
-        "n": 7,
-        "r@1": 0.7142857142857143,
-        "r@5": 0.7142857142857143,
-        "mrr": 0.7142857142857143
+        "n": 8,
+        "r@1": 0.75,
+        "r@5": 0.75,
+        "mrr": 0.75
       },
       "ALL": {
-        "n": 68,
-        "r@1": 0.47058823529411764,
-        "r@5": 0.6617647058823529,
-        "mrr": 0.5475490196078432
+        "n": 95,
+        "r@1": 0.4421052631578947,
+        "r@5": 0.6631578947368421,
+        "mrr": 0.5326315789473685
       }
     },
     "V4": {
       "capability": {
-        "n": 14,
-        "r@1": 0.7857142857142857,
-        "r@5": 0.8571428571428571,
-        "mrr": 0.8214285714285714
+        "n": 16,
+        "r@1": 0.8125,
+        "r@5": 0.875,
+        "mrr": 0.84375
       },
       "exact_token": {
         "n": 20,
@@ -141,47 +219,71 @@
         "mrr": 0.8333333333333334
       },
       "tier_gated": {
-        "n": 12,
-        "r@1": 0.8333333333333334,
-        "r@5": 1.0,
-        "mrr": 0.9027777777777778
+        "n": 15,
+        "r@1": 0.8,
+        "r@5": 0.9333333333333333,
+        "mrr": 0.8555555555555556
       },
       "temporal": {
-        "n": 15,
-        "r@1": 0.8666666666666667,
+        "n": 16,
+        "r@1": 0.875,
         "r@5": 1.0,
-        "mrr": 0.9333333333333333
+        "mrr": 0.9375
+      },
+      "multi_hop": {
+        "n": 6,
+        "r@1": 0.3333333333333333,
+        "r@5": 1.0,
+        "mrr": 0.5611111111111111
+      },
+      "synthesis": {
+        "n": 5,
+        "r@1": 0.4,
+        "r@5": 0.8,
+        "mrr": 0.6
+      },
+      "conflict": {
+        "n": 5,
+        "r@1": 0.6,
+        "r@5": 0.8,
+        "mrr": 0.7
+      },
+      "injection": {
+        "n": 4,
+        "r@1": 0.5,
+        "r@5": 0.75,
+        "mrr": 0.5625
       },
       "non_official": {
-        "n": 7,
-        "r@1": 0.7142857142857143,
+        "n": 8,
+        "r@1": 0.625,
         "r@5": 1.0,
-        "mrr": 0.8571428571428571
+        "mrr": 0.8125
       },
       "ALL": {
-        "n": 68,
-        "r@1": 0.7941176470588235,
-        "r@5": 0.9705882352941176,
-        "mrr": 0.8676470588235294
+        "n": 95,
+        "r@1": 0.7157894736842105,
+        "r@5": 0.9368421052631579,
+        "mrr": 0.8064912280701754
       }
     }
   },
   "latency_ms": {
     "V1": {
-      "median": 3.017415991052985,
-      "p95": 3.9778919075615704
+      "median": 3.194437420461327,
+      "p95": 4.256088042166084
     },
     "V2": {
-      "median": 3.232707967981696,
-      "p95": 3.9249706431291993
+      "median": 3.5967290750704706,
+      "p95": 4.2221272247843435
     },
     "V3": {
-      "median": 3.781000035814941,
-      "p95": 4.238733137026429
+      "median": 6.026833434589207,
+      "p95": 7.259606657316907
     },
     "V4": {
-      "median": 83.23941705748439,
-      "p95": 154.83323375228792
+      "median": 77.04125042073429,
+      "p95": 151.70273925177753
     }
   },
   "per_question": {
@@ -865,6 +967,276 @@
           "support_tickets/TCKT-20139#0",
           "support_tickets/TCKT-20142#0"
         ]
+      },
+      "cap-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-attachments#0",
+          "invoicing/line-items-and-long-invoices#1",
+          "invoicing/line-items-and-long-invoices#0",
+          "support_tickets/TCKT-20131#0",
+          "support_tickets/TCKT-20129#0"
+        ]
+      },
+      "cap-14": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "community/portal-ach#0",
+          "invoicing/refunds#0",
+          "community/partial-pay-portal#0",
+          "client-portal/client-portal-overview#0"
+        ]
+      },
+      "tg-04": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#2",
+          "account-billing/plans-and-limits#0",
+          "community/seats-proration#0",
+          "sales/pricing-sheet-2025#0",
+          "sales/plan-comparison-for-reps#0"
+        ]
+      },
+      "tg-05": {
+        "rank": 3,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20008#0",
+          "api/api-rate-limits#0",
+          "support/faq#1",
+          "support_tickets/TCKT-20112#0"
+        ]
+      },
+      "tg-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "support_tickets/TCKT-20137#0",
+          "sales/battlecard-ledgerloop#1",
+          "sales/battlecard-billbright#1",
+          "support_tickets/TCKT-20113#0"
+        ]
+      },
+      "tp-03": {
+        "rank": 4,
+        "top": [
+          "invoicing/invoice-number-gaps#0",
+          "support_tickets/TCKT-20087#0",
+          "support_tickets/TCKT-20090#0",
+          "invoicing/invoice-numbering#0",
+          "support_tickets/TCKT-20088#0"
+        ]
+      },
+      "no-03": {
+        "rank": 1,
+        "top": [
+          "engineering/note-sandbox#0",
+          "support_tickets/TCKT-20182#0",
+          "support_tickets/TCKT-20180#0",
+          "support_tickets/TCKT-20179#0",
+          "api/sandbox#0"
+        ]
+      },
+      "mh-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/safari-login-loop#0",
+          "release-notes/v2.2.0#1",
+          "support_tickets/TCKT-20058#0",
+          "support_tickets/TCKT-20059#0",
+          "support_tickets/TCKT-20061#0"
+        ]
+      },
+      "mh-05": {
+        "rank": 5,
+        "top": [
+          "support_tickets/TCKT-20008#0",
+          "support_tickets/TCKT-20010#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20007#0",
+          "api/api-rate-limits#0"
+        ]
+      },
+      "mh-07": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20161#0",
+          "support_tickets/TCKT-20159#0",
+          "support_tickets/TCKT-20160#0",
+          "support_tickets/TCKT-20162#0",
+          "support_tickets/TCKT-20163#0"
+        ]
+      },
+      "mh-09": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20111#0",
+          "support_tickets/TCKT-20110#0",
+          "support_tickets/TCKT-20113#0",
+          "support_tickets/TCKT-20112#0",
+          "community/starter-webhooks#0"
+        ]
+      },
+      "mh-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20171#0",
+          "support_tickets/TCKT-20173#0",
+          "support_tickets/TCKT-20170#0",
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0"
+        ]
+      },
+      "mh-12": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20119#0",
+          "support_tickets/TCKT-20121#0",
+          "support_tickets/TCKT-20123#0",
+          "support_tickets/TCKT-20122#0",
+          "support_tickets/TCKT-20120#0"
+        ]
+      },
+      "sy-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/record-payment#0",
+          "api/api-payments#0",
+          "invoicing/refunds#0",
+          "client-portal/portal-payment-methods#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "sy-05": {
+        "rank": 2,
+        "top": [
+          "sales/plan-comparison-for-reps#1",
+          "account-billing/plans-and-limits#1",
+          "reports/custom-report-builder#0",
+          "reports/standard-reports#0",
+          "account-billing/plans-and-limits#2"
+        ]
+      },
+      "sy-07": {
+        "rank": null,
+        "top": [
+          "sales/security-faq-for-sales#0",
+          "sales/objection-handling#0",
+          "sales/one-pager-professional-services#0",
+          "support_tickets/TCKT-20148#0",
+          "sales/one-pager-nonprofit#0"
+        ]
+      },
+      "sy-09": {
+        "rank": 1,
+        "top": [
+          "invoicing/bulk-void-reminders#0",
+          "support_tickets/TCKT-20069#0",
+          "invoicing/invoice-numbering#0",
+          "support_tickets/TCKT-20067#0",
+          "support_tickets/TCKT-20070#0"
+        ]
+      },
+      "sy-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20186#0",
+          "support_tickets/TCKT-20184#0",
+          "support_tickets/TCKT-20187#0",
+          "support_tickets/TCKT-20188#0"
+        ]
+      },
+      "cf-01": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/bank-feed-sync#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20143#0"
+        ]
+      },
+      "cf-04": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20131#0",
+          "engineering/note-bulk-limit#0",
+          "support_tickets/TCKT-20129#0",
+          "support_tickets/TCKT-20132#0",
+          "support_tickets/TCKT-20130#0"
+        ]
+      },
+      "cf-06": {
+        "rank": 4,
+        "top": [
+          "community/seats-proration#0",
+          "sales/discount-policy#0",
+          "getting-started/invite-users#1",
+          "account-billing/plans-and-limits#0",
+          "sales/pricing-sheet-2025#0"
+        ]
+      },
+      "cf-08": {
+        "rank": 1,
+        "top": [
+          "api/webhook-retries#0",
+          "community/webhook-retries-5#0",
+          "engineering/adr-018-webhook-retries#0",
+          "support_tickets/TCKT-20122#0",
+          "support_tickets/TCKT-20119#0"
+        ]
+      },
+      "cf-10": {
+        "rank": 1,
+        "top": [
+          "api/api-rate-limits#0",
+          "api/api-concurrency-limits#0",
+          "api/api-rate-limits#1",
+          "api/sandbox#0",
+          "engineering/adr-017-concurrency-limit#0"
+        ]
+      },
+      "ij-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20040#0",
+          "support_tickets/TCKT-20042#0",
+          "support_tickets/TCKT-20043#0",
+          "support_tickets/TCKT-20041#0",
+          "community/pdf-25-lines#0"
+        ]
+      },
+      "ij-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20138#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20135#0"
+        ]
+      },
+      "ij-07": {
+        "rank": 3,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20008#0",
+          "api/api-rate-limits#0",
+          "support_tickets/TCKT-20112#0",
+          "support_tickets/TCKT-20134#0"
+        ]
+      },
+      "ij-10": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#1",
+          "support/faq#1",
+          "sales/sales-faq#0",
+          "engineering/note-x-ratelimit#0"
+        ]
       }
     },
     "V2": {
@@ -1546,6 +1918,276 @@
           "support_tickets/TCKT-20140#0",
           "support_tickets/TCKT-20139#0",
           "support_tickets/TCKT-20142#0"
+        ]
+      },
+      "cap-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-attachments#0",
+          "invoicing/line-items-and-long-invoices#1",
+          "invoicing/line-items-and-long-invoices#0",
+          "support_tickets/TCKT-20131#0",
+          "support_tickets/TCKT-20129#0"
+        ]
+      },
+      "cap-14": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "community/portal-ach#0",
+          "invoicing/refunds#0",
+          "community/partial-pay-portal#0",
+          "client-portal/client-portal-overview#0"
+        ]
+      },
+      "tg-04": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#1",
+          "community/seats-proration#0",
+          "sales/objection-handling#2",
+          "sales/pricing-sheet-2025#0",
+          "legacy/classic-plans#0"
+        ]
+      },
+      "tg-05": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "sales/objection-handling#0",
+          "support/faq#2",
+          "api/api-rate-limits#2"
+        ]
+      },
+      "tg-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#1",
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20113#0",
+          "support_tickets/TCKT-20112#0"
+        ]
+      },
+      "tp-03": {
+        "rank": 5,
+        "top": [
+          "invoicing/invoice-number-gaps#1",
+          "invoicing/invoice-number-gaps#0",
+          "support_tickets/TCKT-20087#0",
+          "support_tickets/TCKT-20090#0",
+          "invoicing/invoice-numbering#0"
+        ]
+      },
+      "no-03": {
+        "rank": 1,
+        "top": [
+          "engineering/note-sandbox#0",
+          "support_tickets/TCKT-20179#0",
+          "support_tickets/TCKT-20180#0",
+          "support_tickets/TCKT-20182#0",
+          "api/sandbox#0"
+        ]
+      },
+      "mh-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/safari-login-loop#0",
+          "release-notes/v2.2.0#2",
+          "engineering/postmortem-inc-2026-004#0",
+          "engineering/postmortem-inc-2026-004#1",
+          "support_tickets/TCKT-20058#0"
+        ]
+      },
+      "mh-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20008#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20010#0",
+          "support_tickets/TCKT-20007#0",
+          "support_tickets/TCKT-20009#0"
+        ]
+      },
+      "mh-07": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20161#0",
+          "support_tickets/TCKT-20159#0",
+          "support_tickets/TCKT-20160#0",
+          "support_tickets/TCKT-20162#0",
+          "support_tickets/TCKT-20163#0"
+        ]
+      },
+      "mh-09": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20111#0",
+          "support_tickets/TCKT-20110#0",
+          "support_tickets/TCKT-20113#0",
+          "support_tickets/TCKT-20112#0",
+          "community/starter-webhooks#0"
+        ]
+      },
+      "mh-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20173#0",
+          "support_tickets/TCKT-20171#0",
+          "support_tickets/TCKT-20170#0",
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0"
+        ]
+      },
+      "mh-12": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20121#0",
+          "support_tickets/TCKT-20119#0",
+          "support_tickets/TCKT-20123#0",
+          "support_tickets/TCKT-20122#0",
+          "support_tickets/TCKT-20120#0"
+        ]
+      },
+      "sy-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/record-payment#0",
+          "api/api-payments#0",
+          "invoicing/refunds#0",
+          "client-portal/portal-payment-methods#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "sy-05": {
+        "rank": 2,
+        "top": [
+          "reports/custom-report-builder#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "reports/standard-reports#0",
+          "account-billing/plans-and-limits#0"
+        ]
+      },
+      "sy-07": {
+        "rank": null,
+        "top": [
+          "sales/security-faq-for-sales#0",
+          "sales/one-pager-nonprofit#2",
+          "sales/one-pager-manufacturing#2",
+          "sales/one-pager-food-beverage#1",
+          "sales/one-pager-professional-services#2"
+        ]
+      },
+      "sy-09": {
+        "rank": 2,
+        "top": [
+          "engineering/postmortem-inc-2026-007#1",
+          "invoicing/bulk-void-reminders#0",
+          "support_tickets/TCKT-20069#0",
+          "invoicing/invoice-numbering#0",
+          "support_tickets/TCKT-20067#0"
+        ]
+      },
+      "sy-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20186#0",
+          "support_tickets/TCKT-20184#0",
+          "support_tickets/TCKT-20187#0",
+          "support_tickets/TCKT-20188#0"
+        ]
+      },
+      "cf-01": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/bank-feed-sync#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20143#0"
+        ]
+      },
+      "cf-04": {
+        "rank": 2,
+        "top": [
+          "support_tickets/TCKT-20131#0",
+          "invoicing/bulk-invoice-actions#1",
+          "engineering/note-bulk-limit#0",
+          "support_tickets/TCKT-20129#0",
+          "support_tickets/TCKT-20130#0"
+        ]
+      },
+      "cf-06": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#1",
+          "support/faq#2",
+          "sales/objection-handling#2",
+          "community/seats-proration#0",
+          "sales/discount-policy#0"
+        ]
+      },
+      "cf-08": {
+        "rank": 1,
+        "top": [
+          "api/webhook-retries#0",
+          "community/webhook-retries-5#0",
+          "engineering/adr-018-webhook-retries#0",
+          "api/webhook-retries#1",
+          "support_tickets/TCKT-20122#0"
+        ]
+      },
+      "cf-10": {
+        "rank": 2,
+        "top": [
+          "api/api-concurrency-limits#0",
+          "api/api-rate-limits#0",
+          "support/faq#2",
+          "api/sandbox#0",
+          "engineering/adr-017-concurrency-limit#0"
+        ]
+      },
+      "ij-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20042#0",
+          "support_tickets/TCKT-20040#0",
+          "support_tickets/TCKT-20043#0",
+          "support_tickets/TCKT-20041#0",
+          "community/pdf-25-lines#0"
+        ]
+      },
+      "ij-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20138#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20135#0"
+        ]
+      },
+      "ij-07": {
+        "rank": 3,
+        "top": [
+          "sales/objection-handling#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "support_tickets/TCKT-20008#0",
+          "api/api-rate-limits#2"
+        ]
+      },
+      "ij-10": {
+        "rank": 3,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "support/faq#2",
+          "api/api-rate-limits#2",
+          "api/api-rate-limits#0",
+          "sales/objection-handling#1"
         ]
       }
     },
@@ -2229,6 +2871,276 @@
           "support_tickets/TCKT-20142#0",
           "support_tickets/TCKT-20134#0"
         ]
+      },
+      "cap-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-attachments#0",
+          "invoicing/line-items-and-long-invoices#1",
+          "invoicing/line-items-and-long-invoices#0",
+          "support_tickets/TCKT-20131#0",
+          "support_tickets/TCKT-20129#0"
+        ]
+      },
+      "cap-14": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "invoicing/refunds#0",
+          "client-portal/client-portal-overview#0",
+          "invoicing/record-payment#0",
+          "support_tickets/TCKT-20076#0"
+        ]
+      },
+      "tg-04": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#1",
+          "sales/objection-handling#2",
+          "sales/pricing-sheet-2025#0",
+          "legacy/classic-plans#0",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "tg-05": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "sales/objection-handling#0",
+          "support/faq#2",
+          "api/api-rate-limits#2"
+        ]
+      },
+      "tg-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#1",
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20113#0",
+          "support_tickets/TCKT-20112#0"
+        ]
+      },
+      "tp-03": {
+        "rank": 5,
+        "top": [
+          "invoicing/invoice-number-gaps#1",
+          "invoicing/invoice-number-gaps#0",
+          "support_tickets/TCKT-20087#0",
+          "support_tickets/TCKT-20090#0",
+          "invoicing/invoice-numbering#0"
+        ]
+      },
+      "no-03": {
+        "rank": 1,
+        "top": [
+          "engineering/note-sandbox#0",
+          "support_tickets/TCKT-20182#0",
+          "support_tickets/TCKT-20180#0",
+          "support_tickets/TCKT-20179#0",
+          "api/sandbox#0"
+        ]
+      },
+      "mh-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/safari-login-loop#0",
+          "release-notes/v2.2.0#2",
+          "engineering/postmortem-inc-2026-004#0",
+          "engineering/postmortem-inc-2026-004#1",
+          "support_tickets/TCKT-20058#0"
+        ]
+      },
+      "mh-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20008#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20010#0",
+          "support_tickets/TCKT-20007#0",
+          "support_tickets/TCKT-20009#0"
+        ]
+      },
+      "mh-07": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20161#0",
+          "support_tickets/TCKT-20159#0",
+          "support_tickets/TCKT-20160#0",
+          "support_tickets/TCKT-20162#0",
+          "support_tickets/TCKT-20163#0"
+        ]
+      },
+      "mh-09": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20111#0",
+          "support_tickets/TCKT-20110#0",
+          "support_tickets/TCKT-20113#0",
+          "support_tickets/TCKT-20112#0",
+          "support_tickets/TCKT-20109#0"
+        ]
+      },
+      "mh-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20173#0",
+          "support_tickets/TCKT-20171#0",
+          "support_tickets/TCKT-20170#0",
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0"
+        ]
+      },
+      "mh-12": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20121#0",
+          "support_tickets/TCKT-20119#0",
+          "support_tickets/TCKT-20123#0",
+          "support_tickets/TCKT-20122#0",
+          "support_tickets/TCKT-20120#0"
+        ]
+      },
+      "sy-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/record-payment#0",
+          "api/api-payments#0",
+          "invoicing/refunds#0",
+          "client-portal/portal-payment-methods#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "sy-05": {
+        "rank": 2,
+        "top": [
+          "reports/custom-report-builder#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "reports/standard-reports#0",
+          "account-billing/plans-and-limits#0"
+        ]
+      },
+      "sy-07": {
+        "rank": null,
+        "top": [
+          "sales/security-faq-for-sales#0",
+          "sales/one-pager-technology#1",
+          "sales/one-pager-professional-services#2",
+          "sales/one-pager-real-estate#1",
+          "sales/one-pager-food-beverage#1"
+        ]
+      },
+      "sy-09": {
+        "rank": 2,
+        "top": [
+          "engineering/postmortem-inc-2026-007#1",
+          "invoicing/bulk-void-reminders#0",
+          "support_tickets/TCKT-20069#0",
+          "invoicing/invoice-numbering#0",
+          "support_tickets/TCKT-20067#0"
+        ]
+      },
+      "sy-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20186#0",
+          "support_tickets/TCKT-20184#0",
+          "support_tickets/TCKT-20187#0",
+          "support_tickets/TCKT-20188#0"
+        ]
+      },
+      "cf-01": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/bank-feed-sync#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20143#0",
+          "support_tickets/TCKT-20141#0"
+        ]
+      },
+      "cf-04": {
+        "rank": 2,
+        "top": [
+          "support_tickets/TCKT-20131#0",
+          "invoicing/bulk-invoice-actions#1",
+          "engineering/note-bulk-limit#0",
+          "support_tickets/TCKT-20129#0",
+          "support_tickets/TCKT-20132#0"
+        ]
+      },
+      "cf-06": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#1",
+          "support/faq#2",
+          "sales/objection-handling#2",
+          "sales/discount-policy#0",
+          "sales/pricing-sheet-2025#0"
+        ]
+      },
+      "cf-08": {
+        "rank": 1,
+        "top": [
+          "api/webhook-retries#0",
+          "engineering/adr-018-webhook-retries#0",
+          "api/webhook-retries#1",
+          "support_tickets/TCKT-20122#0",
+          "support_tickets/TCKT-20119#0"
+        ]
+      },
+      "cf-10": {
+        "rank": 2,
+        "top": [
+          "api/api-concurrency-limits#0",
+          "api/api-rate-limits#0",
+          "support/faq#2",
+          "api/sandbox#0",
+          "engineering/adr-017-concurrency-limit#0"
+        ]
+      },
+      "ij-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20040#0",
+          "support_tickets/TCKT-20043#0",
+          "support_tickets/TCKT-20042#0",
+          "support_tickets/TCKT-20041#0",
+          "engineering/postmortem-inc-2026-021#1"
+        ]
+      },
+      "ij-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20138#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20135#0"
+        ]
+      },
+      "ij-07": {
+        "rank": 3,
+        "top": [
+          "sales/objection-handling#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "support_tickets/TCKT-20008#0",
+          "api/api-rate-limits#2"
+        ]
+      },
+      "ij-10": {
+        "rank": 3,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "support/faq#2",
+          "api/api-rate-limits#2",
+          "api/api-rate-limits#0",
+          "sales/objection-handling#1"
+        ]
       }
     },
     "V4": {
@@ -2910,6 +3822,276 @@
           "bank-reconciliation/bank-feed-sync#0",
           "api/api-bank-transactions#1",
           "sales/whats-new-2-3-for-sales#0"
+        ]
+      },
+      "cap-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-attachments#0",
+          "release-notes/v1.9.0#0",
+          "invoicing/line-items-and-long-invoices#1",
+          "invoicing/send-invoice-email#0",
+          "getting-started/invite-users#0"
+        ]
+      },
+      "cap-14": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "invoicing/refunds#0",
+          "invoicing/record-payment#0",
+          "sales/demo-script#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "tg-04": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#1",
+          "account-billing/change-plan#0",
+          "sales/pricing-sheet-2026#0",
+          "sales/plan-comparison-for-reps#1",
+          "account-billing/seats-and-add-seats#0"
+        ]
+      },
+      "tg-05": {
+        "rank": null,
+        "top": [
+          "support/faq#2",
+          "sales/objection-handling#0",
+          "account-billing/plans-and-limits#2",
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-concurrency-limits#0"
+        ]
+      },
+      "tg-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "support_tickets/TCKT-20009#0",
+          "engineering/postmortem-inc-2026-016#1",
+          "sales/objection-handling#1",
+          "community/sso-when#0"
+        ]
+      },
+      "tp-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-numbering#0",
+          "invoicing/invoice-number-gaps#1",
+          "invoicing/archived-tax-rate-drafts#0",
+          "release-notes/v2.0.1#0",
+          "invoicing/void-or-delete-invoice#0"
+        ]
+      },
+      "no-03": {
+        "rank": 2,
+        "top": [
+          "api/sandbox#0",
+          "engineering/note-sandbox#0",
+          "sales/api-pitch#0",
+          "api/api-authentication#0",
+          "support_tickets/TCKT-20181#0"
+        ]
+      },
+      "mh-03": {
+        "rank": 2,
+        "top": [
+          "release-notes/v2.2.0#2",
+          "client-portal/safari-login-loop#0",
+          "engineering/release-retro-2.2.0#0",
+          "release-notes/v2.3.0#2",
+          "engineering/release-retro-2.3.0#0"
+        ]
+      },
+      "mh-05": {
+        "rank": 5,
+        "top": [
+          "api/api-concurrency-limits#0",
+          "support_tickets/TCKT-20014#0",
+          "engineering/adr-017-concurrency-limit#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#1"
+        ]
+      },
+      "mh-07": {
+        "rank": 1,
+        "top": [
+          "invoicing/late-fees-in-2x#0",
+          "release-notes/v1.9.0#3",
+          "release-notes/v1.8.0#0",
+          "legacy/classic-migration#0",
+          "support_tickets/TCKT-20163#0"
+        ]
+      },
+      "mh-09": {
+        "rank": 3,
+        "top": [
+          "account-billing/change-plan#0",
+          "sales/plan-comparison-for-reps#1",
+          "account-billing/plans-and-limits#1",
+          "sales/pricing-sheet-2026#0",
+          "sales/renewal-playbook#0"
+        ]
+      },
+      "mh-10": {
+        "rank": 3,
+        "top": [
+          "client-portal/customer-statements#1",
+          "release-notes/v1.8.0#0",
+          "reports/report-exports#0",
+          "release-notes/v2.3.1#0",
+          "reports/aged-receivables#0"
+        ]
+      },
+      "mh-12": {
+        "rank": 1,
+        "top": [
+          "api/webhook-retries#1",
+          "engineering/runbook-webhook-disabled#0",
+          "api/webhooks-overview#0",
+          "engineering/adr-018-webhook-retries#0",
+          "support_tickets/TCKT-20123#0"
+        ]
+      },
+      "sy-03": {
+        "rank": 2,
+        "top": [
+          "invoicing/refunds#0",
+          "invoicing/record-payment#0",
+          "api/api-payments#0",
+          "invoicing/partial-payments#0",
+          "client-portal/portal-partial-payment#0"
+        ]
+      },
+      "sy-05": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#0",
+          "reports/standard-reports#0",
+          "reports/custom-report-builder#0",
+          "sales/objection-handling#1",
+          "sales/competitive-pricing-notes#0"
+        ]
+      },
+      "sy-07": {
+        "rank": null,
+        "top": [
+          "sales/security-faq-for-sales#0",
+          "sales/one-pager-technology#1",
+          "sales/one-pager-professional-services#2",
+          "sales/one-pager-real-estate#1",
+          "sales/one-pager-food-beverage#1"
+        ]
+      },
+      "sy-09": {
+        "rank": 1,
+        "top": [
+          "invoicing/bulk-void-reminders#0",
+          "release-notes/v2.2.1#1",
+          "invoicing/invoice-numbering#0",
+          "invoicing/partial-payments#0",
+          "invoicing/invoice-number-gaps#0"
+        ]
+      },
+      "sy-10": {
+        "rank": 2,
+        "top": [
+          "api/sdk-node#1",
+          "api/sdk-python#0",
+          "api/migrate-v1-to-v2#1",
+          "sales/api-pitch#0",
+          "api/webhook-signatures#1"
+        ]
+      },
+      "cf-01": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/bank-feed-sync#0",
+          "bank-reconciliation/bank-feed-faq#0",
+          "release-notes/v2.3.0#1",
+          "sales/whats-new-2-3-for-sales#0",
+          "support_tickets/TCKT-20142#0"
+        ]
+      },
+      "cf-04": {
+        "rank": 1,
+        "top": [
+          "invoicing/bulk-invoice-actions#1",
+          "invoicing/export-invoice-pdf#0",
+          "release-notes/v2.2.0#0",
+          "expenses/expense-categories#0",
+          "sales/sales-faq#0"
+        ]
+      },
+      "cf-06": {
+        "rank": 2,
+        "top": [
+          "account-billing/change-plan#0",
+          "account-billing/plans-and-limits#1",
+          "support/faq#2",
+          "sales/pricing-sheet-2026#0",
+          "sales/battlecard-finchbooks#1"
+        ]
+      },
+      "cf-08": {
+        "rank": 1,
+        "top": [
+          "api/webhook-retries#0",
+          "engineering/adr-018-webhook-retries#0",
+          "api/api-error-subcodes#1",
+          "engineering/runbook-webhook-disabled#0",
+          "support_tickets/TCKT-20120#0"
+        ]
+      },
+      "cf-10": {
+        "rank": null,
+        "top": [
+          "api/sandbox#0",
+          "api/api-concurrency-limits#0",
+          "support/faq#2",
+          "sales/objection-handling#0",
+          "community/classic-api-rate#0"
+        ]
+      },
+      "ij-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/line-items-and-long-invoices#1",
+          "invoicing/export-invoice-pdf#0",
+          "release-notes/v2.3.1#2",
+          "invoicing/send-invoice-email#0",
+          "support_tickets/TCKT-20043#0"
+        ]
+      },
+      "ij-05": {
+        "rank": 1,
+        "top": [
+          "account-billing/plans-and-limits#2",
+          "bank-reconciliation/disconnect-bank-feed#0",
+          "bank-reconciliation/connect-bank-feed#0",
+          "support_tickets/TCKT-20137#0",
+          "account-billing/change-plan#0"
+        ]
+      },
+      "ij-07": {
+        "rank": 4,
+        "top": [
+          "support/faq#2",
+          "account-billing/plans-and-limits#2",
+          "sales/objection-handling#0",
+          "api/api-rate-limits#2",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "ij-10": {
+        "rank": null,
+        "top": [
+          "release-notes/v2.3.0#2",
+          "engineering/release-retro-2.3.0#0",
+          "support/faq#2",
+          "account-billing/plans-and-limits#2",
+          "release-notes/v2.2.1#2"
         ]
       }
     }

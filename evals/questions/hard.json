@@ -2,153 +2,394 @@
   {
     "id": "h-01",
     "class": "exact_token",
-    "targets": "R1: near-identical bug IDs (BUG-2310-01/02/03)",
     "question": "Is BUG-2310-03 just cosmetic, or does it affect report data?",
+    "expected_behavior": "answer",
     "expected_answer": "Cosmetic. The date-range picker always starts weeks on Sunday, but report data is correct.",
-    "expected_docs": ["reports/date-picker-week-start"],
-    "must_include": ["cosmetic"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "reports/date-picker-week-start"
+    ],
+    "evidence": [
+      "This is cosmetic. Report data is correct. Type dates directly into the range fields if the calendar is confusing."
+    ],
+    "must_include": [
+      "cosmetic"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "R1: near-identical bug IDs (BUG-2310-01/02/03)",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-02",
     "class": "exact_token",
-    "targets": "R1: BUG-2200-02 vs BUG-2200-01",
     "question": "Which version fixed BUG-2200-02?",
+    "expected_behavior": "answer",
     "expected_answer": "2.3.0. API v2 responses were missing the X-RateLimit-* headers in 2.2.0.",
-    "expected_docs": ["api/api-rate-limits", "support/known-issues", "release-notes/v2.3.0"],
-    "must_include": ["2.3.0"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "api/api-rate-limits",
+      "support/known-issues",
+      "release-notes/v2.3.0"
+    ],
+    "evidence": [
+      "Note: in 2.2.0 these headers were missing (BUG-2200-02). Fixed in 2.3.0."
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "R1: BUG-2200-02 vs BUG-2200-01",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-03",
     "class": "exact_token",
-    "targets": "R1: BUG-2100-01 (Low) vs BUG-2100-02 (High)",
     "question": "What severity is BUG-2100-01?",
+    "expected_behavior": "answer",
     "expected_answer": "Low, with status Won't Fix (handwritten receipt OCR accuracy below 40%).",
-    "expected_docs": ["release-notes/v2.1.0", "support/known-issues"],
-    "must_include": ["Low"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "release-notes/v2.1.0",
+      "support/known-issues"
+    ],
+    "evidence": [
+      "| BUG-2100-01 | Receipt OCR misreads handwritten totals | 2.1.0 | — | Low | Won't Fix |"
+    ],
+    "must_include": [
+      "Low"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "R1: BUG-2100-01 (Low) vs BUG-2100-02 (High)",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-04",
     "class": "tier_gated",
-    "targets": "R2: value sits in a table row that may lose its header",
     "question": "How many saved custom reports does a Professional customer get?",
+    "expected_behavior": "answer",
     "expected_answer": "100 saved custom reports (Starter 10, Enterprise unlimited).",
-    "expected_docs": ["reports/custom-report-builder", "account-billing/plans-and-limits"],
-    "must_include": ["100"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "reports/custom-report-builder",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "| Saved custom reports | 10 | 100 | Unlimited |"
+    ],
+    "must_include": [
+      "100"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "plan_gating",
+      "chunk_context"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "R2: value sits in a table row that may lose its header",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-05",
     "class": "tier_gated",
-    "targets": "R2: headerless table row",
     "question": "How many bank accounts can a Professional customer connect?",
+    "expected_behavior": "answer",
     "expected_answer": "10 connected bank feeds (Starter 2, Enterprise unlimited).",
-    "expected_docs": ["bank-reconciliation/connect-bank-feed", "account-billing/plans-and-limits", "bank-reconciliation/disconnect-bank-feed"],
-    "must_include": ["10"],
+    "expected_docs": [
+      "bank-reconciliation/connect-bank-feed",
+      "account-billing/plans-and-limits",
+      "bank-reconciliation/disconnect-bank-feed"
+    ],
+    "evidence": [
+      "| Connected bank feeds | 2 | 10 | Unlimited |"
+    ],
+    "must_include": [
+      "10"
+    ],
     "difficulty": "hard",
-    "notes": "Weak check: '10' also matches '100' or '10,000'. Read the answer."
+    "targets": [
+      "plan_gating",
+      "chunk_context"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "R2: headerless table row | Weak check: '10' also matches '100' or '10,000'. Read the answer.",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-06",
     "class": "tier_gated",
-    "targets": "R2: the Support row is split across two chunks of the plans table",
     "question": "What kind of support does an Enterprise customer get?",
-    "expected_answer": "Priority email, chat, and phone with a named CSM, and a 4-hour first response target. Critical issues are handled 24/7.",
-    "expected_docs": ["support/contact-support", "account-billing/plans-and-limits"],
-    "must_include": ["4 hours"],
-    "difficulty": "hard"
+    "expected_behavior": "answer",
+    "expected_answer": "Priority email, chat, and phone with a named CSM, and a first response target of 4 hours. Critical issues are handled 24/7.",
+    "expected_docs": [
+      "support/contact-support",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "| Enterprise | Priority email, chat, phone, named CSM | 4 hours |"
+    ],
+    "must_include": [
+      "4 hours"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "plan_gating",
+      "chunk_context",
+      "incomplete_answer"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "R2: the Support row is split across two chunks of the plans table",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-07",
     "class": "temporal",
-    "targets": "version competition: several pages about recurring schedules at different versions",
     "question": "On 2.3.0, were recurring invoice schedules calculated in UTC?",
+    "expected_behavior": "answer",
     "expected_answer": "No. Schedules moved to UTC in 2.3.1. Before that they used the organization's local time zone.",
-    "expected_docs": ["recurring-invoices/recurring-invoice-timezones", "release-notes/v2.3.1", "recurring-invoices/recurring-invoices-faq"],
-    "must_include": ["local"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "recurring-invoices/recurring-invoice-timezones",
+      "release-notes/v2.3.1",
+      "recurring-invoices/recurring-invoices-faq"
+    ],
+    "evidence": [
+      "Starting in 2.3.1, recurring invoice schedules are calculated in UTC internally. Send times are still shown in your organization's local time zone."
+    ],
+    "must_include": [
+      "local"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition",
+      "version_filter_removes_evidence"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version competition: several pages about recurring schedules at different versions",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-08",
     "class": "temporal",
-    "targets": "version competition + a stale FAQ nearby",
     "question": "Did bank feeds sync every 4 hours for a customer on 2.2.0?",
+    "expected_behavior": "answer",
     "expected_answer": "No. Every-4-hours sync arrived in 2.3.0. Before that, feeds synced once a day.",
-    "expected_docs": ["bank-reconciliation/bank-feed-sync", "release-notes/v2.3.0"],
-    "must_include": ["2.3.0"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "bank-reconciliation/bank-feed-sync",
+      "release-notes/v2.3.0"
+    ],
+    "evidence": [
+      "Since 2.3.0, connected bank feeds sync every 4 hours. Before 2.3.0 they synced once a day."
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition",
+      "version_filter_removes_evidence"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version competition + a stale FAQ nearby",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-09",
     "class": "temporal",
-    "targets": "version-specific bug: present in 2.2.0, fixed in 2.3.0",
     "question": "Did API v2 responses include rate-limit headers on 2.2.0?",
+    "expected_behavior": "answer",
     "expected_answer": "No. The X-RateLimit-* headers were missing in 2.2.0 (BUG-2200-02) and were fixed in 2.3.0.",
-    "expected_docs": ["api/api-rate-limits", "release-notes/v2.3.0", "support/known-issues", "api/migrate-v1-to-v2"],
-    "must_include": ["2.3.0"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "api/api-rate-limits",
+      "release-notes/v2.3.0",
+      "support/known-issues",
+      "api/migrate-v1-to-v2"
+    ],
+    "evidence": [
+      "| BUG-2200-02 | API v2 rate limit headers missing | 2.2.0 | 2.3.0 | Low | Fixed |"
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "version-specific bug: present in 2.2.0, fixed in 2.3.0",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-10",
     "class": "capability",
-    "targets": "no shared words: customer description of the Safari login loop",
     "question": "A client says they keep getting sent back to the sign-in screen in their Mac browser right after logging in. Is that a known problem?",
+    "expected_behavior": "answer",
     "expected_answer": "Yes, the Safari client portal login loop (BUG-2200-01), caused by a cookie SameSite misconfiguration. It was fixed within 2.2.0. If it still happens, clear cookies for the portal and sign in again.",
-    "expected_docs": ["client-portal/safari-login-loop", "support/known-issues", "release-notes/v2.2.0"],
-    "must_include": ["2.2.0"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "client-portal/safari-login-loop",
+      "support/known-issues",
+      "release-notes/v2.2.0"
+    ],
+    "evidence": [
+      "| BUG-2200-01 | Client portal login loop on Safari | 2.2.0 | 2.2.0 | Medium | Fixed |"
+    ],
+    "must_include": [
+      "2.2.0"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "meaning_match",
+      "vocabulary_mismatch"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "no shared words: customer description of the Safari login loop",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-11",
     "class": "capability",
-    "targets": "no shared words: customer description of BUG-2310-02",
     "question": "A customer with a really long invoice says the PDF they sent only showed some of the items. Is that on our side?",
+    "expected_behavior": "answer",
     "expected_answer": "Yes, a known issue in 2.3.1 (BUG-2310-02): invoices with more than 25 line items export as a single-page PDF and drop the rest. Workaround: send by email link, or keep invoices to 25 lines or fewer.",
-    "expected_docs": ["invoicing/line-items-and-long-invoices", "invoicing/export-invoice-pdf", "release-notes/v2.3.1"],
-    "must_include": ["25"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "invoicing/line-items-and-long-invoices",
+      "invoicing/export-invoice-pdf",
+      "release-notes/v2.3.1"
+    ],
+    "evidence": [
+      "| BUG-2310-02 | High | Open | Invoices with more than 25 line items export as a single-page PDF, silently dropping remaining line items. |"
+    ],
+    "must_include": [
+      "25"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "meaning_match",
+      "vocabulary_mismatch"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "no shared words: customer description of BUG-2310-02",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-12",
     "class": "capability",
-    "targets": "no shared words: 'payment page look like our company' = portal branding",
     "question": "Can we make the page where our clients pay look like our own company?",
+    "expected_behavior": "answer",
     "expected_answer": "Yes on Professional and Enterprise: client portal branding adds your logo and accent color. Starter portals use the default InvoicePilot look.",
-    "expected_docs": ["client-portal/portal-branding", "account-billing/plans-and-limits"],
-    "must_include": ["Professional"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "client-portal/portal-branding",
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "> Note: Portal branding is available on Professional and Enterprise. Starter portals use the default InvoicePilot look."
+    ],
+    "must_include": [
+      "Professional"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "meaning_match",
+      "vocabulary_mismatch"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "no shared words: 'payment page look like our company' = portal branding",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-13",
     "class": "capability",
-    "targets": "no shared words: 'avoid making two invoices on retry' = idempotency",
     "question": "If an integration retries a create-invoice call after a timeout, how do we avoid ending up with two invoices?",
+    "expected_behavior": "answer",
     "expected_answer": "Send an Idempotency-Key header on POST requests. Retrying with the same key returns the original result instead of creating a duplicate. Keys are kept for 24 hours.",
-    "expected_docs": ["api/api-errors", "api/migrate-v1-to-v2"],
-    "must_include": ["Idempotency-Key"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "api/api-errors",
+      "api/migrate-v1-to-v2"
+    ],
+    "evidence": [
+      "4. Add Idempotency-Key to POST calls so retries are safe."
+    ],
+    "must_include": [
+      "Idempotency-Key"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "meaning_match",
+      "vocabulary_mismatch"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "no shared words: 'avoid making two invoices on retry' = idempotency",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-14",
     "class": "capability",
-    "targets": "answer split across chunks: bug description and workaround may land in different chunks",
     "question": "What can customers do if auto-match leaves their EUR transactions unmatched on 2.3.1?",
+    "expected_behavior": "answer",
     "expected_answer": "Use manual matching for foreign-currency transactions until a fix ships. Base-currency transactions still auto-match, and suggested matches on multi-currency accounts should not be bulk-confirmed.",
-    "expected_docs": ["multi-currency/multi-currency-bank-reconciliation", "bank-reconciliation/auto-match-rules"],
-    "must_include": ["manual"],
+    "expected_docs": [
+      "multi-currency/multi-currency-bank-reconciliation",
+      "bank-reconciliation/auto-match-rules"
+    ],
+    "evidence": [
+      "On 2.3.1, foreign-currency amounts are not converted before they are compared (BUG-2310-01). Use manual matching for those transactions."
+    ],
+    "must_include": [
+      "manual"
+    ],
     "difficulty": "hard",
-    "notes": "The community post also mentions manual matching, but it is low authority and not an expected doc."
+    "targets": [
+      "meaning_match",
+      "low_authority_source"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "answer split across chunks: bug description and workaround may land in different chunks | The community post also mentions manual matching, but it is low authority and not an expected doc.",
+    "verified_by": "claude-review-2026-11-06"
   },
   {
     "id": "h-15",
     "class": "capability",
-    "targets": "answer spread across table rows",
     "question": "Which API errors should an integration retry?",
+    "expected_behavior": "answer",
     "expected_answer": "429 (IP-4290, wait for Retry-After), 500 (IP-5000) and 503 (IP-5030) with backoff. Also the subcodes IP-4091 (after 1 second), IP-4291 (after Retry-After), and IP-5031 (with backoff). Other errors should not be retried.",
-    "expected_docs": ["api/api-errors", "api/api-error-subcodes"],
-    "must_include": ["429"],
-    "difficulty": "hard"
+    "expected_docs": [
+      "api/api-errors",
+      "api/api-error-subcodes"
+    ],
+    "evidence": [
+      "| 429 | IP-4290 | Rate limit exceeded; wait for Retry-After | Yes |"
+    ],
+    "must_include": [
+      "429"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "meaning_match",
+      "chunk_context"
+    ],
+    "split": "dev",
+    "verified": true,
+    "notes": "answer spread across table rows",
+    "verified_by": "claude-review-2026-11-06"
   }
 ]

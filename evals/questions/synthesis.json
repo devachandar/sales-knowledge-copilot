@@ -1,0 +1,282 @@
+[
+  {
+    "id": "sy-01",
+    "class": "synthesis",
+    "question": "List every open bug in 2.3.1 and its workaround.",
+    "expected_behavior": "answer",
+    "expected_answer": "BUG-2310-01 (Critical): auto-match does not convert foreign-currency amounts; use manual matching for those transactions. BUG-2310-02 (High): invoices over 25 line items export as a single-page PDF; send the email link or keep to 25 lines. BUG-2310-03 (Low): date picker starts weeks on Sunday; cosmetic, type dates directly.",
+    "expected_docs": [
+      "release-notes/v2.3.1",
+      "bank-reconciliation/auto-match-rules",
+      "invoicing/line-items-and-long-invoices",
+      "reports/date-picker-week-start"
+    ],
+    "evidence": [
+      "| BUG-2310-01 | Critical | Open | Auto-match in bank reconciliation does not convert foreign-currency transactions before comparing amounts, so multi-currency accounts see most transactions left unmatched. |",
+      "On 2.3.1, foreign-currency amounts are not converted before they are compared (BUG-2310-01). Use manual matching for those transactions.",
+      "> Known issue: BUG-2310-02 (High, Open): Invoices with more than 25 line items export as a single-page PDF, silently dropping remaining line items. Affects 2.3.1.",
+      "This is cosmetic. Report data is correct. Type dates directly into the range fields if the calendar is confusing."
+    ],
+    "must_include": [
+      "BUG-2310-01",
+      "BUG-2310-02",
+      "BUG-2310-03"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "synthesis",
+      "incomplete_answer"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-02",
+    "class": "synthesis",
+    "question": "Compare what Starter and Professional get for API use: per-minute limit, concurrency, and webhooks.",
+    "expected_behavior": "answer",
+    "expected_answer": "Starter: 60 requests per minute, 10 concurrent, no webhooks. Professional: 300 per minute, 10 concurrent, 5 webhook endpoints.",
+    "expected_docs": [
+      "api/api-rate-limits",
+      "api/api-concurrency-limits",
+      "api/webhooks-overview"
+    ],
+    "evidence": [
+      "| Starter | 60 |",
+      "| Professional | 300 |",
+      "Besides the per-minute rate limit, each API key can have at most 10 requests in flight at once.",
+      "| Professional | 5 |"
+    ],
+    "must_include": [
+      "60",
+      "300",
+      "10"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "synthesis",
+      "plan_gating"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-03",
+    "class": "synthesis",
+    "question": "What are all the ways a client's payment can be recorded against an invoice?",
+    "expected_behavior": "answer",
+    "expected_answer": "Clients can pay in the portal by card or bank transfer (ACH or SEPA), recorded automatically; payments received outside the portal, such as bank transfers or checks, are recorded with Record Payment.",
+    "expected_docs": [
+      "client-portal/portal-payment-methods",
+      "invoicing/record-payment"
+    ],
+    "evidence": [
+      "Clients can pay by card or bank transfer (ACH in the US, SEPA in the EU).",
+      "Record payments you receive outside the client portal, such as bank transfers or checks."
+    ],
+    "must_include": [
+      "card",
+      "check"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "synthesis"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-04",
+    "class": "synthesis",
+    "question": "Summarize how bank feeds and reconciliation changed from 2.0.0 to 2.3.1.",
+    "expected_behavior": "answer",
+    "expected_answer": "On 2.0.0 to 2.2.x feeds synced once a day and reconciliation was manual. 2.3.0 added auto-match and sync every 4 hours. On 2.3.1, auto-match does not convert foreign currency (BUG-2310-01), so foreign-currency transactions need manual matching.",
+    "expected_docs": [
+      "bank-reconciliation/bank-feed-sync",
+      "bank-reconciliation/manual-reconciliation",
+      "bank-reconciliation/auto-match-rules"
+    ],
+    "evidence": [
+      "Since 2.3.0, connected bank feeds sync every 4 hours. Before 2.3.0 they synced once a day.",
+      "Manual reconciliation has been available since 2.0.0 and is still the fallback when auto-match cannot find a match.",
+      "On 2.3.1, foreign-currency amounts are not converted before they are compared (BUG-2310-01). Use manual matching for those transactions."
+    ],
+    "must_include": [
+      "4 hours",
+      "BUG-2310-01"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "synthesis",
+      "version_competition"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-05",
+    "class": "synthesis",
+    "question": "What reporting features differ by plan?",
+    "expected_behavior": "answer",
+    "expected_answer": "Saved custom reports: 10 on Starter, 100 on Professional, unlimited on Enterprise. Scheduled report emails: Professional and Enterprise only.",
+    "expected_docs": [
+      "account-billing/plans-and-limits",
+      "reports/report-schedules"
+    ],
+    "evidence": [
+      "| Saved custom reports | 10 | 100 | Unlimited |",
+      "> Note: Scheduled report emails are available on Professional and Enterprise."
+    ],
+    "must_include": [
+      "100",
+      "Professional"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "synthesis",
+      "plan_gating"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-06",
+    "class": "synthesis",
+    "question": "List every limit that applies to API v2 traffic.",
+    "expected_behavior": "answer",
+    "expected_answer": "Per-minute rate limits of 60, 300, or 1,000 by plan; at most 10 requests in flight per key; list pages of up to 100 items; Idempotency-Key results are kept for 24 hours.",
+    "expected_docs": [
+      "api/api-rate-limits",
+      "api/api-concurrency-limits",
+      "api/migrate-v1-to-v2",
+      "api/api-errors"
+    ],
+    "evidence": [
+      "| Enterprise | 1,000 |",
+      "Besides the per-minute rate limit, each API key can have at most 10 requests in flight at once.",
+      "| Pagination | ?page=2&per_page=50 | ?cursor=...&limit=100 |",
+      "Send an Idempotency-Key header on POST requests. Retrying with the same key returns the original result instead of creating a duplicate. Keys are kept for 24 hours."
+    ],
+    "must_include": [
+      "10",
+      "100"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "synthesis"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-07",
+    "class": "synthesis",
+    "question": "What security points can I share with a prospect?",
+    "expected_behavior": "answer",
+    "expected_answer": "TLS 1.2+ in transit and AES-256 at rest; two-step verification for every user; a SOC 2 Type II report on request; data hosted in the US and EU; an audit log on Enterprise (13 months). SSO (SAML) is not available.",
+    "expected_docs": [
+      "account-billing/security-overview",
+      "account-billing/sso-saml"
+    ],
+    "evidence": [
+      "- SOC 2 Type II report available on request",
+      "InvoicePilot encrypts data in transit with TLS 1.2 or later and at rest with AES-256.",
+      "InvoicePilot does not support SSO or SAML sign-in on any plan today."
+    ],
+    "must_include": [
+      "SOC 2",
+      "SSO"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "synthesis"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-08",
+    "class": "synthesis",
+    "question": "Which bugs have affected the client portal, and are they fixed?",
+    "expected_behavior": "answer",
+    "expected_answer": "BUG-2200-01, the Safari login loop, fixed within 2.2.0; and BUG-2210-01, the hidden Pay now button for partially paid invoices on 2.2.1, fixed in 2.3.0.",
+    "expected_docs": [
+      "client-portal/safari-login-loop",
+      "client-portal/portal-partial-payment"
+    ],
+    "evidence": [
+      "BUG-2200-01: Safari users were redirected back to the login page after successful authentication due to a cookie SameSite misconfiguration.",
+      "This is BUG-2210-01 (High). It affected 2.2.1. It was fixed in 2.3.0."
+    ],
+    "must_include": [
+      "BUG-2200-01",
+      "BUG-2210-01"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "synthesis"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-09",
+    "class": "synthesis",
+    "question": "What happens to an invoice's number and its payment reminders when it is voided?",
+    "expected_behavior": "answer",
+    "expected_answer": "A voided invoice stays in reports with a zero balance and a VOID watermark, and its number is never reused. Since 2.2.1, voiding in bulk also cancels its scheduled reminders (on 2.2.0 they had to be cancelled by hand).",
+    "expected_docs": [
+      "invoicing/void-or-delete-invoice",
+      "invoicing/invoice-numbering",
+      "invoicing/bulk-void-reminders"
+    ],
+    "evidence": [
+      "Voided invoices stay in reports with a zero balance and show a VOID watermark.",
+      "Numbers are never reused, even if an invoice is voided.",
+      "- Since 2.2.1, a bulk void cancels reminders automatically."
+    ],
+    "must_include": [
+      "never reused"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "synthesis"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "sy-10",
+    "class": "synthesis",
+    "question": "What does the Python SDK do to make retries safe?",
+    "expected_behavior": "answer",
+    "expected_answer": "It retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff up to max_retries (default 2), never retries 4xx validation errors, and accepts idempotency_key on creates; Idempotency-Key on POST calls makes retries safe.",
+    "expected_docs": [
+      "api/sdk-python",
+      "api/migrate-v1-to-v2"
+    ],
+    "evidence": [
+      "The SDK retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff, up to max_retries times (default 2). It never retries 4xx validation errors.",
+      "4. Add Idempotency-Key to POST calls so retries are safe."
+    ],
+    "must_include": [
+      "max_retries"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "synthesis"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  }
+]

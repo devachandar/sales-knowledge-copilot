@@ -1,0 +1,558 @@
+[
+  {
+    "id": "cap-09",
+    "class": "capability",
+    "question": "Can a client pay part of an invoice now and the rest later?",
+    "expected_behavior": "answer",
+    "expected_answer": "Yes. An invoice can be paid in several parts; it shows Partially paid until the balance is zero, and the client can pay the rest from the portal.",
+    "expected_docs": [
+      "invoicing/partial-payments"
+    ],
+    "evidence": [
+      "An invoice can be paid in several parts. Each payment lowers the balance, and the status shows Partially paid until the balance is zero."
+    ],
+    "must_include": [
+      "several parts"
+    ],
+    "difficulty": "easy",
+    "targets": [
+      "meaning_match"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cap-10",
+    "class": "capability",
+    "question": "A client was overcharged on a sent invoice. Is there a way to reduce what they owe without voiding the invoice?",
+    "expected_behavior": "answer",
+    "expected_answer": "Yes, issue a credit note. It reduces what the client owes without deleting or voiding the invoice, and can be applied to open invoices or kept as credit.",
+    "expected_docs": [
+      "invoicing/credit-notes"
+    ],
+    "evidence": [
+      "A credit note reduces what a client owes without deleting or voiding an invoice. Credit note numbers start with CN-."
+    ],
+    "must_include": [
+      "credit note"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "meaning_match",
+      "vocabulary_mismatch"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cap-11",
+    "class": "capability",
+    "question": "How many files can be attached to one invoice?",
+    "expected_behavior": "answer",
+    "expected_answer": "Up to 5 files per invoice, each up to 10 MB.",
+    "expected_docs": [
+      "invoicing/invoice-attachments"
+    ],
+    "evidence": [
+      "Attach up to 5 files per invoice, each up to 10 MB. Clients can download them from the email or the portal."
+    ],
+    "must_include": [
+      "5 files"
+    ],
+    "difficulty": "easy",
+    "targets": [
+      "meaning_match"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cap-12",
+    "class": "capability",
+    "question": "If a recurring invoice is paused for two months and then resumed, are the missed invoices sent?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. Missed dates are not sent; the next invoice goes out on the next scheduled date.",
+    "expected_docs": [
+      "recurring-invoices/pause-recurring-invoice"
+    ],
+    "evidence": [
+      "When you resume, the next invoice goes out on the next scheduled date. Missed dates are not sent."
+    ],
+    "must_include": [
+      "not sent"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "meaning_match"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cap-13",
+    "class": "capability",
+    "question": "Do webhook events always arrive in the order they happened?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. Deliveries can arrive more than once and out of order; use the event id to ignore duplicates.",
+    "expected_docs": [
+      "api/webhook-retries"
+    ],
+    "evidence": [
+      "Deliveries can arrive more than once and out of order. Use the event id to ignore duplicates."
+    ],
+    "must_include": [
+      "out of order"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "meaning_match"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "cap-14",
+    "class": "capability",
+    "question": "How long does it take for a card payment made in the client portal to reach our bank account?",
+    "expected_behavior": "answer",
+    "expected_answer": "Card payments are settled to your bank account in 2 business days. Bank transfers take 3 to 5 business days.",
+    "expected_docs": [
+      "client-portal/portal-payment-methods"
+    ],
+    "evidence": [
+      "Card payments are settled to your bank account in 2 business days. Bank transfers take 3 to 5 business days."
+    ],
+    "must_include": [
+      "2 business days"
+    ],
+    "difficulty": "easy",
+    "targets": [
+      "meaning_match"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "ex-01",
+    "class": "exact_token",
+    "question": "An integration got IP-4291. What does that mean?",
+    "expected_behavior": "answer",
+    "expected_answer": "Too many concurrent requests: more than 10 in flight per API key. It is retryable after Retry-After. It is different from IP-4290, the per-minute limit.",
+    "expected_docs": [
+      "api/api-error-subcodes"
+    ],
+    "evidence": [
+      "| 429 | IP-4291 | Too many concurrent requests (more than 10 in flight per key) | Yes, after Retry-After |"
+    ],
+    "must_include": [
+      "concurrent"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "ex-02",
+    "class": "exact_token",
+    "question": "What does error IP-4223 mean?",
+    "expected_behavior": "answer",
+    "expected_answer": "The customer is archived (HTTP 422). It is not retryable.",
+    "expected_docs": [
+      "api/api-error-subcodes"
+    ],
+    "evidence": [
+      "| 422 | IP-4223 | The customer is archived | No |"
+    ],
+    "must_include": [
+      "archived"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "ex-03",
+    "class": "exact_token",
+    "question": "What does the X-InvoicePilot-Timestamp header contain?",
+    "expected_behavior": "answer",
+    "expected_answer": "The Unix time the webhook request was signed. Reject requests whose timestamp is more than 5 minutes old.",
+    "expected_docs": [
+      "api/webhook-signatures"
+    ],
+    "evidence": [
+      "| X-InvoicePilot-Timestamp | Unix time the request was signed |"
+    ],
+    "must_include": [
+      "Unix time"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "ex-04",
+    "class": "exact_token",
+    "question": "Which API call does client.invoices.void make in the Python SDK?",
+    "expected_behavior": "answer",
+    "expected_answer": "POST /v2/invoices/{invoice_id}/void.",
+    "expected_docs": [
+      "api/sdk-python"
+    ],
+    "evidence": [
+      "| client.invoices.void(invoice_id, reason=...) | POST /v2/invoices/{invoice_id}/void |"
+    ],
+    "must_include": [
+      "/void"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "ex-05",
+    "class": "exact_token",
+    "question": "Which version fixed BUG-2110-02?",
+    "expected_behavior": "answer",
+    "expected_answer": "2.2.1. BUG-2110-02 rejected expense CSV imports with DD/MM/YYYY dates; it affected 2.1.1.",
+    "expected_docs": [
+      "expenses/expense-import-dates"
+    ],
+    "evidence": [
+      "This is BUG-2110-02 (Medium). It affected 2.1.1. It was fixed in 2.2.1."
+    ],
+    "must_include": [
+      "2.2.1"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "ex-06",
+    "class": "exact_token",
+    "question": "Is BUG-2210-01 the same problem as BUG-2210-02?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. BUG-2210-01 hid the portal Pay now button for partially paid invoices; BUG-2210-02 made POST /v2/payments ignore the Idempotency-Key. Both affected 2.2.1 and were fixed in 2.3.0.",
+    "expected_docs": [
+      "client-portal/portal-partial-payment",
+      "api/duplicate-api-payments"
+    ],
+    "evidence": [
+      "This is BUG-2210-01 (High). It affected 2.2.1. It was fixed in 2.3.0.",
+      "This is BUG-2210-02 (High). It affected 2.2.1. It was fixed in 2.3.0."
+    ],
+    "must_include": [
+      "Pay now",
+      "Idempotency-Key"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "lookalike_token"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tg-01",
+    "class": "tier_gated",
+    "question": "How many webhook endpoints can a Professional customer create?",
+    "expected_behavior": "answer",
+    "expected_answer": "5 webhook endpoints (Enterprise gets 25; Starter has none).",
+    "expected_docs": [
+      "api/webhooks-overview"
+    ],
+    "evidence": [
+      "| Professional | 5 |"
+    ],
+    "must_include": [
+      "5"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tg-02",
+    "class": "tier_gated",
+    "question": "Can a Starter customer use webhooks?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. Webhooks are available on Professional (5 endpoints) and Enterprise (25 endpoints) only.",
+    "expected_docs": [
+      "api/webhooks-overview"
+    ],
+    "evidence": [
+      "| Starter | Not available |"
+    ],
+    "must_include": [
+      "Professional"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tg-03",
+    "class": "tier_gated",
+    "question": "Does an Enterprise customer get a higher concurrency limit than Starter?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. The concurrency limit of 10 requests in flight is the same on every plan; only the per-minute limits differ.",
+    "expected_docs": [
+      "api/api-concurrency-limits"
+    ],
+    "evidence": [
+      "The concurrency limit is the same on every plan. Per-minute limits are 60, 300, or 1,000 by plan."
+    ],
+    "must_include": [
+      "same"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tg-04",
+    "class": "tier_gated",
+    "question": "What is the list price per seat for Professional?",
+    "expected_behavior": "answer",
+    "expected_answer": "$25 per seat per year.",
+    "expected_docs": [
+      "account-billing/plans-and-limits"
+    ],
+    "evidence": [
+      "| Professional | $25 |"
+    ],
+    "must_include": [
+      "$25"
+    ],
+    "difficulty": "easy",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tg-05",
+    "class": "tier_gated",
+    "question": "Can an Enterprise customer get more than 1,000 API requests per minute?",
+    "expected_behavior": "answer",
+    "expected_answer": "Possibly. Enterprise customers can ask their CSM about a custom limit.",
+    "expected_docs": [
+      "api/api-rate-limits"
+    ],
+    "evidence": [
+      "Higher limits come with a higher plan. Enterprise customers can ask their CSM about a custom limit."
+    ],
+    "must_include": [
+      "CSM"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tg-06",
+    "class": "tier_gated",
+    "question": "How fast should a Professional customer expect a first reply from support?",
+    "expected_behavior": "answer",
+    "expected_answer": "Email and chat with a first response target of 1 business day.",
+    "expected_docs": [
+      "support/contact-support"
+    ],
+    "evidence": [
+      "| Professional | Email and chat | 1 business day |"
+    ],
+    "must_include": [
+      "1 business day"
+    ],
+    "difficulty": "easy",
+    "targets": [
+      "plan_gating"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tp-01",
+    "class": "temporal",
+    "question": "On 2.2.0, did voiding invoices in bulk also cancel their payment reminders?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. On 2.2.0 reminders stayed scheduled (BUG-2200-03) and had to be cancelled by hand. Since 2.2.1, a bulk void cancels them.",
+    "expected_docs": [
+      "invoicing/bulk-void-reminders"
+    ],
+    "evidence": [
+      "- Since 2.2.1, a bulk void cancels reminders automatically."
+    ],
+    "must_include": [
+      "2.2.1"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tp-02",
+    "class": "temporal",
+    "question": "Could a customer on 2.1.1 import expenses with dates written like 31/01/2026?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. Before 2.2.1 only YYYY-MM-DD worked (BUG-2110-02). DD/MM/YYYY is accepted since 2.2.1.",
+    "expected_docs": [
+      "expenses/expense-import-csv"
+    ],
+    "evidence": [
+      "Since 2.2.1, dates can be YYYY-MM-DD or DD/MM/YYYY. Before that, only YYYY-MM-DD worked (BUG-2110-02)."
+    ],
+    "must_include": [
+      "2.2.1"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "tp-03",
+    "class": "temporal",
+    "question": "On 2.0.0, did deleting a draft invoice free up its number?",
+    "expected_behavior": "answer",
+    "expected_answer": "No. On 2.0.0 deleting a draft left a gap (BUG-2000-04). Since 2.0.1, deleting a draft frees its number.",
+    "expected_docs": [
+      "invoicing/invoice-numbering"
+    ],
+    "evidence": [
+      "On 2.0.0, deleting a draft left a gap in the sequence (BUG-2000-04). Since 2.0.1, deleting a draft frees its number."
+    ],
+    "must_include": [
+      "2.0.1"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "version_competition"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "no-01",
+    "class": "non_official",
+    "question": "Why are bulk actions capped at 100 invoices?",
+    "expected_behavior": "answer",
+    "expected_answer": "Bulk actions run synchronously in the browser request, and 100 invoices keeps the request under 30 seconds.",
+    "expected_docs": [
+      "engineering/note-bulk-limit"
+    ],
+    "evidence": [
+      "Bulk actions run synchronously in the browser request. 100 invoices keeps the request under 30 seconds. An older prototype used 50; some community posts still repeat that number."
+    ],
+    "must_include": [
+      "30 seconds"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "authority_override"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "no-02",
+    "class": "non_official",
+    "question": "How many organizations were affected when recurring invoices skipped a cycle at the DST change?",
+    "expected_behavior": "answer",
+    "expected_answer": "41 organizations (312 recurring profiles missed one invoice), per postmortem INC-2025-031.",
+    "expected_docs": [
+      "engineering/postmortem-inc-2025-031"
+    ],
+    "evidence": [
+      "312 recurring profiles across 41 organizations missed one invoice."
+    ],
+    "must_include": [
+      "41"
+    ],
+    "difficulty": "hard",
+    "targets": [
+      "authority_override"
+    ],
+    "split": "test",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  },
+  {
+    "id": "no-03",
+    "class": "non_official",
+    "question": "Do sandbox API keys survive the monthly sandbox reset?",
+    "expected_behavior": "answer",
+    "expected_answer": "Yes. Keys (ip_test_) survive the reset; the data does not.",
+    "expected_docs": [
+      "engineering/note-sandbox"
+    ],
+    "evidence": [
+      "The sandbox is wiped at 00:00 UTC on the first day of each month. Keys (ip_test_) survive the reset; data does not."
+    ],
+    "must_include": [
+      "survive"
+    ],
+    "difficulty": "medium",
+    "targets": [
+      "authority_override"
+    ],
+    "split": "dev",
+    "verified": true,
+    "verified_by": "claude-review-2026-11-06"
+  }
+]
