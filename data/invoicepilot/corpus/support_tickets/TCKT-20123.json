@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20123",
+  "created_at": "2026-09-02T12:12:00Z",
+  "customer_id": "CUST-0007",
+  "company": "Wayne Enterprises",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "Webhook endpoint disabled",
+  "status": "Open",
+  "tags": [
+    "api",
+    "webhooks"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wayne Enterprises admin",
+      "sent_at": "2026-09-02T12:12:00Z",
+      "body": "We stopped getting webhooks after our server was down over the weekend."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-09-02T17:44:00Z",
+      "body": "Endpoints are disabled after 3 days of failed deliveries. Re-enable it under Settings > Developer > Webhooks. Each failed delivery is retried up to 8 times over 24 hours, so events from before that window are not resent; use the API to catch up."
+    },
+    {
+      "from": "customer",
+      "name": "Wayne Enterprises admin",
+      "sent_at": "2026-09-03T11:53:00Z",
+      "body": "That's not great, but we'll use the workaround."
+    }
+  ]
+}

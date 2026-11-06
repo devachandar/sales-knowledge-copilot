@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20113",
+  "created_at": "2026-09-12T09:29:00Z",
+  "customer_id": "CUST-0022",
+  "company": "Los Pollos Hermanos",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "Can't find webhooks",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "webhooks",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Los Pollos Hermanos admin",
+      "sent_at": "2026-09-12T09:29:00Z",
+      "body": "Do we have webhooks on Starter?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-09-12T14:20:00Z",
+      "body": "Webhooks are available on Professional (5 endpoints) and Enterprise (25 endpoints). You're on Starter, so you'd need to upgrade to use them."
+    }
+  ]
+}

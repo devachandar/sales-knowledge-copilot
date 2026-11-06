@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20045",
+  "created_at": "2026-11-02T08:59:00Z",
+  "customer_id": "CUST-0013",
+  "company": "Gringotts Financial",
+  "plan": "Enterprise",
+  "product_version": "2.3.1",
+  "subject": "Week start wrong in report builder",
+  "status": "Linked to bug",
+  "tags": [
+    "reports",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2310-03",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Gringotts Financial admin",
+      "sent_at": "2026-11-02T08:59:00Z",
+      "body": "Our locale is set to Monday but the report date picker starts weeks on Sunday. Are our weekly numbers wrong?"
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-11-03T10:26:00Z",
+      "body": "That's BUG-2310-03 (Low, open). It is cosmetic: the picker always starts on Sunday, but the report data is correct."
+    }
+  ]
+}

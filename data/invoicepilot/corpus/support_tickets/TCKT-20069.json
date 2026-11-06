@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20069",
+  "created_at": "2026-03-08T11:11:00Z",
+  "customer_id": "CUST-0009",
+  "company": "Hooli",
+  "plan": "Starter",
+  "product_version": "2.2.0",
+  "subject": "Clients got reminders for voided invoices",
+  "status": "Solved",
+  "tags": [
+    "invoicing",
+    "reminders",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-03",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-03-08T11:11:00Z",
+      "body": "We voided 60 invoices in bulk and clients still got payment reminders for them."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-03-08T13:15:00Z",
+      "body": "That's BUG-2200-03: a bulk void leaves scheduled reminders in place. It will be fixed in 2.2.1. For now, cancel the reminders from each client's Reminders tab."
+    }
+  ]
+}

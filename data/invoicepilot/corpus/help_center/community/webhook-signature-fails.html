@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Webhook signature never matches | InvoicePilot Help Center</title>
+<meta name="doc-id" content="community/webhook-signature-fails">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Community &gt; Webhook signature never matches</nav>
+<main>
+<article>
+<h1>Webhook signature never matches</h1>
+<p class="byline">Posted by nodedev_kim on 2026-06-22 · Community answer, not reviewed by InvoicePilot staff</p>
+<p>Spent a day on this. You have to sign timestamp + '.' + the RAW body, not the parsed JSON re-serialized.</p>
+<p>Also use X-InvoicePilot-Timestamp, not your server time.</p>
+</article>
+
+
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

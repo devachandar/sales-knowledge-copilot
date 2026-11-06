@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20059",
+  "created_at": "2026-02-17T09:59:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.2.0",
+  "subject": "Portal keeps sending client back to sign in",
+  "status": "Solved",
+  "tags": [
+    "client-portal",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-02-17T09:59:00Z",
+      "body": "A client on a Mac says the portal sends them back to the login page right after they sign in."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-02-17T11:21:00Z",
+      "body": "That's BUG-2200-01, a Safari login loop caused by a cookie SameSite setting. A fix is already rolling out in 2.2.0. Ask the client to clear cookies for the portal and sign in again."
+    }
+  ]
+}

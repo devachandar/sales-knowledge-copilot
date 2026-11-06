@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python SDK | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/sdk-python">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-08-03">
+<meta name="applies-to-version" content="2.2.0+">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Python SDK</nav>
+<main>
+<article>
+<h1>Python SDK</h1>
+<p class="updated">Last updated: 2026-08-03</p>
+<p class="applies">Applies to: InvoicePilot 2.2.0+</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>Install with pip install invoicepilot. The current version is 3.2.0 and it supports Python 3.9 and later.</p>
+<pre><code>from invoicepilot import Client
+
+client = Client(api_key="ip_live_xxxx", max_retries=2)
+inv = client.invoices.create(customer_id="cus_8812", currency="EUR",
+                             line_items=[{"description": "Consulting", "quantity": 10, "rate": 150}],
+                             idempotency_key="7f9c2e1a")
+client.invoices.send(inv.id)</code></pre>
+<table><thead><tr><th>Method</th><th>API call</th></tr></thead><tbody><tr><td>client.invoices.create(...)</td><td>POST /v2/invoices</td></tr><tr><td>client.invoices.send(invoice_id)</td><td>POST /v2/invoices/{invoice_id}/send</td></tr><tr><td>client.invoices.void(invoice_id, reason=...)</td><td>POST /v2/invoices/{invoice_id}/void</td></tr><tr><td>client.payments.create(...)</td><td>POST /v2/payments</td></tr><tr><td>client.payments.delete(payment_id)</td><td>DELETE /v2/payments/{payment_id}</td></tr><tr><td>client.customers.get_statement(customer_id, format="json")</td><td>GET /v2/customers/{customer_id}/statements</td></tr><tr><td>client.webhooks.verify_signature(payload, signature, timestamp, secret)</td><td>Checks X-InvoicePilot-Signature locally</td></tr></tbody></table>
+<h2>Retries</h2>
+<p>The SDK retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff, up to max_retries times (default 2). It never retries 4xx validation errors.</p>
+<p>List methods such as client.invoices.list() follow next_cursor for you. Use auto_paginate=False to get one page.</p>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="sdk-node.html">sdk-node</a></li><li><a href="api-errors.html">api-errors</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>364 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

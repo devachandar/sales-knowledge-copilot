@@ -1,0 +1,34 @@
+{
+  "ticket_id": "TCKT-20170",
+  "created_at": "2026-06-16T15:39:00Z",
+  "customer_id": "CUST-0009",
+  "company": "Hooli",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Export reports to Excel",
+  "status": "Solved",
+  "tags": [
+    "reports"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-06-16T15:39:00Z",
+      "body": "Can we export reports to Excel? We're on 2.3.0."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-06-17T17:36:00Z",
+      "body": "XLSX export arrived in 2.3.0. Pick XLSX in the export menu."
+    },
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-06-18T11:45:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

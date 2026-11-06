@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TCKT-20175",
+  "created_at": "2026-04-28T14:36:00Z",
+  "customer_id": "CUST-0018",
+  "company": "Bluth Company",
+  "plan": "Starter",
+  "product_version": "2.2.1",
+  "subject": "Automatic bank matching?",
+  "status": "Pending",
+  "tags": [
+    "bank-reconciliation"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Bluth Company admin",
+      "sent_at": "2026-04-28T14:36:00Z",
+      "body": "Does InvoicePilot match bank transactions automatically? We're on 2.2.1."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-04-28T16:26:00Z",
+      "body": "Auto-match was added in 2.3.0. On 2.2.1, reconcile manually: match each transaction to an invoice or expense, or categorize it. You'll get auto-match automatically when you move to 2.3.x."
+    }
+  ]
+}

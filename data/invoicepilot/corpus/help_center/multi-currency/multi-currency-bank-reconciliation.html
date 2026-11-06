@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Multi-currency accounts and bank reconciliation | InvoicePilot Help Center</title>
+<meta name="doc-id" content="multi-currency/multi-currency-bank-reconciliation">
+<meta name="source-type" content="help_article">
+<meta name="last-updated" content="2026-08-27">
+<meta name="applies-to-version" content="2.3.1">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Multi-Currency &gt; Multi-currency accounts and bank reconciliation</nav>
+<main>
+<article>
+<h1>Multi-currency accounts and bank reconciliation</h1>
+<p class="updated">Last updated: 2026-08-27</p>
+<p class="applies">Applies to: InvoicePilot 2.3.1</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>If your bank feed is in a currency different from your invoices, InvoicePilot must convert amounts before matching.</p>
+<div class="callout warning"><strong>Known issue:</strong> BUG-2310-01 (Critical, Open): Auto-match in bank reconciliation does not convert foreign-currency transactions before comparing amounts, so multi-currency accounts see most transactions left unmatched. Affects 2.3.1.</div>
+<h3>Workaround</h3>
+<ul><li>Use manual matching for foreign-currency transactions until a fix ships.</li><li>Base-currency transactions still auto-match normally.</li><li>Do not bulk-confirm suggested matches on multi-currency accounts; review each one.</li></ul>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="auto-match.html">auto-match</a></li><li><a href="manual-reconciliation.html">manual-reconciliation</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>1,204 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

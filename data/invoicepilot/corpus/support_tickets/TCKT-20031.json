@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20031",
+  "created_at": "2026-03-12T10:00:00Z",
+  "customer_id": "CUST-0029",
+  "company": "Buy N Large",
+  "plan": "Professional",
+  "product_version": "2.2.1",
+  "subject": "403 IP-4030 on POST",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "permissions"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Buy N Large admin",
+      "sent_at": "2026-03-12T10:00:00Z",
+      "body": "Our key can read invoices but POST /v2/invoices returns IP-4030."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-03-12T13:24:00Z",
+      "body": "IP-4030 means the key lacks permission or you hit a plan limit. A read-only key cannot create invoices. On Starter you can connect 2 bank feeds. It is not retryable."
+    },
+    {
+      "from": "customer",
+      "name": "Buy N Large admin",
+      "sent_at": "2026-03-13T07:41:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

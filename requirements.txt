@@ -1,0 +1,16 @@
+# Model APIs are called over raw HTTP (no SDK)
+requests
+python-dotenv
+
+# Postgres + pgvector
+psycopg[binary]
+pgvector
+numpy
+
+# Parsing
+lxml
+pypdf
+python-docx
+
+# Reranking (cross-encoder, runs locally)
+sentence-transformers

@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TCKT-20103",
+  "created_at": "2025-10-31T12:39:00Z",
+  "customer_id": "CUST-0014",
+  "company": "Vandelay Industries",
+  "plan": "Professional",
+  "product_version": "2.1.0",
+  "subject": "Handwritten receipts not scanned",
+  "status": "Linked to bug",
+  "tags": [
+    "expenses"
+  ],
+  "linked_bug_id": "BUG-2100-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Vandelay Industries admin",
+      "sent_at": "2025-10-31T12:39:00Z",
+      "body": "Receipt scanning doesn't read our handwritten taxi receipts at all."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2025-11-01T14:01:00Z",
+      "body": "Handwritten receipts are a known limitation, BUG-2100-01 (Low, Won't Fix): OCR accuracy on handwriting is below 40%. Typed and printed receipts scan reliably. Please type the amount for handwritten ones."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20065",
+  "created_at": "2026-03-18T08:51:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.2.1",
+  "subject": "X-RateLimit-Remaining missing",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-03-18T08:51:00Z",
+      "body": "We want to back off before hitting limits but v2 responses have no X-RateLimit-* headers."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-03-19T10:19:00Z",
+      "body": "That's BUG-2200-02 (Low): API v2 responses are missing the X-RateLimit-* headers. It's fixed in 2.3.0. Until then, rely on the 429 response and Retry-After."
+    },
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-03-20T04:55:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

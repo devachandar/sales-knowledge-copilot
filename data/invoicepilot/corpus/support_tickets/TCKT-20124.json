@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20124",
+  "created_at": "2026-08-29T15:31:00Z",
+  "customer_id": "CUST-0009",
+  "company": "Hooli",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "Can we create our own user roles?",
+  "status": "Open",
+  "tags": [
+    "account",
+    "roles",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-08-29T15:31:00Z",
+      "body": "We're on Starter. Can we make a role that can create invoices but not see reports?"
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-08-30T11:03:00Z",
+      "body": "Yes, custom roles are available on Professional and Enterprise. Go to Settings > Roles."
+    }
+  ]
+}

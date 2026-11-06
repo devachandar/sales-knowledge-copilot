@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Concurrency limits | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/api-concurrency-limits">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-07-01">
+<meta name="applies-to-version" content="2.2.1+">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Concurrency limits</nav>
+<main>
+<article>
+<h1>Concurrency limits</h1>
+<p class="updated">Last updated: 2026-07-01</p>
+<p class="applies">Applies to: InvoicePilot 2.2.1+</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>Besides the per-minute rate limit, each API key can have at most 10 requests in flight at once.</p>
+<p>An 11th parallel request gets HTTP 429 with IP-4291 and a Retry-After header. This is different from IP-4290, which means the per-minute limit was reached.</p>
+<p>The concurrency limit is the same on every plan. Per-minute limits are 60, 300, or 1,000 by plan.</p>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="api-rate-limits.html">api-rate-limits</a></li><li><a href="api-error-subcodes.html">api-error-subcodes</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>165 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20138",
+  "created_at": "2026-01-29T14:30:00Z",
+  "customer_id": "CUST-0027",
+  "company": "Genco Pura Olive Oil",
+  "plan": "Enterprise",
+  "product_version": "2.2.0",
+  "subject": "How many bank accounts can we connect?",
+  "status": "Solved",
+  "tags": [
+    "bank-feeds",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Genco Pura Olive Oil admin",
+      "sent_at": "2026-01-29T14:30:00Z",
+      "body": "We're on Enterprise. How many bank feeds can we connect?"
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-01-29T19:49:00Z",
+      "body": "Starter includes 2 connected bank feeds, Professional 10, and Enterprise unlimited. You're on Enterprise, so your limit is unlimited."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20132",
+  "created_at": "2026-08-26T12:35:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.3.1",
+  "subject": "Bulk send limit",
+  "status": "Solved",
+  "tags": [
+    "invoicing",
+    "bulk"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-08-26T12:35:00Z",
+      "body": "How many invoices can we send at once from the list? We have about 300 at month end."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-08-27T14:16:00Z",
+      "body": "You can select up to 100 invoices per bulk action. For 300, filter the list and repeat three times."
+    }
+  ]
+}

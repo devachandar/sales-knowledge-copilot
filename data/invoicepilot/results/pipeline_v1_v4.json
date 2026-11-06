@@ -1,0 +1,2917 @@
+{
+  "versions": {
+    "V1": "fixed-500 chunks, vector search (Day 4)",
+    "V2": "structure-aware chunks, vector search (Day 5)",
+    "V3": "V2 + soft version/plan boost + no community posts (Day 6)",
+    "V4": "hybrid (BM25 + vector, RRF) -> rerank top 20 -> authority -> diversity (Day 7)"
+  },
+  "files": [
+    "seed.json",
+    "hard.json",
+    "filter.json",
+    "exact.json",
+    "non_official.json"
+  ],
+  "table": {
+    "V1": {
+      "capability": {
+        "n": 14,
+        "r@1": 0.5714285714285714,
+        "r@5": 0.9285714285714286,
+        "mrr": 0.7285714285714285
+      },
+      "exact_token": {
+        "n": 20,
+        "r@1": 0.15,
+        "r@5": 0.45,
+        "mrr": 0.26
+      },
+      "tier_gated": {
+        "n": 12,
+        "r@1": 0.6666666666666666,
+        "r@5": 0.8333333333333334,
+        "mrr": 0.75
+      },
+      "temporal": {
+        "n": 15,
+        "r@1": 0.3333333333333333,
+        "r@5": 0.6,
+        "mrr": 0.41111111111111115
+      },
+      "non_official": {
+        "n": 7,
+        "r@1": 0.42857142857142855,
+        "r@5": 0.7142857142857143,
+        "mrr": 0.5476190476190477
+      },
+      "ALL": {
+        "n": 68,
+        "r@1": 0.39705882352941174,
+        "r@5": 0.6764705882352942,
+        "mrr": 0.5058823529411764
+      }
+    },
+    "V2": {
+      "capability": {
+        "n": 14,
+        "r@1": 0.5714285714285714,
+        "r@5": 0.7142857142857143,
+        "mrr": 0.6428571428571429
+      },
+      "exact_token": {
+        "n": 20,
+        "r@1": 0.15,
+        "r@5": 0.45,
+        "mrr": 0.24666666666666667
+      },
+      "tier_gated": {
+        "n": 12,
+        "r@1": 0.6666666666666666,
+        "r@5": 0.8333333333333334,
+        "mrr": 0.7361111111111112
+      },
+      "temporal": {
+        "n": 15,
+        "r@1": 0.3333333333333333,
+        "r@5": 0.6666666666666666,
+        "mrr": 0.46111111111111114
+      },
+      "non_official": {
+        "n": 7,
+        "r@1": 0.7142857142857143,
+        "r@5": 0.7142857142857143,
+        "mrr": 0.7142857142857143
+      },
+      "ALL": {
+        "n": 68,
+        "r@1": 0.4264705882352941,
+        "r@5": 0.6470588235294118,
+        "mrr": 0.5100490196078431
+      }
+    },
+    "V3": {
+      "capability": {
+        "n": 14,
+        "r@1": 0.6428571428571429,
+        "r@5": 0.7142857142857143,
+        "mrr": 0.6785714285714286
+      },
+      "exact_token": {
+        "n": 20,
+        "r@1": 0.15,
+        "r@5": 0.45,
+        "mrr": 0.24916666666666668
+      },
+      "tier_gated": {
+        "n": 12,
+        "r@1": 0.6666666666666666,
+        "r@5": 0.8333333333333334,
+        "mrr": 0.75
+      },
+      "temporal": {
+        "n": 15,
+        "r@1": 0.4666666666666667,
+        "r@5": 0.7333333333333333,
+        "mrr": 0.5833333333333334
+      },
+      "non_official": {
+        "n": 7,
+        "r@1": 0.7142857142857143,
+        "r@5": 0.7142857142857143,
+        "mrr": 0.7142857142857143
+      },
+      "ALL": {
+        "n": 68,
+        "r@1": 0.47058823529411764,
+        "r@5": 0.6617647058823529,
+        "mrr": 0.5475490196078432
+      }
+    },
+    "V4": {
+      "capability": {
+        "n": 14,
+        "r@1": 0.7857142857142857,
+        "r@5": 0.8571428571428571,
+        "mrr": 0.8214285714285714
+      },
+      "exact_token": {
+        "n": 20,
+        "r@1": 0.75,
+        "r@5": 1.0,
+        "mrr": 0.8333333333333334
+      },
+      "tier_gated": {
+        "n": 12,
+        "r@1": 0.8333333333333334,
+        "r@5": 1.0,
+        "mrr": 0.9027777777777778
+      },
+      "temporal": {
+        "n": 15,
+        "r@1": 0.8666666666666667,
+        "r@5": 1.0,
+        "mrr": 0.9333333333333333
+      },
+      "non_official": {
+        "n": 7,
+        "r@1": 0.7142857142857143,
+        "r@5": 1.0,
+        "mrr": 0.8571428571428571
+      },
+      "ALL": {
+        "n": 68,
+        "r@1": 0.7941176470588235,
+        "r@5": 0.9705882352941176,
+        "mrr": 0.8676470588235294
+      }
+    }
+  },
+  "latency_ms": {
+    "V1": {
+      "median": 3.017415991052985,
+      "p95": 3.9778919075615704
+    },
+    "V2": {
+      "median": 3.232707967981696,
+      "p95": 3.9249706431291993
+    },
+    "V3": {
+      "median": 3.781000035814941,
+      "p95": 4.238733137026429
+    },
+    "V4": {
+      "median": 83.23941705748439,
+      "p95": 154.83323375228792
+    }
+  },
+  "per_question": {
+    "V1": {
+      "c1-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/client-portal-overview#0",
+          "invoicing/send-invoice-email#0",
+          "client-portal/portal-partial-payment#0",
+          "client-portal/portal-payment-methods#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "c1-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/void-or-delete-invoice#0",
+          "community/credit-note-vs-void#0",
+          "support_tickets/TCKT-20090#0",
+          "support_tickets/TCKT-20087#0",
+          "support_tickets/TCKT-20088#0"
+        ]
+      },
+      "c1-03": {
+        "rank": 2,
+        "top": [
+          "community/tax-rate-change-old#0",
+          "invoicing/tax-rates#0",
+          "invoicing/archived-tax-rate-drafts#0",
+          "support/faq#0",
+          "reports/tax-summary-report#0"
+        ]
+      },
+      "c1-04": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoices-faq#0",
+          "recurring-invoices/recurring-cadences#0",
+          "engineering/postmortem-inc-2025-031#1",
+          "support_tickets/TCKT-20057#0",
+          "support_tickets/TCKT-20054#0"
+        ]
+      },
+      "c1-05": {
+        "rank": 1,
+        "top": [
+          "expenses/receipt-scanning#0",
+          "support_tickets/TCKT-20102#0",
+          "support_tickets/TCKT-20100#0",
+          "support_tickets/TCKT-20099#0",
+          "support_tickets/TCKT-20103#0"
+        ]
+      },
+      "c1-06": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/review-suggested-matches#0",
+          "api/api-bank-transactions#1",
+          "support_tickets/TCKT-20176#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20177#0"
+        ]
+      },
+      "c1-07": {
+        "rank": 1,
+        "top": [
+          "getting-started/invite-users#0",
+          "account-billing/renewals#0",
+          "estimates/estimate-expiry#0",
+          "sales/objection-handling#1",
+          "account-billing/seats-and-add-seats#0"
+        ]
+      },
+      "c1-08": {
+        "rank": 2,
+        "top": [
+          "multi-currency/exchange-rates#0",
+          "getting-started/create-organization#1",
+          "release-notes/v2.0.0#0",
+          "getting-started/create-organization#0",
+          "release-notes/v2.0.0#2"
+        ]
+      },
+      "c2-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20020#0",
+          "support_tickets/TCKT-20019#0",
+          "support_tickets/TCKT-20018#0",
+          "support_tickets/TCKT-20016#0",
+          "support_tickets/TCKT-20017#0"
+        ]
+      },
+      "c2-02": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20029#0",
+          "support_tickets/TCKT-20026#0",
+          "api/sandbox#0",
+          "support_tickets/TCKT-20030#0",
+          "support_tickets/TCKT-20027#0"
+        ]
+      },
+      "c2-03": {
+        "rank": 3,
+        "top": [
+          "community/report-3-years#0",
+          "api/api-reports#1",
+          "reports/large-date-ranges#0",
+          "support_tickets/TCKT-20050#0",
+          "support_tickets/TCKT-20048#0"
+        ]
+      },
+      "c2-04": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-016#1",
+          "support_tickets/TCKT-20021#0",
+          "support_tickets/TCKT-20024#0",
+          "support_tickets/TCKT-20022#0",
+          "support_tickets/TCKT-20025#0"
+        ]
+      },
+      "c2-05": {
+        "rank": 1,
+        "top": [
+          "api/api-rate-limits#0",
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#1",
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20062#0"
+        ]
+      },
+      "c2-06": {
+        "rank": 2,
+        "top": [
+          "engineering/postmortem-inc-2026-021#1",
+          "release-notes/v2.3.1#2",
+          "engineering/note-pdf-workaround#0",
+          "engineering/postmortem-inc-2026-019#1",
+          "support/known-issues#2"
+        ]
+      },
+      "c3-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20124#0",
+          "sales/draft-roles-messaging#0",
+          "community/custom-roles-pro#0",
+          "support_tickets/TCKT-20125#0",
+          "support_tickets/TCKT-20126#0"
+        ]
+      },
+      "c3-02": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#1",
+          "support_tickets/TCKT-20111#0",
+          "support_tickets/TCKT-20113#0",
+          "community/starter-webhooks#0"
+        ]
+      },
+      "c3-03": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "sales/plan-comparison-for-reps#1",
+          "release-notes/v2.3.0#1",
+          "account-billing/plans-and-limits#1",
+          "reports/custom-report-builder#0"
+        ]
+      },
+      "c3-04": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "support_tickets/TCKT-20008#0",
+          "api/api-rate-limits#1",
+          "support/faq#1"
+        ]
+      },
+      "c3-05": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-templates#0",
+          "invoicing/invoice-templates#1",
+          "sales/plan-comparison-for-reps#1",
+          "support/faq#0",
+          "account-billing/plans-and-limits#1"
+        ]
+      },
+      "c3-06": {
+        "rank": 2,
+        "top": [
+          "community/audit-log-length#0",
+          "account-billing/plans-and-limits#2",
+          "account-billing/roles-and-audit-log#0",
+          "sales/enterprise-onboarding#0",
+          "sales/security-faq-for-sales#0"
+        ]
+      },
+      "c4-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0",
+          "support_tickets/TCKT-20171#0",
+          "support_tickets/TCKT-20173#0",
+          "support_tickets/TCKT-20170#0"
+        ]
+      },
+      "c4-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/payment-reminders#0",
+          "release-notes/v2.1.1#1",
+          "invoicing/bulk-void-reminders#0",
+          "community/bulk-send-tips#0",
+          "support_tickets/TCKT-20067#0"
+        ]
+      },
+      "c4-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20174#0",
+          "support_tickets/TCKT-20178#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20176#0"
+        ]
+      },
+      "c4-04": {
+        "rank": 1,
+        "top": [
+          "api/api-overview#0",
+          "api/migrate-v1-to-v2#0",
+          "support_tickets/TCKT-20149#0",
+          "support_tickets/TCKT-20153#0",
+          "sales/api-pitch#0"
+        ]
+      },
+      "c4-05": {
+        "rank": 1,
+        "top": [
+          "multi-currency/zero-decimal-currencies#0",
+          "engineering/postmortem-inc-2025-010#0",
+          "release-notes/v2.0.1#1",
+          "community/exchange-rate-weekend#0",
+          "release-notes/v2.1.0#2"
+        ]
+      },
+      "h-01": {
+        "rank": 5,
+        "top": [
+          "support_tickets/TCKT-20047#0",
+          "support_tickets/TCKT-20046#0",
+          "support_tickets/TCKT-20044#0",
+          "support_tickets/TCKT-20045#0",
+          "reports/date-picker-week-start#0"
+        ]
+      },
+      "h-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-007#1",
+          "engineering/postmortem-inc-2026-004#1",
+          "engineering/release-retro-2.2.0#0",
+          "engineering/postmortem-inc-2025-012#1",
+          "release-notes/v2.2.1#1"
+        ]
+      },
+      "h-03": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2025-012#1",
+          "engineering/postmortem-inc-2025-010#1",
+          "support_tickets/TCKT-20091#0",
+          "support_tickets/TCKT-20094#0",
+          "support_tickets/TCKT-20092#0"
+        ]
+      },
+      "h-04": {
+        "rank": 1,
+        "top": [
+          "reports/custom-report-builder#0",
+          "sales/plan-comparison-for-reps#1",
+          "legacy/classic-reports#0",
+          "account-billing/plans-and-limits#1",
+          "community/custom-roles-pro#0"
+        ]
+      },
+      "h-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20138#0",
+          "support_tickets/TCKT-20135#0"
+        ]
+      },
+      "h-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "support_tickets/TCKT-20112#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20138#0"
+        ]
+      },
+      "h-07": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "recurring-invoices/recurring-invoices-faq#0",
+          "recurring-invoices/skipped-recurring-cycle#1",
+          "recurring-invoices/recurring-schedule-local-time#0",
+          "engineering/adr-014-utc-schedules#0"
+        ]
+      },
+      "h-08": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20143#0"
+        ]
+      },
+      "h-09": {
+        "rank": null,
+        "top": [
+          "community/ratelimit-headers#0",
+          "engineering/note-x-ratelimit#0",
+          "support_tickets/TCKT-20062#0",
+          "support_tickets/TCKT-20063#0",
+          "support_tickets/TCKT-20064#0"
+        ]
+      },
+      "h-10": {
+        "rank": 5,
+        "top": [
+          "support_tickets/TCKT-20061#0",
+          "support_tickets/TCKT-20059#0",
+          "support_tickets/TCKT-20058#0",
+          "support_tickets/TCKT-20060#0",
+          "client-portal/safari-login-loop#0"
+        ]
+      },
+      "h-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/line-items-and-long-invoices#1",
+          "community/pdf-25-lines#0",
+          "invoicing/line-items-and-long-invoices#0",
+          "support_tickets/TCKT-20040#0",
+          "support_tickets/TCKT-20042#0"
+        ]
+      },
+      "h-12": {
+        "rank": 2,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "client-portal/portal-branding#0",
+          "client-portal/client-portal-overview#0",
+          "community/portal-ach#0",
+          "release-notes/v2.2.0#1"
+        ]
+      },
+      "h-13": {
+        "rank": null,
+        "top": [
+          "api/duplicate-api-payments#0",
+          "support_tickets/TCKT-20080#0",
+          "support_tickets/TCKT-20082#0",
+          "support_tickets/TCKT-20079#0",
+          "support_tickets/TCKT-20081#0"
+        ]
+      },
+      "h-14": {
+        "rank": 2,
+        "top": [
+          "community/reconciliation-euro-workaround#0",
+          "multi-currency/multi-currency-bank-reconciliation#1",
+          "support_tickets/TCKT-20037#0",
+          "support_tickets/TCKT-20038#0",
+          "support_tickets/TCKT-20039#0"
+        ]
+      },
+      "h-15": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "api/api-error-subcodes#2",
+          "support_tickets/TCKT-20185#0",
+          "community/python-sdk-retries#0",
+          "support_tickets/TCKT-20184#0"
+        ]
+      },
+      "f-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "sales/plan-comparison-for-reps#1",
+          "release-notes/v2.2.0#1",
+          "account-billing/plans-and-limits#1",
+          "community/starter-webhooks#0"
+        ]
+      },
+      "f-02": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "sales/plan-comparison-for-reps#1",
+          "release-notes/v2.3.0#1",
+          "account-billing/plans-and-limits#1",
+          "sales/objection-handling#1"
+        ]
+      },
+      "f-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "release-notes/v2.2.0#1",
+          "sales/plan-comparison-for-reps#1",
+          "community/portal-ach#0",
+          "invoicing/invoice-templates#0"
+        ]
+      },
+      "f-04": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20143#0"
+        ]
+      },
+      "f-05": {
+        "rank": 4,
+        "top": [
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "recurring-invoices/set-up-recurring-invoices#0",
+          "recurring-invoices/recurring-invoices-faq#0",
+          "release-notes/v2.1.0#2",
+          "recurring-invoices/recurring-cadences#0"
+        ]
+      },
+      "f-06": {
+        "rank": 4,
+        "top": [
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0",
+          "support_tickets/TCKT-20170#0",
+          "reports/report-exports#0",
+          "support_tickets/TCKT-20171#0"
+        ]
+      },
+      "f-07": {
+        "rank": 3,
+        "top": [
+          "community/api-v1-still-works#0",
+          "release-notes/v2.2.1#2",
+          "api/api-overview#0",
+          "release-notes/v2.2.0#1",
+          "support_tickets/TCKT-20149#0"
+        ]
+      },
+      "f-08": {
+        "rank": 3,
+        "top": [
+          "engineering/release-retro-2.3.1#0",
+          "multi-currency/multi-currency-bank-reconciliation#1",
+          "support/known-issues#2",
+          "release-notes/v2.3.1#0",
+          "release-notes/v2.3.1#3"
+        ]
+      },
+      "f-09": {
+        "rank": 1,
+        "top": [
+          "support/known-issues#2",
+          "engineering/release-retro-2.3.0#0",
+          "release-notes/v2.3.1#3",
+          "release-notes/v2.3.0#2",
+          "multi-currency/multi-currency-bank-reconciliation#1"
+        ]
+      },
+      "f-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20174#0",
+          "support_tickets/TCKT-20178#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20176#0"
+        ]
+      },
+      "e-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20003#0",
+          "support_tickets/TCKT-20001#0",
+          "support_tickets/TCKT-20005#0",
+          "support_tickets/TCKT-20002#0",
+          "support_tickets/TCKT-20004#0"
+        ]
+      },
+      "e-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-016#1",
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20033#0",
+          "support_tickets/TCKT-20034#0",
+          "support_tickets/TCKT-20031#0"
+        ]
+      },
+      "e-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20030#0",
+          "support_tickets/TCKT-20029#0",
+          "support_tickets/TCKT-20026#0",
+          "support_tickets/TCKT-20028#0",
+          "support_tickets/TCKT-20027#0"
+        ]
+      },
+      "e-04": {
+        "rank": 3,
+        "top": [
+          "engineering/postmortem-inc-2026-021#1",
+          "engineering/postmortem-inc-2026-019#1",
+          "release-notes/v2.3.1#2",
+          "support/known-issues#2",
+          "engineering/note-pdf-workaround#0"
+        ]
+      },
+      "e-05": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2025-012#1",
+          "engineering/postmortem-inc-2025-010#1",
+          "engineering/release-retro-2.0.0#0",
+          "support_tickets/TCKT-20050#0",
+          "community/exchange-rate-weekend#0"
+        ]
+      },
+      "e-06": {
+        "rank": 3,
+        "top": [
+          "engineering/postmortem-inc-2026-007#1",
+          "engineering/postmortem-inc-2026-004#1",
+          "client-portal/safari-login-loop#0",
+          "support_tickets/TCKT-20072#0",
+          "support_tickets/TCKT-20073#0"
+        ]
+      },
+      "e-07": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2025-012#1",
+          "engineering/postmortem-inc-2026-007#1",
+          "support_tickets/TCKT-20093#0",
+          "engineering/postmortem-inc-2025-010#1",
+          "support_tickets/TCKT-20094#0"
+        ]
+      },
+      "e-08": {
+        "rank": 2,
+        "top": [
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#0",
+          "support_tickets/TCKT-20065#0",
+          "support_tickets/TCKT-20010#0",
+          "support_tickets/TCKT-20063#0"
+        ]
+      },
+      "e-09": {
+        "rank": 1,
+        "top": [
+          "api/api-payments#0",
+          "engineering/runbook-duplicate-payments#0",
+          "support_tickets/TCKT-20079#0",
+          "support_tickets/TCKT-20082#0",
+          "support_tickets/TCKT-20080#0"
+        ]
+      },
+      "e-10": {
+        "rank": null,
+        "top": [
+          "community/statement-json#0",
+          "support_tickets/TCKT-20157#0",
+          "support_tickets/TCKT-20154#0",
+          "support_tickets/TCKT-20155#0",
+          "support_tickets/TCKT-20158#0"
+        ]
+      },
+      "e-11": {
+        "rank": 1,
+        "top": [
+          "api/api-pagination#0",
+          "engineering/adr-009-cursor-pagination#0",
+          "api/migrate-v1-to-v2#0",
+          "legacy/classic-api#0",
+          "release-notes/v2.2.1#2"
+        ]
+      },
+      "n-01": {
+        "rank": 1,
+        "top": [
+          "sales/discount-policy#0",
+          "sales/plan-comparison-for-reps#0",
+          "sales/sales-faq#0",
+          "invoicing/line-item-discounts#0",
+          "sales/objection-handling#0"
+        ]
+      },
+      "n-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-021#1",
+          "engineering/postmortem-inc-2026-019#1",
+          "support/known-issues#2",
+          "release-notes/v2.3.1#2",
+          "engineering/postmortem-inc-2025-012#1"
+        ]
+      },
+      "n-03": {
+        "rank": 2,
+        "top": [
+          "community/duplicate-payments-api#0",
+          "engineering/postmortem-inc-2026-011#0",
+          "engineering/postmortem-inc-2026-011#1",
+          "support_tickets/TCKT-20080#0",
+          "api/duplicate-api-payments#0"
+        ]
+      },
+      "n-04": {
+        "rank": 3,
+        "top": [
+          "community/multi-currency-starter#0",
+          "release-notes/v2.0.0#2",
+          "sales/competitive-pricing-notes#0",
+          "legacy/classic-currencies#0",
+          "getting-started/create-organization#1"
+        ]
+      },
+      "n-05": {
+        "rank": 1,
+        "top": [
+          "engineering/runbook-critical-bug-escalation#0",
+          "support/contact-support#0",
+          "engineering/postmortem-inc-2025-012#1",
+          "support_tickets/TCKT-20050#0",
+          "engineering/postmortem-inc-2025-010#1"
+        ]
+      },
+      "n-06": {
+        "rank": 1,
+        "top": [
+          "engineering/note-auto-match-tolerance#0",
+          "bank-reconciliation/auto-match-rules#0",
+          "bank-reconciliation/auto-match#0",
+          "bank-reconciliation/auto-match#1",
+          "community/reconciliation-euro-workaround#0"
+        ]
+      },
+      "n-07": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20143#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20142#0"
+        ]
+      }
+    },
+    "V2": {
+      "c1-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-partial-payment#1",
+          "invoicing/send-invoice-email#0",
+          "client-portal/portal-payment-methods#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "c1-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/void-or-delete-invoice#0",
+          "community/credit-note-vs-void#0",
+          "support_tickets/TCKT-20090#0",
+          "support_tickets/TCKT-20087#0",
+          "support_tickets/TCKT-20088#0"
+        ]
+      },
+      "c1-03": {
+        "rank": 2,
+        "top": [
+          "community/tax-rate-change-old#0",
+          "invoicing/tax-rates#0",
+          "support/faq#1",
+          "invoicing/archived-tax-rate-drafts#0",
+          "multi-currency/weekend-exchange-rates#1"
+        ]
+      },
+      "c1-04": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoices-faq#2",
+          "recurring-invoices/recurring-cadences#0",
+          "recurring-invoices/recurring-invoices-faq#1",
+          "support_tickets/TCKT-20057#0",
+          "engineering/postmortem-inc-2025-031#2"
+        ]
+      },
+      "c1-05": {
+        "rank": 1,
+        "top": [
+          "expenses/receipt-scanning#0",
+          "release-notes/v2.1.0#3",
+          "support_tickets/TCKT-20099#0",
+          "support_tickets/TCKT-20100#0",
+          "support_tickets/TCKT-20102#0"
+        ]
+      },
+      "c1-06": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/review-suggested-matches#0",
+          "support_tickets/TCKT-20176#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20178#0"
+        ]
+      },
+      "c1-07": {
+        "rank": 1,
+        "top": [
+          "getting-started/invite-users#0",
+          "account-billing/renewals#0",
+          "estimates/estimate-expiry#0",
+          "recurring-invoices/recurring-invoices-faq#2",
+          "getting-started/invite-users#1"
+        ]
+      },
+      "c1-08": {
+        "rank": null,
+        "top": [
+          "multi-currency/exchange-rates#0",
+          "release-notes/v2.0.0#0",
+          "multi-currency/enable-multi-currency#0",
+          "multi-currency/multi-currency-bank-reconciliation#0",
+          "release-notes/v2.0.0#3"
+        ]
+      },
+      "c2-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20020#0",
+          "support_tickets/TCKT-20019#0",
+          "support_tickets/TCKT-20016#0",
+          "support_tickets/TCKT-20017#0",
+          "support_tickets/TCKT-20018#0"
+        ]
+      },
+      "c2-02": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20029#0",
+          "support_tickets/TCKT-20026#0",
+          "api/sandbox#0",
+          "support_tickets/TCKT-20030#0",
+          "support_tickets/TCKT-20027#0"
+        ]
+      },
+      "c2-03": {
+        "rank": 5,
+        "top": [
+          "community/report-3-years#0",
+          "api/api-reports#1",
+          "support_tickets/TCKT-20050#0",
+          "engineering/postmortem-inc-2026-019#3",
+          "reports/large-date-ranges#0"
+        ]
+      },
+      "c2-04": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20021#0",
+          "support_tickets/TCKT-20024#0",
+          "engineering/postmortem-inc-2026-016#1",
+          "support_tickets/TCKT-20025#0",
+          "support_tickets/TCKT-20022#0"
+        ]
+      },
+      "c2-05": {
+        "rank": 1,
+        "top": [
+          "api/api-rate-limits#1",
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20062#0"
+        ]
+      },
+      "c2-06": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#2",
+          "engineering/note-pdf-workaround#0"
+        ]
+      },
+      "c3-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20124#0",
+          "sales/draft-roles-messaging#0",
+          "community/custom-roles-pro#0",
+          "support_tickets/TCKT-20126#0",
+          "support_tickets/TCKT-20125#0"
+        ]
+      },
+      "c3-02": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#1",
+          "support_tickets/TCKT-20111#0",
+          "support_tickets/TCKT-20113#0",
+          "community/starter-webhooks#0"
+        ]
+      },
+      "c3-03": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "reports/custom-report-builder#0",
+          "reports/standard-reports#0"
+        ]
+      },
+      "c3-04": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "sales/objection-handling#0",
+          "support/faq#2",
+          "support_tickets/TCKT-20008#0"
+        ]
+      },
+      "c3-05": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-templates#0",
+          "invoicing/invoice-templates#1",
+          "support/faq#1",
+          "account-billing/plans-and-limits#2",
+          "support_tickets/TCKT-20125#0"
+        ]
+      },
+      "c3-06": {
+        "rank": 3,
+        "top": [
+          "community/audit-log-length#0",
+          "sales/security-faq-for-sales#1",
+          "account-billing/roles-and-audit-log#0",
+          "sales/enterprise-onboarding#0",
+          "api/api-rate-limits#2"
+        ]
+      },
+      "c4-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0",
+          "support_tickets/TCKT-20173#0",
+          "support_tickets/TCKT-20171#0",
+          "support_tickets/TCKT-20170#0"
+        ]
+      },
+      "c4-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/payment-reminders#0",
+          "invoicing/bulk-void-reminders#0",
+          "community/bulk-send-tips#0",
+          "support_tickets/TCKT-20067#0",
+          "support_tickets/TCKT-20129#0"
+        ]
+      },
+      "c4-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20174#0",
+          "support_tickets/TCKT-20178#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20176#0"
+        ]
+      },
+      "c4-04": {
+        "rank": 1,
+        "top": [
+          "api/api-overview#0",
+          "api/migrate-v1-to-v2#0",
+          "support_tickets/TCKT-20149#0",
+          "api/api-changelog#0",
+          "support_tickets/TCKT-20153#0"
+        ]
+      },
+      "c4-05": {
+        "rank": 1,
+        "top": [
+          "multi-currency/zero-decimal-currencies#0",
+          "engineering/postmortem-inc-2025-010#1",
+          "release-notes/v2.1.0#2",
+          "engineering/postmortem-inc-2025-010#2",
+          "engineering/postmortem-inc-2025-010#0"
+        ]
+      },
+      "h-01": {
+        "rank": 5,
+        "top": [
+          "support_tickets/TCKT-20047#0",
+          "support_tickets/TCKT-20046#0",
+          "support_tickets/TCKT-20045#0",
+          "support_tickets/TCKT-20044#0",
+          "reports/date-picker-week-start#0"
+        ]
+      },
+      "h-02": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.3.0#2",
+          "engineering/postmortem-inc-2026-004#2",
+          "engineering/release-retro-2.2.0#1",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.2.0#0"
+        ]
+      },
+      "h-03": {
+        "rank": null,
+        "top": [
+          "engineering/release-retro-2.1.0#1",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/postmortem-inc-2026-019#3",
+          "support_tickets/TCKT-20092#0",
+          "support_tickets/TCKT-20091#0"
+        ]
+      },
+      "h-04": {
+        "rank": 1,
+        "top": [
+          "reports/custom-report-builder#0",
+          "account-billing/plans-and-limits#2",
+          "legacy/classic-reports#0",
+          "api/api-rate-limits#2",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "h-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20138#0",
+          "support_tickets/TCKT-20135#0"
+        ]
+      },
+      "h-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#0",
+          "support_tickets/TCKT-20112#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20134#0"
+        ]
+      },
+      "h-07": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "recurring-invoices/recurring-invoices-faq#0",
+          "release-notes/v2.1.0#4",
+          "recurring-invoices/recurring-schedule-local-time#0",
+          "recurring-invoices/skipped-recurring-cycle#0"
+        ]
+      },
+      "h-08": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20143#0"
+        ]
+      },
+      "h-09": {
+        "rank": 2,
+        "top": [
+          "community/ratelimit-headers#0",
+          "api/api-rate-limits#1",
+          "release-notes/v2.3.0#2",
+          "support_tickets/TCKT-20062#0",
+          "support_tickets/TCKT-20063#0"
+        ]
+      },
+      "h-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20061#0",
+          "support_tickets/TCKT-20059#0",
+          "support_tickets/TCKT-20058#0",
+          "support_tickets/TCKT-20060#0",
+          "engineering/postmortem-inc-2026-004#1"
+        ]
+      },
+      "h-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/line-items-and-long-invoices#1",
+          "community/pdf-25-lines#0",
+          "engineering/postmortem-inc-2026-021#1",
+          "support_tickets/TCKT-20040#0",
+          "support_tickets/TCKT-20042#0"
+        ]
+      },
+      "h-12": {
+        "rank": 2,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "client-portal/portal-branding#0",
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-partial-payment#1",
+          "community/portal-ach#0"
+        ]
+      },
+      "h-13": {
+        "rank": null,
+        "top": [
+          "api/duplicate-api-payments#1",
+          "support_tickets/TCKT-20080#0",
+          "support_tickets/TCKT-20079#0",
+          "support_tickets/TCKT-20082#0",
+          "api/sdk-python#2"
+        ]
+      },
+      "h-14": {
+        "rank": null,
+        "top": [
+          "community/reconciliation-euro-workaround#0",
+          "support_tickets/TCKT-20037#0",
+          "support_tickets/TCKT-20038#0",
+          "support_tickets/TCKT-20039#0",
+          "engineering/postmortem-inc-2026-019#1"
+        ]
+      },
+      "h-15": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "support_tickets/TCKT-20185#0",
+          "community/python-sdk-retries#0",
+          "support_tickets/TCKT-20184#0",
+          "support_tickets/TCKT-20187#0"
+        ]
+      },
+      "f-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "release-notes/v2.2.0#1",
+          "account-billing/plans-and-limits#2",
+          "community/starter-webhooks#0",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "f-02": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "sales/objection-handling#1",
+          "reports/custom-report-builder#0"
+        ]
+      },
+      "f-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "release-notes/v2.2.0#1",
+          "account-billing/plans-and-limits#2",
+          "release-notes/v2.2.0#3",
+          "sales/objection-handling#0"
+        ]
+      },
+      "f-04": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20143#0"
+        ]
+      },
+      "f-05": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.1.0#4",
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "recurring-invoices/set-up-recurring-invoices#0",
+          "recurring-invoices/recurring-cadences#0",
+          "recurring-invoices/skipped-recurring-cycle#0"
+        ]
+      },
+      "f-06": {
+        "rank": 4,
+        "top": [
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0",
+          "support_tickets/TCKT-20170#0",
+          "reports/report-exports#0",
+          "support_tickets/TCKT-20171#0"
+        ]
+      },
+      "f-07": {
+        "rank": 3,
+        "top": [
+          "community/api-v1-still-works#0",
+          "release-notes/v2.2.1#2",
+          "api/api-overview#0",
+          "release-notes/v2.2.0#3",
+          "support_tickets/TCKT-20149#0"
+        ]
+      },
+      "f-08": {
+        "rank": 2,
+        "top": [
+          "engineering/release-retro-2.3.1#0",
+          "recurring-invoices/skipped-recurring-cycle#1",
+          "engineering/postmortem-inc-2026-019#1",
+          "engineering/postmortem-inc-2026-021#1",
+          "release-notes/v2.3.1#3"
+        ]
+      },
+      "f-09": {
+        "rank": 3,
+        "top": [
+          "engineering/release-retro-2.3.0#0",
+          "release-notes/v2.3.1#3",
+          "support/known-issues#1",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#1"
+        ]
+      },
+      "f-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20174#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20178#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20176#0"
+        ]
+      },
+      "e-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20003#0",
+          "support_tickets/TCKT-20001#0",
+          "support_tickets/TCKT-20005#0",
+          "support_tickets/TCKT-20002#0",
+          "support_tickets/TCKT-20004#0"
+        ]
+      },
+      "e-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-016#1",
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20033#0",
+          "support_tickets/TCKT-20034#0",
+          "support_tickets/TCKT-20031#0"
+        ]
+      },
+      "e-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20030#0",
+          "support_tickets/TCKT-20026#0",
+          "support_tickets/TCKT-20029#0",
+          "support_tickets/TCKT-20027#0",
+          "support_tickets/TCKT-20028#0"
+        ]
+      },
+      "e-04": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/postmortem-inc-2026-021#2",
+          "engineering/note-pdf-workaround#0"
+        ]
+      },
+      "e-05": {
+        "rank": 5,
+        "top": [
+          "engineering/postmortem-inc-2025-012#2",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.0.0#0",
+          "support_tickets/TCKT-20050#0",
+          "getting-started/dashboard#1"
+        ]
+      },
+      "e-06": {
+        "rank": 3,
+        "top": [
+          "engineering/postmortem-inc-2026-004#2",
+          "engineering/release-retro-2.2.0#1",
+          "release-notes/v2.2.0#2",
+          "release-notes/v2.3.0#2",
+          "engineering/postmortem-inc-2026-007#2"
+        ]
+      },
+      "e-07": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.1.0#1",
+          "support_tickets/TCKT-20093#0",
+          "engineering/postmortem-inc-2025-031#2",
+          "engineering/postmortem-inc-2025-012#2"
+        ]
+      },
+      "e-08": {
+        "rank": 2,
+        "top": [
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#1",
+          "support_tickets/TCKT-20065#0",
+          "support_tickets/TCKT-20010#0",
+          "support_tickets/TCKT-20062#0"
+        ]
+      },
+      "e-09": {
+        "rank": 1,
+        "top": [
+          "api/api-payments#0",
+          "engineering/runbook-duplicate-payments#0",
+          "support_tickets/TCKT-20079#0",
+          "support_tickets/TCKT-20082#0",
+          "support_tickets/TCKT-20080#0"
+        ]
+      },
+      "e-10": {
+        "rank": null,
+        "top": [
+          "community/statement-json#0",
+          "support_tickets/TCKT-20154#0",
+          "support_tickets/TCKT-20155#0",
+          "support_tickets/TCKT-20157#0",
+          "support_tickets/TCKT-20158#0"
+        ]
+      },
+      "e-11": {
+        "rank": 2,
+        "top": [
+          "engineering/adr-009-cursor-pagination#0",
+          "api/api-pagination#0",
+          "api/migrate-v1-to-v2#0",
+          "legacy/classic-api#0",
+          "support_tickets/TCKT-20149#0"
+        ]
+      },
+      "n-01": {
+        "rank": 1,
+        "top": [
+          "sales/discount-policy#0",
+          "sales/plan-comparison-for-reps#0",
+          "sales/plan-comparison-for-reps#1",
+          "account-billing/plans-and-limits#3",
+          "invoicing/line-item-discounts#0"
+        ]
+      },
+      "n-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#2",
+          "release-notes/v2.3.1#2"
+        ]
+      },
+      "n-03": {
+        "rank": 1,
+        "top": [
+          "engineering/postmortem-inc-2026-011#1",
+          "community/duplicate-payments-api#0",
+          "api/duplicate-api-payments#0",
+          "support_tickets/TCKT-20080#0",
+          "engineering/postmortem-inc-2026-011#2"
+        ]
+      },
+      "n-04": {
+        "rank": 1,
+        "top": [
+          "sales/battlecard-ledgerloop#1",
+          "community/multi-currency-starter#0",
+          "support/faq#0",
+          "sales/sales-faq#0",
+          "sales/competitive-pricing-notes#0"
+        ]
+      },
+      "n-05": {
+        "rank": 1,
+        "top": [
+          "engineering/runbook-critical-bug-escalation#0",
+          "support/contact-support#0",
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/postmortem-inc-2026-011#3",
+          "support_tickets/TCKT-20050#0"
+        ]
+      },
+      "n-06": {
+        "rank": 1,
+        "top": [
+          "engineering/note-auto-match-tolerance#0",
+          "bank-reconciliation/auto-match-rules#0",
+          "bank-reconciliation/auto-match#1",
+          "api/api-bank-transactions#1",
+          "community/reconciliation-euro-workaround#0"
+        ]
+      },
+      "n-07": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20143#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20142#0"
+        ]
+      }
+    },
+    "V3": {
+      "c1-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-partial-payment#1",
+          "invoicing/send-invoice-email#0",
+          "client-portal/portal-payment-methods#0",
+          "invoicing/partial-payments#0"
+        ]
+      },
+      "c1-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/void-or-delete-invoice#0",
+          "support_tickets/TCKT-20090#0",
+          "support_tickets/TCKT-20087#0",
+          "support_tickets/TCKT-20088#0",
+          "support_tickets/TCKT-20089#0"
+        ]
+      },
+      "c1-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/tax-rates#0",
+          "support/faq#1",
+          "invoicing/archived-tax-rate-drafts#0",
+          "multi-currency/weekend-exchange-rates#1",
+          "sales/sales-faq#0"
+        ]
+      },
+      "c1-04": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoices-faq#2",
+          "recurring-invoices/recurring-cadences#0",
+          "recurring-invoices/recurring-invoices-faq#1",
+          "support_tickets/TCKT-20057#0",
+          "engineering/postmortem-inc-2025-031#2"
+        ]
+      },
+      "c1-05": {
+        "rank": 1,
+        "top": [
+          "expenses/receipt-scanning#0",
+          "release-notes/v2.1.0#3",
+          "support_tickets/TCKT-20103#0",
+          "support_tickets/TCKT-20100#0",
+          "support_tickets/TCKT-20099#0"
+        ]
+      },
+      "c1-06": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/review-suggested-matches#0",
+          "support_tickets/TCKT-20176#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20178#0",
+          "support_tickets/TCKT-20177#0"
+        ]
+      },
+      "c1-07": {
+        "rank": 1,
+        "top": [
+          "getting-started/invite-users#0",
+          "account-billing/renewals#0",
+          "estimates/estimate-expiry#0",
+          "recurring-invoices/recurring-invoices-faq#2",
+          "getting-started/invite-users#1"
+        ]
+      },
+      "c1-08": {
+        "rank": null,
+        "top": [
+          "multi-currency/exchange-rates#0",
+          "release-notes/v2.0.0#0",
+          "multi-currency/enable-multi-currency#0",
+          "multi-currency/multi-currency-bank-reconciliation#0",
+          "release-notes/v2.0.0#3"
+        ]
+      },
+      "c2-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20020#0",
+          "support_tickets/TCKT-20019#0",
+          "support_tickets/TCKT-20016#0",
+          "support_tickets/TCKT-20018#0",
+          "support_tickets/TCKT-20017#0"
+        ]
+      },
+      "c2-02": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20029#0",
+          "support_tickets/TCKT-20026#0",
+          "api/sandbox#0",
+          "support_tickets/TCKT-20030#0",
+          "support_tickets/TCKT-20027#0"
+        ]
+      },
+      "c2-03": {
+        "rank": 4,
+        "top": [
+          "api/api-reports#1",
+          "support_tickets/TCKT-20050#0",
+          "engineering/postmortem-inc-2026-019#3",
+          "reports/large-date-ranges#0",
+          "support_tickets/TCKT-20049#0"
+        ]
+      },
+      "c2-04": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20021#0",
+          "support_tickets/TCKT-20024#0",
+          "engineering/postmortem-inc-2026-016#1",
+          "support_tickets/TCKT-20022#0",
+          "support_tickets/TCKT-20025#0"
+        ]
+      },
+      "c2-05": {
+        "rank": 1,
+        "top": [
+          "api/api-rate-limits#1",
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#0",
+          "engineering/runbook-rate-limit-requests#0",
+          "support_tickets/TCKT-20062#0"
+        ]
+      },
+      "c2-06": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#2",
+          "engineering/note-pdf-workaround#0"
+        ]
+      },
+      "c3-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20124#0",
+          "sales/draft-roles-messaging#0",
+          "support_tickets/TCKT-20126#0",
+          "support_tickets/TCKT-20125#0",
+          "support_tickets/TCKT-20127#0"
+        ]
+      },
+      "c3-02": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#1",
+          "support_tickets/TCKT-20111#0",
+          "support_tickets/TCKT-20113#0",
+          "support_tickets/TCKT-20110#0"
+        ]
+      },
+      "c3-03": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "reports/custom-report-builder#0",
+          "reports/standard-reports#0"
+        ]
+      },
+      "c3-04": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-rate-limit-requests#0",
+          "api/api-rate-limits#0",
+          "sales/objection-handling#0",
+          "support/faq#2",
+          "support_tickets/TCKT-20008#0"
+        ]
+      },
+      "c3-05": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-templates#0",
+          "invoicing/invoice-templates#1",
+          "support/faq#1",
+          "account-billing/plans-and-limits#2",
+          "support_tickets/TCKT-20125#0"
+        ]
+      },
+      "c3-06": {
+        "rank": 2,
+        "top": [
+          "sales/security-faq-for-sales#1",
+          "account-billing/roles-and-audit-log#0",
+          "sales/enterprise-onboarding#0",
+          "api/api-rate-limits#2",
+          "account-billing/plans-and-limits#2"
+        ]
+      },
+      "c4-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20172#0",
+          "support_tickets/TCKT-20169#0",
+          "support_tickets/TCKT-20173#0",
+          "support_tickets/TCKT-20171#0",
+          "support_tickets/TCKT-20170#0"
+        ]
+      },
+      "c4-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/payment-reminders#0",
+          "invoicing/bulk-void-reminders#0",
+          "engineering/postmortem-inc-2026-007#1",
+          "invoicing/duplicate-payment-reminders#0",
+          "engineering/postmortem-inc-2026-007#2"
+        ]
+      },
+      "c4-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20174#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20178#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20176#0"
+        ]
+      },
+      "c4-04": {
+        "rank": 1,
+        "top": [
+          "api/api-overview#0",
+          "api/migrate-v1-to-v2#0",
+          "support_tickets/TCKT-20149#0",
+          "api/api-changelog#0",
+          "support_tickets/TCKT-20153#0"
+        ]
+      },
+      "c4-05": {
+        "rank": 1,
+        "top": [
+          "multi-currency/zero-decimal-currencies#0",
+          "engineering/postmortem-inc-2025-010#1",
+          "release-notes/v2.1.0#2",
+          "engineering/postmortem-inc-2025-010#2",
+          "engineering/postmortem-inc-2025-010#0"
+        ]
+      },
+      "h-01": {
+        "rank": 5,
+        "top": [
+          "support_tickets/TCKT-20047#0",
+          "support_tickets/TCKT-20046#0",
+          "support_tickets/TCKT-20044#0",
+          "support_tickets/TCKT-20045#0",
+          "reports/date-picker-week-start#0"
+        ]
+      },
+      "h-02": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.3.0#2",
+          "engineering/postmortem-inc-2026-004#2",
+          "engineering/release-retro-2.2.0#1",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.2.0#0"
+        ]
+      },
+      "h-03": {
+        "rank": null,
+        "top": [
+          "engineering/release-retro-2.1.0#1",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/postmortem-inc-2026-019#3",
+          "support_tickets/TCKT-20092#0",
+          "support_tickets/TCKT-20091#0"
+        ]
+      },
+      "h-04": {
+        "rank": 1,
+        "top": [
+          "reports/custom-report-builder#0",
+          "account-billing/plans-and-limits#2",
+          "legacy/classic-reports#0",
+          "api/api-rate-limits#2",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "h-05": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20137#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20136#0",
+          "support_tickets/TCKT-20138#0",
+          "support_tickets/TCKT-20135#0"
+        ]
+      },
+      "h-06": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "sales/objection-handling#0",
+          "support_tickets/TCKT-20112#0",
+          "support_tickets/TCKT-20134#0",
+          "support_tickets/TCKT-20136#0"
+        ]
+      },
+      "h-07": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "recurring-invoices/recurring-invoices-faq#0",
+          "release-notes/v2.1.0#4",
+          "recurring-invoices/skipped-recurring-cycle#0",
+          "recurring-invoices/recurring-schedule-local-time#0"
+        ]
+      },
+      "h-08": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20143#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20141#0"
+        ]
+      },
+      "h-09": {
+        "rank": 4,
+        "top": [
+          "support_tickets/TCKT-20062#0",
+          "support_tickets/TCKT-20063#0",
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#1",
+          "release-notes/v2.3.0#2"
+        ]
+      },
+      "h-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20059#0",
+          "support_tickets/TCKT-20061#0",
+          "support_tickets/TCKT-20058#0",
+          "support_tickets/TCKT-20060#0",
+          "engineering/postmortem-inc-2026-004#1"
+        ]
+      },
+      "h-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/line-items-and-long-invoices#1",
+          "engineering/postmortem-inc-2026-021#1",
+          "support_tickets/TCKT-20042#0",
+          "support_tickets/TCKT-20043#0",
+          "support_tickets/TCKT-20040#0"
+        ]
+      },
+      "h-12": {
+        "rank": 2,
+        "top": [
+          "client-portal/portal-payment-methods#0",
+          "client-portal/portal-branding#0",
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-partial-payment#1",
+          "support/faq#1"
+        ]
+      },
+      "h-13": {
+        "rank": null,
+        "top": [
+          "api/duplicate-api-payments#1",
+          "support_tickets/TCKT-20080#0",
+          "support_tickets/TCKT-20079#0",
+          "support_tickets/TCKT-20082#0",
+          "api/sdk-python#2"
+        ]
+      },
+      "h-14": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20037#0",
+          "support_tickets/TCKT-20038#0",
+          "support_tickets/TCKT-20039#0",
+          "engineering/postmortem-inc-2026-019#1",
+          "support_tickets/TCKT-20036#0"
+        ]
+      },
+      "h-15": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20184#0",
+          "support_tickets/TCKT-20187#0",
+          "api/api-error-subcodes#1"
+        ]
+      },
+      "f-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "release-notes/v2.2.0#1",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "support_tickets/TCKT-20113#0"
+        ]
+      },
+      "f-02": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "sales/objection-handling#1",
+          "reports/custom-report-builder#0"
+        ]
+      },
+      "f-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "release-notes/v2.2.0#1",
+          "account-billing/plans-and-limits#2",
+          "release-notes/v2.2.0#3",
+          "sales/objection-handling#0"
+        ]
+      },
+      "f-04": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20143#0",
+          "support_tickets/TCKT-20140#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20141#0"
+        ]
+      },
+      "f-05": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.1.0#4",
+          "recurring-invoices/set-up-recurring-invoices#0",
+          "recurring-invoices/recurring-cadences#0",
+          "recurring-invoices/skipped-recurring-cycle#0",
+          "recurring-invoices/recurring-invoice-timezones#0"
+        ]
+      },
+      "f-06": {
+        "rank": 2,
+        "top": [
+          "support_tickets/TCKT-20172#0",
+          "reports/report-exports#0",
+          "support_tickets/TCKT-20169#0",
+          "support_tickets/TCKT-20170#0",
+          "support_tickets/TCKT-20173#0"
+        ]
+      },
+      "f-07": {
+        "rank": 1,
+        "top": [
+          "api/api-overview#0",
+          "release-notes/v2.2.0#3",
+          "support_tickets/TCKT-20149#0",
+          "release-notes/v2.2.1#2",
+          "support_tickets/TCKT-20151#0"
+        ]
+      },
+      "f-08": {
+        "rank": 2,
+        "top": [
+          "engineering/release-retro-2.3.1#0",
+          "recurring-invoices/skipped-recurring-cycle#1",
+          "engineering/postmortem-inc-2026-019#1",
+          "engineering/postmortem-inc-2026-021#1",
+          "release-notes/v2.3.1#3"
+        ]
+      },
+      "f-09": {
+        "rank": 2,
+        "top": [
+          "engineering/release-retro-2.3.0#0",
+          "support/known-issues#1",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#1",
+          "engineering/postmortem-inc-2026-019#1"
+        ]
+      },
+      "f-10": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/manual-reconciliation#0",
+          "support_tickets/TCKT-20174#0",
+          "support_tickets/TCKT-20177#0",
+          "support_tickets/TCKT-20175#0",
+          "support_tickets/TCKT-20178#0"
+        ]
+      },
+      "e-01": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20003#0",
+          "support_tickets/TCKT-20001#0",
+          "support_tickets/TCKT-20005#0",
+          "support_tickets/TCKT-20002#0",
+          "support_tickets/TCKT-20004#0"
+        ]
+      },
+      "e-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-016#1",
+          "support_tickets/TCKT-20185#0",
+          "support_tickets/TCKT-20033#0",
+          "support_tickets/TCKT-20034#0",
+          "support_tickets/TCKT-20031#0"
+        ]
+      },
+      "e-03": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20030#0",
+          "support_tickets/TCKT-20026#0",
+          "support_tickets/TCKT-20029#0",
+          "support_tickets/TCKT-20027#0",
+          "support_tickets/TCKT-20028#0"
+        ]
+      },
+      "e-04": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/postmortem-inc-2026-021#2",
+          "engineering/note-pdf-workaround#0"
+        ]
+      },
+      "e-05": {
+        "rank": 5,
+        "top": [
+          "engineering/postmortem-inc-2025-012#2",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.0.0#0",
+          "support_tickets/TCKT-20050#0",
+          "getting-started/dashboard#1"
+        ]
+      },
+      "e-06": {
+        "rank": 3,
+        "top": [
+          "engineering/postmortem-inc-2026-004#2",
+          "engineering/release-retro-2.2.0#1",
+          "release-notes/v2.2.0#2",
+          "release-notes/v2.3.0#2",
+          "engineering/postmortem-inc-2026-007#2"
+        ]
+      },
+      "e-07": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.1.0#1",
+          "support_tickets/TCKT-20093#0",
+          "engineering/postmortem-inc-2025-031#2",
+          "engineering/postmortem-inc-2025-012#2"
+        ]
+      },
+      "e-08": {
+        "rank": 2,
+        "top": [
+          "engineering/note-x-ratelimit#0",
+          "api/api-rate-limits#1",
+          "support_tickets/TCKT-20065#0",
+          "support_tickets/TCKT-20010#0",
+          "support_tickets/TCKT-20063#0"
+        ]
+      },
+      "e-09": {
+        "rank": 1,
+        "top": [
+          "api/api-payments#0",
+          "engineering/runbook-duplicate-payments#0",
+          "support_tickets/TCKT-20082#0",
+          "support_tickets/TCKT-20079#0",
+          "support_tickets/TCKT-20080#0"
+        ]
+      },
+      "e-10": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20155#0",
+          "support_tickets/TCKT-20154#0",
+          "support_tickets/TCKT-20157#0",
+          "support_tickets/TCKT-20158#0",
+          "support_tickets/TCKT-20156#0"
+        ]
+      },
+      "e-11": {
+        "rank": 2,
+        "top": [
+          "engineering/adr-009-cursor-pagination#0",
+          "api/api-pagination#0",
+          "api/migrate-v1-to-v2#0",
+          "legacy/classic-api#0",
+          "support_tickets/TCKT-20149#0"
+        ]
+      },
+      "n-01": {
+        "rank": 1,
+        "top": [
+          "sales/discount-policy#0",
+          "sales/plan-comparison-for-reps#0",
+          "sales/plan-comparison-for-reps#1",
+          "account-billing/plans-and-limits#3",
+          "invoicing/line-item-discounts#0"
+        ]
+      },
+      "n-02": {
+        "rank": null,
+        "top": [
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/postmortem-inc-2026-011#3",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#2",
+          "release-notes/v2.3.1#2"
+        ]
+      },
+      "n-03": {
+        "rank": 1,
+        "top": [
+          "engineering/postmortem-inc-2026-011#1",
+          "api/duplicate-api-payments#0",
+          "support_tickets/TCKT-20080#0",
+          "engineering/postmortem-inc-2026-011#2",
+          "support_tickets/TCKT-20079#0"
+        ]
+      },
+      "n-04": {
+        "rank": 1,
+        "top": [
+          "sales/battlecard-ledgerloop#1",
+          "support/faq#0",
+          "sales/sales-faq#0",
+          "sales/competitive-pricing-notes#0",
+          "legacy/classic-currencies#0"
+        ]
+      },
+      "n-05": {
+        "rank": 1,
+        "top": [
+          "engineering/runbook-critical-bug-escalation#0",
+          "support/contact-support#0",
+          "engineering/postmortem-inc-2026-019#3",
+          "engineering/postmortem-inc-2026-011#3",
+          "support_tickets/TCKT-20050#0"
+        ]
+      },
+      "n-06": {
+        "rank": 1,
+        "top": [
+          "engineering/note-auto-match-tolerance#0",
+          "bank-reconciliation/auto-match-rules#0",
+          "bank-reconciliation/auto-match#1",
+          "api/api-bank-transactions#1",
+          "multi-currency/multi-currency-bank-reconciliation#1"
+        ]
+      },
+      "n-07": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20143#0",
+          "support_tickets/TCKT-20141#0",
+          "support_tickets/TCKT-20139#0",
+          "support_tickets/TCKT-20142#0",
+          "support_tickets/TCKT-20134#0"
+        ]
+      }
+    },
+    "V4": {
+      "c1-01": {
+        "rank": 2,
+        "top": [
+          "client-portal/portal-partial-payment#0",
+          "release-notes/v2.2.0#0",
+          "client-portal/client-portal-overview#0",
+          "invoicing/partial-payments#0",
+          "getting-started/welcome#0"
+        ]
+      },
+      "c1-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/void-or-delete-invoice#0",
+          "recurring-invoices/pause-recurring-invoice#0",
+          "invoicing/bulk-void-reminders#0",
+          "engineering/note-pdf-workaround#0",
+          "support_tickets/TCKT-20090#0"
+        ]
+      },
+      "c1-03": {
+        "rank": 1,
+        "top": [
+          "invoicing/tax-rates#0",
+          "multi-currency/weekend-exchange-rates#1",
+          "invoicing/archived-tax-rate-drafts#0",
+          "community/tax-rate-change-old#0",
+          "reports/tax-summary-report#0"
+        ]
+      },
+      "c1-04": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoices-faq#2",
+          "recurring-invoices/recurring-cadences#0",
+          "sales/objection-handling#2",
+          "invoicing/duplicate-invoice#0",
+          "release-notes/v2.3.1#1"
+        ]
+      },
+      "c1-05": {
+        "rank": 1,
+        "top": [
+          "expenses/receipt-scanning#0",
+          "expenses/receipt-rotated#0",
+          "release-notes/v2.1.0#3",
+          "release-notes/v2.1.1#1",
+          "support_tickets/TCKT-20101#0"
+        ]
+      },
+      "c1-06": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/review-suggested-matches#0",
+          "bank-reconciliation/auto-match#1",
+          "release-notes/v2.3.0#4",
+          "bank-reconciliation/manual-reconciliation#0",
+          "api/api-bank-transactions#0"
+        ]
+      },
+      "c1-07": {
+        "rank": 1,
+        "top": [
+          "getting-started/invite-users#0",
+          "api/api-users#0",
+          "sales/enterprise-onboarding#0",
+          "account-billing/renewals#0",
+          "account-billing/seats-and-add-seats#0"
+        ]
+      },
+      "c1-08": {
+        "rank": 1,
+        "top": [
+          "getting-started/create-organization#0",
+          "multi-currency/exchange-rates#0",
+          "recurring-invoices/preview-currency-symbol#0",
+          "release-notes/v2.0.0#0",
+          "multi-currency/enable-multi-currency#0"
+        ]
+      },
+      "c2-01": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "support_tickets/TCKT-20019#0",
+          "api/api-error-subcodes#2",
+          "engineering/adr-010-idempotency#1",
+          "community/idempotency-reuse#0"
+        ]
+      },
+      "c2-02": {
+        "rank": 1,
+        "top": [
+          "api/api-authentication#0",
+          "api/sandbox#0",
+          "api/webhooks-overview#1",
+          "support_tickets/TCKT-20027#0",
+          "sales/api-pitch#0"
+        ]
+      },
+      "c2-03": {
+        "rank": 1,
+        "top": [
+          "reports/large-date-ranges#0",
+          "api/api-reports#1",
+          "support_tickets/TCKT-20060#0",
+          "engineering/note-pdf-workaround#0",
+          "engineering/postmortem-inc-2026-021#2"
+        ]
+      },
+      "c2-04": {
+        "rank": 4,
+        "top": [
+          "engineering/postmortem-inc-2026-016#1",
+          "support/status-page#0",
+          "support_tickets/TCKT-20021#0",
+          "api/api-errors#1",
+          "engineering/runbook-ip5030-spike#0"
+        ]
+      },
+      "c2-05": {
+        "rank": 1,
+        "top": [
+          "api/api-rate-limits#1",
+          "api/api-concurrency-limits#0",
+          "engineering/adr-017-concurrency-limit#0",
+          "legacy/classic-api#0",
+          "support_tickets/TCKT-20062#0"
+        ]
+      },
+      "c2-06": {
+        "rank": 4,
+        "top": [
+          "engineering/postmortem-inc-2026-021#0",
+          "sales/objection-handling#1",
+          "engineering/postmortem-inc-2026-019#0",
+          "support/known-issues#1",
+          "engineering/release-retro-2.1.1#1"
+        ]
+      },
+      "c3-01": {
+        "rank": 1,
+        "top": [
+          "account-billing/roles-and-audit-log#0",
+          "account-billing/plans-and-limits#2",
+          "getting-started/invite-users#1",
+          "support_tickets/TCKT-20124#0",
+          "api/api-users#0"
+        ]
+      },
+      "c3-02": {
+        "rank": 1,
+        "top": [
+          "support/contact-support#0",
+          "account-billing/plans-and-limits#2",
+          "sales/plan-comparison-for-reps#1",
+          "reports/report-schedules#0",
+          "support_tickets/TCKT-20111#0"
+        ]
+      },
+      "c3-03": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "account-billing/plans-and-limits#2",
+          "release-notes/v2.3.0#0",
+          "reports/custom-report-builder#0",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "c3-04": {
+        "rank": 3,
+        "top": [
+          "support/faq#2",
+          "sales/objection-handling#0",
+          "account-billing/plans-and-limits#2",
+          "api/api-concurrency-limits#0",
+          "sales/plan-comparison-for-reps#1"
+        ]
+      },
+      "c3-05": {
+        "rank": 1,
+        "top": [
+          "invoicing/invoice-templates#1",
+          "support/faq#1",
+          "account-billing/plans-and-limits#2",
+          "invoicing/create-invoice#0",
+          "client-portal/customer-statements#0"
+        ]
+      },
+      "c3-06": {
+        "rank": 1,
+        "top": [
+          "account-billing/roles-and-audit-log#0",
+          "account-billing/security-overview#0",
+          "sales/battlecard-finchbooks#1",
+          "sales/security-faq-for-sales#1",
+          "sales/enterprise-onboarding#0"
+        ]
+      },
+      "c4-01": {
+        "rank": 2,
+        "top": [
+          "client-portal/customer-statements#1",
+          "reports/report-exports#0",
+          "support/faq#3",
+          "support_tickets/TCKT-20169#0",
+          "client-portal/client-portal-overview#0"
+        ]
+      },
+      "c4-02": {
+        "rank": 1,
+        "top": [
+          "invoicing/payment-reminders#0",
+          "invoicing/bulk-void-reminders#0",
+          "invoicing/duplicate-payment-reminders#0",
+          "invoicing/bulk-invoice-actions#0",
+          "support_tickets/TCKT-20093#0"
+        ]
+      },
+      "c4-03": {
+        "rank": 1,
+        "top": [
+          "support/glossary#0",
+          "bank-reconciliation/auto-match-rules#0",
+          "release-notes/v2.3.0#0",
+          "bank-reconciliation/auto-match#0",
+          "api/api-bank-transactions#1"
+        ]
+      },
+      "c4-04": {
+        "rank": 1,
+        "top": [
+          "api/api-overview#0",
+          "release-notes/v2.2.0#0",
+          "api/api-changelog#0",
+          "api/api-users#0",
+          "api/api-bank-transactions#0"
+        ]
+      },
+      "c4-05": {
+        "rank": 1,
+        "top": [
+          "multi-currency/zero-decimal-currencies#0",
+          "support/known-issues#1",
+          "engineering/release-retro-2.1.0#0",
+          "invoicing/invoice-number-gaps#0",
+          "multi-currency/weekend-exchange-rates#0"
+        ]
+      },
+      "h-01": {
+        "rank": 1,
+        "top": [
+          "reports/date-picker-week-start#0",
+          "release-notes/v2.3.1#2",
+          "support/known-issues#1",
+          "support_tickets/TCKT-20047#0",
+          "community/week-start-sunday#0"
+        ]
+      },
+      "h-02": {
+        "rank": 3,
+        "top": [
+          "engineering/release-retro-2.2.0#1",
+          "release-notes/v2.2.0#2",
+          "release-notes/v2.3.0#2",
+          "release-notes/v2.2.1#1",
+          "engineering/postmortem-inc-2026-004#0"
+        ]
+      },
+      "h-03": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.1.0#3",
+          "engineering/release-retro-2.1.0#1",
+          "support_tickets/TCKT-20050#0",
+          "community/reminders-twice#0",
+          "engineering/postmortem-inc-2026-019#3"
+        ]
+      },
+      "h-04": {
+        "rank": 1,
+        "top": [
+          "reports/custom-report-builder#0",
+          "account-billing/plans-and-limits#2",
+          "reports/report-schedules#0",
+          "sales/plan-comparison-for-reps#1",
+          "legacy/classic-reports#0"
+        ]
+      },
+      "h-05": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/connect-bank-feed#0",
+          "bank-reconciliation/disconnect-bank-feed#0",
+          "support_tickets/TCKT-20137#0",
+          "bank-reconciliation/bank-feed-faq#1",
+          "reports/custom-report-builder#0"
+        ]
+      },
+      "h-06": {
+        "rank": 2,
+        "top": [
+          "engineering/runbook-critical-bug-escalation#0",
+          "support/contact-support#0",
+          "support_tickets/TCKT-20128#0",
+          "sales/objection-handling#0",
+          "support/faq#1"
+        ]
+      },
+      "h-07": {
+        "rank": 1,
+        "top": [
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "release-notes/v2.1.0#4",
+          "recurring-invoices/skipped-recurring-cycle#0",
+          "api/api-recurring-profiles#1",
+          "recurring-invoices/recurring-invoices-faq#0"
+        ]
+      },
+      "h-08": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/bank-feed-sync#0",
+          "release-notes/v2.3.0#1",
+          "sales/whats-new-2-3-for-sales#0",
+          "bank-reconciliation/bank-feed-faq#0",
+          "account-billing/plans-and-limits#2"
+        ]
+      },
+      "h-09": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.3.0#2",
+          "api/api-rate-limits#1",
+          "api/migrate-v1-to-v2#0",
+          "engineering/note-x-ratelimit#0",
+          "engineering/release-retro-2.3.0#0"
+        ]
+      },
+      "h-10": {
+        "rank": 1,
+        "top": [
+          "client-portal/safari-login-loop#0",
+          "release-notes/v2.2.0#2",
+          "invoicing/duplicate-payment-reminders#0",
+          "support_tickets/TCKT-20059#0",
+          "account-billing/sso-saml#0"
+        ]
+      },
+      "h-11": {
+        "rank": 1,
+        "top": [
+          "invoicing/line-items-and-long-invoices#0",
+          "invoicing/export-invoice-pdf#0",
+          "invoicing/send-invoice-email#0",
+          "support_tickets/TCKT-20041#0",
+          "client-portal/customer-statements#0"
+        ]
+      },
+      "h-12": {
+        "rank": null,
+        "top": [
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-partial-payment#0",
+          "client-portal/customer-statements#0",
+          "invoicing/partial-payments#0",
+          "client-portal/portal-payment-methods#0"
+        ]
+      },
+      "h-13": {
+        "rank": null,
+        "top": [
+          "support_tickets/TCKT-20080#0",
+          "api/sdk-python#0",
+          "recurring-invoices/skipped-recurring-cycle#1",
+          "api/duplicate-api-payments#1",
+          "api/api-invoices#0"
+        ]
+      },
+      "h-14": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/auto-match-rules#0",
+          "multi-currency/multi-currency-bank-reconciliation#0",
+          "api/api-bank-transactions#1",
+          "support_tickets/TCKT-20038#0",
+          "bank-reconciliation/auto-match#1"
+        ]
+      },
+      "h-15": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "support_tickets/TCKT-20003#0",
+          "api/api-error-subcodes#2",
+          "engineering/postmortem-inc-2026-016#1",
+          "community/python-sdk-retries#0"
+        ]
+      },
+      "f-01": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "account-billing/plans-and-limits#2",
+          "release-notes/v2.2.0#1",
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-payment-methods#0"
+        ]
+      },
+      "f-02": {
+        "rank": 1,
+        "top": [
+          "reports/report-schedules#0",
+          "sales/sales-faq#0",
+          "reports/custom-report-builder#0",
+          "support_tickets/TCKT-20047#0",
+          "recurring-invoices/recurring-cadences#0"
+        ]
+      },
+      "f-03": {
+        "rank": 1,
+        "top": [
+          "client-portal/portal-branding#0",
+          "release-notes/v2.2.0#1",
+          "account-billing/plans-and-limits#2",
+          "client-portal/client-portal-overview#0",
+          "client-portal/portal-payment-methods#0"
+        ]
+      },
+      "f-04": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/bank-feed-sync#0",
+          "bank-reconciliation/bank-feed-faq#0",
+          "sales/whats-new-2-3-for-sales#0",
+          "support_tickets/TCKT-20142#0",
+          "bank-reconciliation/connect-bank-feed#0"
+        ]
+      },
+      "f-05": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.1.0#4",
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "recurring-invoices/skipped-recurring-cycle#0",
+          "recurring-invoices/set-up-recurring-invoices#0",
+          "recurring-invoices/recurring-schedule-local-time#0"
+        ]
+      },
+      "f-06": {
+        "rank": 1,
+        "top": [
+          "reports/report-exports#0",
+          "client-portal/customer-statements#1",
+          "support/faq#3",
+          "client-portal/client-portal-overview#0",
+          "support_tickets/TCKT-20172#0"
+        ]
+      },
+      "f-07": {
+        "rank": 1,
+        "top": [
+          "api/api-overview#0",
+          "release-notes/v2.2.0#1",
+          "release-notes/v2.2.1#2",
+          "client-portal/client-portal-overview#0",
+          "support/version-history#0"
+        ]
+      },
+      "f-08": {
+        "rank": 2,
+        "top": [
+          "client-portal/portal-partial-payment#0",
+          "recurring-invoices/recurring-invoice-timezones#0",
+          "sales/objection-handling#1",
+          "recurring-invoices/skipped-recurring-cycle#0",
+          "engineering/release-retro-2.3.1#0"
+        ]
+      },
+      "f-09": {
+        "rank": 1,
+        "top": [
+          "reports/custom-report-builder#0",
+          "release-notes/v1.9.0#2",
+          "support/known-issues#1",
+          "sales/whats-new-2-3-for-sales#0",
+          "multi-currency/multi-currency-bank-reconciliation#0"
+        ]
+      },
+      "f-10": {
+        "rank": 1,
+        "top": [
+          "bank-reconciliation/manual-reconciliation#0",
+          "bank-reconciliation/auto-match#0",
+          "support/known-issues#1",
+          "api/api-bank-transactions#1",
+          "multi-currency/multi-currency-bank-reconciliation#0"
+        ]
+      },
+      "e-01": {
+        "rank": 3,
+        "top": [
+          "support_tickets/TCKT-20003#0",
+          "api/api-error-subcodes#1",
+          "api/api-errors#1",
+          "community/python-sdk-retries#0",
+          "support/report-a-bug#0"
+        ]
+      },
+      "e-02": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "support_tickets/TCKT-20003#0",
+          "api/api-error-subcodes#1",
+          "engineering/postmortem-inc-2026-016#1",
+          "community/idempotency-reuse#0"
+        ]
+      },
+      "e-03": {
+        "rank": 1,
+        "top": [
+          "api/api-errors#1",
+          "support_tickets/TCKT-20027#0",
+          "support/report-a-bug#0",
+          "api/api-error-subcodes#1",
+          "community/ip-4290-vs-4291#0"
+        ]
+      },
+      "e-04": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.3.1#2",
+          "sales/objection-handling#1",
+          "engineering/postmortem-inc-2026-021#0",
+          "engineering/postmortem-inc-2026-019#0",
+          "multi-currency/multi-currency-bank-reconciliation#0"
+        ]
+      },
+      "e-05": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.0.0#2",
+          "invoicing/invoice-number-gaps#0",
+          "engineering/release-retro-2.0.0#1",
+          "getting-started/dashboard#1",
+          "multi-currency/weekend-exchange-rates#0"
+        ]
+      },
+      "e-06": {
+        "rank": 1,
+        "top": [
+          "release-notes/v2.2.0#2",
+          "client-portal/safari-login-loop#0",
+          "release-notes/v2.3.0#2",
+          "engineering/release-retro-2.2.0#0",
+          "support_tickets/TCKT-20065#0"
+        ]
+      },
+      "e-07": {
+        "rank": 2,
+        "top": [
+          "engineering/release-retro-2.1.0#1",
+          "release-notes/v2.3.1#1",
+          "release-notes/v2.1.1#1",
+          "engineering/release-retro-2.3.1#0",
+          "engineering/release-retro-2.1.1#0"
+        ]
+      },
+      "e-08": {
+        "rank": 1,
+        "top": [
+          "api/api-rate-limits#1",
+          "release-notes/v2.3.0#2",
+          "api/migrate-v1-to-v2#0",
+          "engineering/note-x-ratelimit#0",
+          "api/webhook-signatures#0"
+        ]
+      },
+      "e-09": {
+        "rank": 1,
+        "top": [
+          "api/api-payments#0",
+          "api/duplicate-api-payments#1",
+          "api/sdk-python#1",
+          "engineering/runbook-duplicate-payments#0",
+          "api/api-expenses#0"
+        ]
+      },
+      "e-10": {
+        "rank": 1,
+        "top": [
+          "api/api-customers#0",
+          "api/sdk-python#1",
+          "api/api-reports#0",
+          "client-portal/customer-statements#1",
+          "support/faq#3"
+        ]
+      },
+      "e-11": {
+        "rank": 1,
+        "top": [
+          "api/migrate-v1-to-v2#0",
+          "api/api-quickstart-2025#0",
+          "api/api-overview#0",
+          "engineering/adr-009-cursor-pagination#0",
+          "legacy/classic-api#0"
+        ]
+      },
+      "n-01": {
+        "rank": 1,
+        "top": [
+          "sales/discount-policy#0",
+          "invoicing/line-item-discounts#0",
+          "sales/plan-comparison-for-reps#1",
+          "account-billing/plans-and-limits#3",
+          "api/api-rate-limits#2"
+        ]
+      },
+      "n-02": {
+        "rank": 2,
+        "top": [
+          "sales/objection-handling#1",
+          "engineering/planning-q4-2026-fixes#0",
+          "release-notes/v2.3.1#2",
+          "engineering/release-retro-2.3.1#1",
+          "engineering/postmortem-inc-2026-021#2"
+        ]
+      },
+      "n-03": {
+        "rank": 2,
+        "top": [
+          "api/duplicate-api-payments#0",
+          "engineering/postmortem-inc-2026-011#1",
+          "api/api-errors#2",
+          "support_tickets/TCKT-20080#0",
+          "engineering/release-retro-2.2.1#1"
+        ]
+      },
+      "n-04": {
+        "rank": 1,
+        "top": [
+          "sales/battlecard-ledgerloop#1",
+          "sales/competitive-pricing-notes#0",
+          "multi-currency/enable-multi-currency#0",
+          "release-notes/v2.0.0#0",
+          "multi-currency/multi-currency-bank-reconciliation#0"
+        ]
+      },
+      "n-05": {
+        "rank": 1,
+        "top": [
+          "engineering/runbook-critical-bug-escalation#0",
+          "support/contact-support#0",
+          "support_tickets/TCKT-20051#0",
+          "recurring-invoices/recurring-schedule-local-time#0",
+          "engineering/postmortem-inc-2026-019#0"
+        ]
+      },
+      "n-06": {
+        "rank": 1,
+        "top": [
+          "engineering/note-auto-match-tolerance#0",
+          "bank-reconciliation/auto-match-rules#0",
+          "bank-reconciliation/auto-match#1",
+          "api/api-bank-transactions#1",
+          "multi-currency/multi-currency-bank-reconciliation#1"
+        ]
+      },
+      "n-07": {
+        "rank": 1,
+        "top": [
+          "sales/demo-script#0",
+          "multi-currency/multi-currency-bank-reconciliation#0",
+          "bank-reconciliation/bank-feed-sync#0",
+          "api/api-bank-transactions#1",
+          "sales/whats-new-2-3-for-sales#0"
+        ]
+      }
+    }
+  }
+}

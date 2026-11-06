@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20082",
+  "created_at": "2026-04-07T08:00:00Z",
+  "customer_id": "CUST-0017",
+  "company": "Sterling Cooper",
+  "plan": "Starter",
+  "product_version": "2.2.1",
+  "subject": "Idempotency-Key not working on payments",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "payments",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2210-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Sterling Cooper admin",
+      "sent_at": "2026-04-07T08:00:00Z",
+      "body": "Our ERP retried POST /v2/payments after a timeout with the same Idempotency-Key and we got two payments."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-04-08T04:31:00Z",
+      "body": "That's BUG-2210-02 (High): on 2.2.1 the Idempotency-Key is ignored on POST /v2/payments only. It's fixed in 2.3.0. Delete the duplicate with DELETE /v2/payments/{payment_id}, which reopens the invoice, and check GET /v2/payments before retrying."
+    }
+  ]
+}

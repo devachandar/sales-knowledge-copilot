@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20008",
+  "created_at": "2026-04-12T08:48:00Z",
+  "customer_id": "CUST-0001",
+  "company": "Oracle",
+  "plan": "Enterprise",
+  "product_version": "2.2.1",
+  "subject": "IP-4290 rate limit errors",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "rate-limit"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Oracle admin",
+      "sent_at": "2026-04-12T08:48:00Z",
+      "body": "Our nightly import fails with 429 and IP-4290. We're on Enterprise. What's our limit?"
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-04-13T04:19:00Z",
+      "body": "IP-4290 means the per-minute rate limit was reached. Your plan allows 1,000 requests per minute. Wait for the number of seconds in the Retry-After header, then retry. If you run many requests in parallel, also watch for IP-4291, which is the separate limit of 10 requests in flight."
+    }
+  ]
+}

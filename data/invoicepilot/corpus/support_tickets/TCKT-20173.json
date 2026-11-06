@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TCKT-20173",
+  "created_at": "2026-06-24T13:47:00Z",
+  "customer_id": "CUST-0015",
+  "company": "Prestige Worldwide",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Export reports to Excel",
+  "status": "Solved",
+  "tags": [
+    "reports"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Prestige Worldwide admin",
+      "sent_at": "2026-06-24T13:47:00Z",
+      "body": "Can we export reports to Excel? We're on 2.3.0."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-06-24T14:33:00Z",
+      "body": "XLSX export arrived in 2.3.0. Pick XLSX in the export menu."
+    }
+  ]
+}

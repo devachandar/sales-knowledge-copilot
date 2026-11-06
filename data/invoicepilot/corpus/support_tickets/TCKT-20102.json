@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TCKT-20102",
+  "created_at": "2026-08-26T12:20:00Z",
+  "customer_id": "CUST-0005",
+  "company": "Umbrella Corp",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "Handwritten receipts not scanned",
+  "status": "Linked to bug",
+  "tags": [
+    "expenses"
+  ],
+  "linked_bug_id": "BUG-2100-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Umbrella Corp admin",
+      "sent_at": "2026-08-26T12:20:00Z",
+      "body": "Receipt scanning doesn't read our handwritten taxi receipts at all."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-08-26T15:27:00Z",
+      "body": "Handwritten receipts are a known limitation, BUG-2100-01 (Low, Won't Fix): OCR accuracy on handwriting is below 40%. Typed and printed receipts scan reliably. Please type the amount for handwritten ones."
+    }
+  ]
+}

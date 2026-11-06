@@ -1,0 +1,31 @@
+customer_id,company_name,industry,country,account_tier,signup_date
+CUST-0001,Oracle,Enterprise Software,United States,Enterprise,2025-05-02
+CUST-0002,Acme Corporation,Manufacturing,United States,Starter,2025-05-22
+CUST-0003,Globex Corporation,Conglomerate,United States,Enterprise,2025-10-08
+CUST-0004,Initech,IT Services,United States,Enterprise,2024-04-06
+CUST-0005,Umbrella Corp,Pharmaceuticals,Germany,Starter,2024-08-18
+CUST-0006,Stark Industries,Defense & Energy,United States,Starter,2024-12-22
+CUST-0007,Wayne Enterprises,Conglomerate,United States,Starter,2025-11-24
+CUST-0008,Soylent Corp,Food & Beverage,United States,Professional,2024-09-28
+CUST-0009,Hooli,Technology,United States,Starter,2024-08-02
+CUST-0010,Massive Dynamic,R&D,United States,Enterprise,2024-05-03
+CUST-0011,Cyberdyne Systems,Robotics,United States,Starter,2024-12-25
+CUST-0012,Wonka Industries,Food & Beverage,United Kingdom,Starter,2024-07-04
+CUST-0013,Gringotts Financial,Financial Services,United Kingdom,Enterprise,2026-02-21
+CUST-0014,Vandelay Industries,Import/Export,United States,Professional,2025-09-17
+CUST-0015,Prestige Worldwide,Media,United States,Starter,2025-03-16
+CUST-0016,Dunder Mifflin,Paper & Office Supplies,United States,Enterprise,2025-07-22
+CUST-0017,Sterling Cooper,Advertising,United States,Starter,2025-03-20
+CUST-0018,Bluth Company,Real Estate,United States,Starter,2025-02-03
+CUST-0019,Monsters Inc,Energy,United States,Professional,2025-03-12
+CUST-0020,Weyland-Yutani,Aerospace,United States,Enterprise,2026-01-14
+CUST-0021,Pied Piper,Technology,United States,Starter,2024-08-27
+CUST-0022,Los Pollos Hermanos,Food & Beverage,United States,Starter,2025-02-05
+CUST-0023,Nakatomi Trading,Real Estate,Japan,Enterprise,2025-05-03
+CUST-0024,Oceanic Airlines,Aviation,Australia,Enterprise,2024-06-04
+CUST-0025,Tyrell Corporation,Biotech,United States,Professional,2025-02-22
+CUST-0026,Aperture Science,R&D,United States,Starter,2025-12-18
+CUST-0027,Genco Pura Olive Oil,Food & Beverage,Italy,Enterprise,2025-07-09
+CUST-0028,Springfield Nuclear,Energy,United States,Enterprise,2025-12-08
+CUST-0029,Buy N Large,Retail,United States,Professional,2025-11-16
+CUST-0030,Wonderland Media,Media,Canada,Professional,2024-11-20

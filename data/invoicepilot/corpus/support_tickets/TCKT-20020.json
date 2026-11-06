@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20020",
+  "created_at": "2026-05-20T11:42:00Z",
+  "customer_id": "CUST-0022",
+  "company": "Los Pollos Hermanos",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Idempotency error IP-4090",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "idempotency"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Los Pollos Hermanos admin",
+      "sent_at": "2026-05-20T11:42:00Z",
+      "body": "Our retries fail with 409 IP-4090. We reuse the Idempotency-Key from the first attempt."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-05-20T14:50:00Z",
+      "body": "IP-4090 means the Idempotency-Key was reused with a different request body. Retries must send exactly the same body with the same key. This error is not retryable as-is. If the first request is still running you would get IP-4091 instead, which you can retry after a second."
+    }
+  ]
+}

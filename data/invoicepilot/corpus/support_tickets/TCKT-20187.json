@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20187",
+  "created_at": "2026-05-31T08:57:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.3.0",
+  "subject": "Python SDK retries",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "sdk"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-05-31T08:57:00Z",
+      "body": "Do we need our own retry logic with the Python SDK?"
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-05-31T13:19:00Z",
+      "body": "The Python SDK retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff, up to max_retries (default 2). It never retries 4xx validation errors like IP-4220. Pass idempotency_key on creates so retries are safe."
+    },
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-06-01T07:56:00Z",
+      "body": "That's not great, but we'll use the workaround."
+    }
+  ]
+}

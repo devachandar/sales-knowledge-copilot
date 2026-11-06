@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20007",
+  "created_at": "2026-02-20T09:09:00Z",
+  "customer_id": "CUST-0016",
+  "company": "Dunder Mifflin",
+  "plan": "Enterprise",
+  "product_version": "2.2.0",
+  "subject": "429 IP-4290 during nightly import",
+  "status": "Open",
+  "tags": [
+    "api",
+    "rate-limit"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Dunder Mifflin admin",
+      "sent_at": "2026-02-20T09:09:00Z",
+      "body": "We keep hitting IP-4290. Can you raise our rate limit?"
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-02-20T10:47:00Z",
+      "body": "IP-4290 means the per-minute rate limit was reached. Your plan allows 1,000 requests per minute. Wait for the number of seconds in the Retry-After header, then retry. If you run many requests in parallel, also watch for IP-4291, which is the separate limit of 10 requests in flight."
+    }
+  ]
+}

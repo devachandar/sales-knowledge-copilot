@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20041",
+  "created_at": "2026-10-15T08:31:00Z",
+  "customer_id": "CUST-0013",
+  "company": "Gringotts Financial",
+  "plan": "Enterprise",
+  "product_version": "2.3.1",
+  "subject": "PDF only shows the first page",
+  "status": "Linked to bug",
+  "tags": [
+    "invoicing",
+    "pdf",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2310-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Gringotts Financial admin",
+      "sent_at": "2026-10-15T08:31:00Z",
+      "body": "Client says the PDF we sent is missing items."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-10-16T10:28:00Z",
+      "body": "This is BUG-2310-02 (High, open): invoices with more than 25 line items export as a single-page PDF. Send the invoice by email link instead; the online view and the portal show every line. Or keep invoices to 25 lines or fewer."
+    }
+  ]
+}

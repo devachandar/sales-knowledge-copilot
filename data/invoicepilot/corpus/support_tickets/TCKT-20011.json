@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20011",
+  "created_at": "2026-03-24T13:13:00Z",
+  "customer_id": "CUST-0004",
+  "company": "Initech",
+  "plan": "Enterprise",
+  "product_version": "2.2.1",
+  "subject": "What is IP-4291?",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "rate-limit"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Initech admin",
+      "sent_at": "2026-03-24T13:13:00Z",
+      "body": "We moved our sync to 16 parallel workers and now get IP-4291. We're well under our per-minute limit."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-03-24T18:39:00Z",
+      "body": "IP-4291 is the concurrency limit: at most 10 requests in flight per API key, on every plan. IP-4290 is the per-minute limit. Keep 10 or fewer requests in parallel and retry after Retry-After."
+    }
+  ]
+}

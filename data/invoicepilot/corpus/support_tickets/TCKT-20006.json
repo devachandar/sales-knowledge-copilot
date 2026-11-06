@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20006",
+  "created_at": "2026-02-12T14:09:00Z",
+  "customer_id": "CUST-0021",
+  "company": "Pied Piper",
+  "plan": "Starter",
+  "product_version": "2.2.0",
+  "subject": "IP-4290 rate limit errors",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "rate-limit"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Pied Piper admin",
+      "sent_at": "2026-02-12T14:09:00Z",
+      "body": "We keep hitting IP-4290. Can you raise our rate limit?"
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-02-13T16:16:00Z",
+      "body": "IP-4290 means the per-minute rate limit was reached. Your plan allows 60 requests per minute. Wait for the number of seconds in the Retry-After header, then retry. If you run many requests in parallel, also watch for IP-4291, which is the separate limit of 10 requests in flight."
+    }
+  ]
+}

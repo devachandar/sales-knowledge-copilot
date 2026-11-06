@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20019",
+  "created_at": "2026-07-07T12:59:00Z",
+  "customer_id": "CUST-0017",
+  "company": "Sterling Cooper",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Idempotency error IP-4090",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "idempotency"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Sterling Cooper admin",
+      "sent_at": "2026-07-07T12:59:00Z",
+      "body": "Our retries fail with 409 IP-4090. We reuse the Idempotency-Key from the first attempt."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-07-08T08:57:00Z",
+      "body": "IP-4090 means the Idempotency-Key was reused with a different request body. Retries must send exactly the same body with the same key. This error is not retryable as-is. If the first request is still running you would get IP-4091 instead, which you can retry after a second."
+    },
+    {
+      "from": "customer",
+      "name": "Sterling Cooper admin",
+      "sent_at": "2026-07-09T02:07:00Z",
+      "body": "That's not great, but we'll use the workaround."
+    }
+  ]
+}

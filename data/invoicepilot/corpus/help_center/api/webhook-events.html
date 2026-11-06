@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Webhook event types | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/webhook-events">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-06-15">
+<meta name="applies-to-version" content="2.3.0+">
+<meta name="available-on-plans" content="Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Webhook event types</nav>
+<main>
+<article>
+<h1>Webhook event types</h1>
+<p class="updated">Last updated: 2026-06-15</p>
+<p class="applies">Applies to: InvoicePilot 2.3.0+</p>
+<p class="plans">Available on: Professional, Enterprise</p>
+<p>Every event has an id starting with evt_, a type, created_at in UTC, and a data object.</p>
+<table><thead><tr><th>Event type</th><th>Sent when</th></tr></thead><tbody><tr><td>invoice.created</td><td>An invoice was created (draft or sent)</td></tr><tr><td>invoice.sent</td><td>An invoice was emailed or marked as sent</td></tr><tr><td>invoice.viewed</td><td>The client opened the invoice in the portal</td></tr><tr><td>invoice.partially_paid</td><td>A payment covered part of the invoice</td></tr><tr><td>invoice.paid</td><td>The invoice balance reached zero</td></tr><tr><td>invoice.overdue</td><td>The due date passed with a balance left</td></tr><tr><td>invoice.voided</td><td>The invoice was voided</td></tr><tr><td>payment.created</td><td>A payment was recorded, including portal payments</td></tr><tr><td>payment.deleted</td><td>A payment was deleted and its invoices reopened</td></tr><tr><td>customer.created</td><td>A customer was created</td></tr><tr><td>customer.updated</td><td>A customer's details changed</td></tr><tr><td>estimate.accepted</td><td>The client accepted an estimate</td></tr><tr><td>estimate.declined</td><td>The client declined an estimate</td></tr><tr><td>recurring_invoice.generated</td><td>A recurring profile generated an invoice</td></tr><tr><td>bank_transaction.matched</td><td>A bank transaction was matched, by auto-match or a person</td></tr></tbody></table>
+<pre><code>{
+  "id": "evt_1Q2w3E4r",
+  "type": "invoice.paid",
+  "created_at": "2026-07-02T14:05:11Z",
+  "data": {"invoice_id": "inv_7731", "amount_paid": 1500.00, "currency": "EUR"}
+}</code></pre>
+<div class="callout note"><strong>Note:</strong> invoice.paid is not sent for voided invoices. Listen for invoice.voided instead.</div>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="webhooks-overview.html">webhooks-overview</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>2,399 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

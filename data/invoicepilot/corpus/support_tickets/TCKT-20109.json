@@ -1,0 +1,36 @@
+{
+  "ticket_id": "TCKT-20109",
+  "created_at": "2026-10-09T13:29:00Z",
+  "customer_id": "CUST-0023",
+  "company": "Nakatomi Trading",
+  "plan": "Enterprise",
+  "product_version": "2.3.1",
+  "subject": "Can't find webhooks",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "webhooks",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Nakatomi Trading admin",
+      "sent_at": "2026-10-09T13:29:00Z",
+      "body": "We're on Enterprise and can't find webhook settings."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-10-10T15:56:00Z",
+      "body": "Webhooks are available on Professional (5 endpoints) and Enterprise (25 endpoints). You're on Enterprise, so look under Settings > Developer > Webhooks."
+    },
+    {
+      "from": "customer",
+      "name": "Nakatomi Trading admin",
+      "sent_at": "2026-10-11T09:19:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

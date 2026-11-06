@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20126",
+  "created_at": "2026-07-03T08:01:00Z",
+  "customer_id": "CUST-0022",
+  "company": "Los Pollos Hermanos",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Can we create our own user roles?",
+  "status": "Solved",
+  "tags": [
+    "account",
+    "roles",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Los Pollos Hermanos admin",
+      "sent_at": "2026-07-03T08:01:00Z",
+      "body": "We're on Starter. Can we make a role that can create invoices but not see reports?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-07-04T04:02:00Z",
+      "body": "Custom roles are Enterprise only. Other plans use the four built-in roles: Admin, Accountant, Staff, and Read-only."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20084",
+  "created_at": "2025-06-18T08:48:00Z",
+  "customer_id": "CUST-0004",
+  "company": "Initech",
+  "plan": "Enterprise",
+  "product_version": "2.0.0",
+  "subject": "Weekend invoice used old exchange rate",
+  "status": "Solved",
+  "tags": [
+    "multi-currency",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2000-03",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Initech admin",
+      "sent_at": "2025-06-18T08:48:00Z",
+      "body": "An EUR invoice we made on Sunday used Friday's rate."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2025-06-19T04:57:00Z",
+      "body": "That's BUG-2000-03: rates aren't refreshed on weekends on 2.0.0. It's fixed in 2.0.1. You can edit the rate on the invoice."
+    },
+    {
+      "from": "customer",
+      "name": "Initech admin",
+      "sent_at": "2025-06-19T22:04:00Z",
+      "body": "Thanks, that worked."
+    }
+  ]
+}

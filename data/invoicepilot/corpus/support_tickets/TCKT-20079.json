@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20079",
+  "created_at": "2026-03-13T10:40:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.2.1",
+  "subject": "Idempotency-Key not working on payments",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "payments",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2210-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-03-13T10:40:00Z",
+      "body": "Our ERP retried POST /v2/payments after a timeout with the same Idempotency-Key and we got two payments."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-03-13T12:39:00Z",
+      "body": "That's BUG-2210-02 (High): on 2.2.1 the Idempotency-Key is ignored on POST /v2/payments only. It's fixed in 2.3.0. Delete the duplicate with DELETE /v2/payments/{payment_id}, which reopens the invoice, and check GET /v2/payments before retrying."
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "run": "baseline_v1_hard",
+  "questions": "hard_questions.json",
+  "date": "2026-10-24T23:03:28",
+  "config": {
+    "strategy": "fixed-500",
+    "k": 5,
+    "prompt": "grounded_v2",
+    "chat_model": "gemini-3.5-flash-lite",
+    "embed_model": "gemini-embedding-001",
+    "dims": 768
+  },
+  "summary": {
+    "exact_token": {
+      "n": 3,
+      "recall@1": 0.6666666666666666,
+      "recall@5": 1.0,
+      "mrr": 0.7777777777777778,
+      "correct": 1.0
+    },
+    "tier_gated": {
+      "n": 3,
+      "recall@1": 1.0,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "correct": 0.6666666666666666
+    },
+    "temporal": {
+      "n": 3,
+      "recall@1": 1.0,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "correct": 0.3333333333333333
+    },
+    "capability": {
+      "n": 6,
+      "recall@1": 0.6666666666666666,
+      "recall@5": 1.0,
+      "mrr": 0.8055555555555555,
+      "correct": 1.0
+    },
+    "ALL": {
+      "n": 15,
+      "recall@1": 0.8,
+      "recall@5": 1.0,
+      "mrr": 0.8777777777777778,
+      "correct": 0.8
+    }
+  },
+  "latency_ms": {
+    "median": 1643.2724999613129,
+    "max": 1861.288207990583
+  },
+  "cost_usd": {
+    "total": 0.0098989,
+    "per_question": 0.0006599266666666667
+  },
+  "rows": [
+    {
+      "id": "h-01",
+      "class": "exact_token",
+      "question": "Is BUG-2310-03 just cosmetic, or does it affect report data?",
+      "expected_docs": [
+        "reports/date-picker-week-start"
+      ],
+      "retrieved": [
+        "reports/date-picker-week-start#0",
+        "release-notes/v2.3.1#2",
+        "support/known-issues#2",
+        "reports/large-date-ranges#0",
+        "release-notes/v2.3.1#1"
+      ],
+      "scores": [
+        0.7717,
+        0.7399,
+        0.7352,
+        0.6923,
+        0.6789
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.03173802492098532,
+      "status": "answered",
+      "answer": "BUG-2310-03 is cosmetic and report data is correct [reports/date-picker-week-start#0].",
+      "citations": [
+        "reports/date-picker-week-start#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 353.951541997958,
+        "db_ms": 86.51620801538229,
+        "llm_ms": 1216.6017499985173
+      },
+      "tokens_in": 1143,
+      "tokens_out": 79,
+      "cost": 0.0005403999999999999
+    },
+    {
+      "id": "h-02",
+      "class": "exact_token",
+      "question": "Which version fixed BUG-2200-02?",
+      "expected_docs": [
+        "api/api-rate-limits",
+        "support/known-issues",
+        "release-notes/v2.3.0"
+      ],
+      "retrieved": [
+        "client-portal/safari-login-loop#0",
+        "release-notes/v2.3.1#1",
+        "support/known-issues#1",
+        "release-notes/v2.2.0#1",
+        "release-notes/v2.3.0#1"
+      ],
+      "scores": [
+        0.7139,
+        0.6972,
+        0.6935,
+        0.6876,
+        0.682
+      ],
+      "hit": true,
+      "first_hit_rank": 3,
+      "margin": -0.020368318512278605,
+      "status": "answered",
+      "answer": "BUG-2200-02 was fixed in version 2.3.0 [support/known-issues#1].",
+      "citations": [
+        "support/known-issues#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 345.39691696409136,
+        "db_ms": 24.993250030092895,
+        "llm_ms": 1258.6798749980517
+      },
+      "tokens_in": 1258,
+      "tokens_out": 74,
+      "cost": 0.0005624
+    },
+    {
+      "id": "h-03",
+      "class": "exact_token",
+      "question": "What severity is BUG-2100-01?",
+      "expected_docs": [
+        "release-notes/v2.1.0",
+        "support/known-issues"
+      ],
+      "retrieved": [
+        "support/known-issues#0",
+        "support/known-issues#1",
+        "support/known-issues#2",
+        "release-notes/v2.1.0#2",
+        "release-notes/v2.3.1#1"
+      ],
+      "scores": [
+        0.6908,
+        0.677,
+        0.6738,
+        0.668,
+        0.6678
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.023034491516230382,
+      "status": "answered",
+      "answer": "BUG-2100-01 has a Low severity [support/known-issues#0].",
+      "citations": [
+        "support/known-issues#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 433.70358302490786,
+        "db_ms": 44.025791983585805,
+        "llm_ms": 988.8290410162881
+      },
+      "tokens_in": 1339,
+      "tokens_out": 68,
+      "cost": 0.0005717
+    },
+    {
+      "id": "h-04",
+      "class": "tier_gated",
+      "question": "How many saved custom reports does a Professional customer get?",
+      "expected_docs": [
+        "reports/custom-report-builder",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "reports/custom-report-builder#0",
+        "account-billing/plans-and-limits#1",
+        "account-billing/plans-and-limits#2",
+        "reports/report-schedules#0",
+        "reports/standard-reports#0"
+      ],
+      "scores": [
+        0.711,
+        0.6837,
+        0.6704,
+        0.6552,
+        0.6401
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.05588340078330545,
+      "status": "answered",
+      "answer": "A Professional customer gets 100 saved custom reports [reports/custom-report-builder#0][account-billing/plans-and-limits#1].",
+      "citations": [
+        "reports/custom-report-builder#0",
+        "account-billing/plans-and-limits#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 347.5531250005588,
+        "db_ms": 43.616540962830186,
+        "llm_ms": 1041.7590829893015
+      },
+      "tokens_in": 1073,
+      "tokens_out": 97,
+      "cost": 0.0005644
+    },
+    {
+      "id": "h-05",
+      "class": "tier_gated",
+      "question": "How many bank accounts can a Professional customer connect?",
+      "expected_docs": [
+        "bank-reconciliation/connect-bank-feed",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "bank-reconciliation/connect-bank-feed#0",
+        "account-billing/plans-and-limits#1",
+        "account-billing/plans-and-limits#0",
+        "support/faq#0",
+        "support/faq#1"
+      ],
+      "scores": [
+        0.712,
+        0.6744,
+        0.665,
+        0.6343,
+        0.6306
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.07769443826381517,
+      "status": "answered",
+      "answer": "A Professional customer can connect up to 10 bank feeds [bank-reconciliation/connect-bank-feed#0].",
+      "citations": [
+        "bank-reconciliation/connect-bank-feed#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 398.67966598831117,
+        "db_ms": 42.3452919931151,
+        "llm_ms": 1045.7422920153476
+      },
+      "tokens_in": 1242,
+      "tokens_out": 77,
+      "cost": 0.0005651
+    },
+    {
+      "id": "h-06",
+      "class": "tier_gated",
+      "question": "What kind of support does an Enterprise customer get?",
+      "expected_docs": [
+        "support/contact-support",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "support/contact-support#0",
+        "account-billing/plans-and-limits#2",
+        "getting-started/invite-users#1",
+        "support/faq#1",
+        "account-billing/plans-and-limits#1"
+      ],
+      "scores": [
+        0.745,
+        0.6921,
+        0.6687,
+        0.6585,
+        0.6583
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.076262624984054,
+      "status": "answered",
+      "answer": "Enterprise customers get priority email, chat, phone, and a named CSM [support/contact-support#0], [account-billing/plans-and-limits#2]. Critical issues on Enterprise, such as a Critical-severity bug, are handled 24/7 [support/contact-support#0].",
+      "citations": [
+        "support/contact-support#0",
+        "account-billing/plans-and-limits#2",
+        "account-billing/plans-and-limits#1"
+      ],
+      "missing": [
+        "4 hours"
+      ],
+      "problems": [],
+      "correct": false,
+      "bucket": "generation_miss",
+      "timings": {
+        "embed_ms": 332.11016695713624,
+        "db_ms": 41.155582992359996,
+        "llm_ms": 1488.0224580410868
+      },
+      "tokens_in": 1055,
+      "tokens_out": 141,
+      "cost": 0.0006690000000000001
+    },
+    {
+      "id": "h-07",
+      "class": "temporal",
+      "question": "On 2.3.0, were recurring invoice schedules calculated in UTC?",
+      "expected_docs": [
+        "recurring-invoices/recurring-invoice-timezones",
+        "release-notes/v2.3.1"
+      ],
+      "retrieved": [
+        "recurring-invoices/recurring-invoice-timezones#0",
+        "recurring-invoices/skipped-recurring-cycle#1",
+        "recurring-invoices/recurring-schedule-local-time#0",
+        "release-notes/v2.3.1#0",
+        "recurring-invoices/skipped-recurring-cycle#0"
+      ],
+      "scores": [
+        0.8424,
+        0.7845,
+        0.7816,
+        0.7556,
+        0.7526
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.057970082066647555,
+      "status": "answered",
+      "answer": "No. On version 2.3.0, recurring invoice schedules were calculated in local time, which caused them to skip a billing cycle when daylight-saving time shifted [recurring-invoices/skipped-recurring-cycle#0]. (UTC calculation was introduced in version 2.3.1 [recurring-invoices/recurring-invoice-timezones#0][release-notes/v2.3.1#0].)",
+      "citations": [
+        "recurring-invoices/skipped-recurring-cycle#0"
+      ],
+      "missing": [],
+      "problems": [
+        "cited in text but not in list: release-notes/v2.3.1#0",
+        "cited in text but not in list: recurring-invoices/recurring-invoice-timezones#0"
+      ],
+      "correct": false,
+      "bucket": "generation_miss",
+      "timings": {
+        "embed_ms": 465.88362503098324,
+        "db_ms": 44.037333980668336,
+        "llm_ms": 1138.1980839651078
+      },
+      "tokens_in": 1094,
+      "tokens_out": 140,
+      "cost": 0.0006781999999999999
+    },
+    {
+      "id": "h-08",
+      "class": "temporal",
+      "question": "Did bank feeds sync every 4 hours for a customer on 2.2.0?",
+      "expected_docs": [
+        "bank-reconciliation/bank-feed-sync",
+        "release-notes/v2.3.0"
+      ],
+      "retrieved": [
+        "bank-reconciliation/bank-feed-sync#0",
+        "community/reconciliation-euro-workaround#0",
+        "release-notes/v2.3.0#1",
+        "bank-reconciliation/bank-feed-faq#0",
+        "release-notes/v2.3.0#2"
+      ],
+      "scores": [
+        0.7941,
+        0.7131,
+        0.7127,
+        0.7091,
+        0.6858
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.08100787766742501,
+      "status": "answered",
+      "answer": "No. Bank feeds synced once a day before version 2.3.0 [bank-reconciliation/bank-feed-sync#0][release-notes/v2.3.0#1]. Note: an older FAQ still says they update once a day [bank-reconciliation/bank-feed-faq#0]; that page appears out of date.",
+      "citations": [
+        "bank-reconciliation/bank-feed-sync#0",
+        "release-notes/v2.3.0#1"
+      ],
+      "missing": [],
+      "problems": [
+        "cited in text but not in list: bank-reconciliation/bank-feed-faq#0"
+      ],
+      "correct": false,
+      "bucket": "generation_miss",
+      "timings": {
+        "embed_ms": 447.37850001547486,
+        "db_ms": 44.90720800822601,
+        "llm_ms": 1234.3308329582214
+      },
+      "tokens_in": 1063,
+      "tokens_out": 142,
+      "cost": 0.0006739
+    },
+    {
+      "id": "h-09",
+      "class": "temporal",
+      "question": "Did API v2 responses include rate-limit headers on 2.2.0?",
+      "expected_docs": [
+        "api/api-rate-limits",
+        "release-notes/v2.3.0",
+        "support/known-issues",
+        "api/migrate-v1-to-v2"
+      ],
+      "retrieved": [
+        "api/api-rate-limits#0",
+        "api/api-rate-limits#1",
+        "release-notes/v2.2.0#1",
+        "community/api-v1-still-works#0",
+        "api/migrate-v1-to-v2#0"
+      ],
+      "scores": [
+        0.7327,
+        0.7187,
+        0.697,
+        0.6887,
+        0.6882
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.03575275079175744,
+      "status": "answered",
+      "answer": "No, v2 responses did not include rate-limit headers in version 2.2.0 [api/api-rate-limits#0] [api/api-rate-limits#1]. The documentation notes that in version 2.2.0 these headers were missing (BUG-2200-02), and they were fixed in version 2.3.0 [api/api-rate-limits#0] [api/api-rate-limits#1] [api/migrate-v1-to-v2#0].",
+      "citations": [
+        "api/api-rate-limits#0",
+        "api/api-rate-limits#1",
+        "api/migrate-v1-to-v2#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 512.2230420238338,
+        "db_ms": 46.96233296999708,
+        "llm_ms": 1182.9889579676092
+      },
+      "tokens_in": 1174,
+      "tokens_out": 196,
+      "cost": 0.0008422
+    },
+    {
+      "id": "h-10",
+      "class": "capability",
+      "question": "A client says they keep getting sent back to the sign-in screen in their Mac browser right after logging in. Is that a known problem?",
+      "expected_docs": [
+        "client-portal/safari-login-loop",
+        "support/known-issues",
+        "release-notes/v2.2.0"
+      ],
+      "retrieved": [
+        "client-portal/safari-login-loop#0",
+        "release-notes/v2.2.0#2",
+        "support/known-issues#1",
+        "account-billing/renewals#0",
+        "release-notes/v2.2.0#1"
+      ],
+      "scores": [
+        0.7113,
+        0.645,
+        0.6236,
+        0.6123,
+        0.5962
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.09898054729827621,
+      "status": "answered",
+      "answer": "Yes, this is a known issue (BUG-2200-01) where Safari users were redirected back to the login page after successful authentication due to a cookie SameSite misconfiguration [client-portal/safari-login-loop#0][release-notes/v2.2.0#1]. It was fixed in version 2.2.0 [client-portal/safari-login-loop#0][release-notes/v2.2.0#1]. If a client still experiences the loop, they should clear their cookies for portal.invoicepilot.example and sign in again [client-portal/safari-login-loop#0].",
+      "citations": [
+        "client-portal/safari-login-loop#0",
+        "release-notes/v2.2.0#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 343.2784170145169,
+        "db_ms": 45.159082976169884,
+        "llm_ms": 1248.6037079943344
+      },
+      "tokens_in": 1155,
+      "tokens_out": 209,
+      "cost": 0.000869
+    },
+    {
+      "id": "h-11",
+      "class": "capability",
+      "question": "A customer with a really long invoice says the PDF they sent only showed some of the items. Is that on our side?",
+      "expected_docs": [
+        "invoicing/line-items-and-long-invoices",
+        "invoicing/export-invoice-pdf",
+        "release-notes/v2.3.1"
+      ],
+      "retrieved": [
+        "invoicing/line-items-and-long-invoices#1",
+        "invoicing/line-items-and-long-invoices#0",
+        "invoicing/export-invoice-pdf#0",
+        "invoicing/bulk-invoice-actions#0",
+        "release-notes/v2.1.0#2"
+      ],
+      "scores": [
+        0.8153,
+        0.7909,
+        0.7046,
+        0.6831,
+        0.6828
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.1322528431326827,
+      "status": "answered",
+      "answer": "Yes, this is a known issue (BUG-2310-02) in version 2.3.1 where invoices with more than 25 line items export as a single-page PDF and silently drop the remaining lines [invoicing/line-items-and-long-invoices#0][invoicing/export-invoice-pdf#0].",
+      "citations": [
+        "invoicing/line-items-and-long-invoices#0",
+        "invoicing/export-invoice-pdf#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 335.55699995486066,
+        "db_ms": 43.98687503999099,
+        "llm_ms": 1263.7286249664612
+      },
+      "tokens_in": 1102,
+      "tokens_out": 145,
+      "cost": 0.0006930999999999999
+    },
+    {
+      "id": "h-12",
+      "class": "capability",
+      "question": "Can we make the page where our clients pay look like our own company?",
+      "expected_docs": [
+        "client-portal/portal-branding",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "client-portal/portal-branding#0",
+        "client-portal/client-portal-overview#0",
+        "release-notes/v2.2.0#1",
+        "support/faq#0",
+        "invoicing/invoice-templates#0"
+      ],
+      "scores": [
+        0.6851,
+        0.6816,
+        0.6622,
+        0.6557,
+        0.6491
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.003558011762603175,
+      "status": "answered",
+      "answer": "Yes. You can brand your client portal by adding your logo and accent color so it matches your brand [client-portal/portal-branding#0] [release-notes/v2.2.0#1]. This is available on Professional and Enterprise plans [client-portal/portal-branding#0].",
+      "citations": [
+        "client-portal/portal-branding#0",
+        "release-notes/v2.2.0#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 456.6041249781847,
+        "db_ms": 45.22404202725738,
+        "llm_ms": 1336.832000000868
+      },
+      "tokens_in": 1090,
+      "tokens_out": 128,
+      "cost": 0.000647
+    },
+    {
+      "id": "h-13",
+      "class": "capability",
+      "question": "If an integration retries a create-invoice call after a timeout, how do we avoid ending up with two invoices?",
+      "expected_docs": [
+        "api/api-errors",
+        "api/migrate-v1-to-v2"
+      ],
+      "retrieved": [
+        "api/api-invoices#1",
+        "api/api-invoices#0",
+        "api/api-errors#2",
+        "api/api-errors#1",
+        "recurring-invoices/skipped-recurring-cycle#1"
+      ],
+      "scores": [
+        0.7021,
+        0.6969,
+        0.6965,
+        0.6702,
+        0.6557
+      ],
+      "hit": true,
+      "first_hit_rank": 3,
+      "margin": -0.0056202750946231506,
+      "status": "answered",
+      "answer": "Send an Idempotency-Key header on POST requests [api/api-errors#2]. Retrying with the same key returns the original result instead of creating a duplicate [api/api-errors#2].",
+      "citations": [
+        "api/api-errors#2"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 350.1069999765605,
+        "db_ms": 46.38816701481119,
+        "llm_ms": 1114.628833020106
+      },
+      "tokens_in": 1180,
+      "tokens_out": 90,
+      "cost": 0.000579
+    },
+    {
+      "id": "h-14",
+      "class": "capability",
+      "question": "What can customers do if auto-match leaves their EUR transactions unmatched on 2.3.1?",
+      "expected_docs": [
+        "multi-currency/multi-currency-bank-reconciliation"
+      ],
+      "retrieved": [
+        "community/reconciliation-euro-workaround#0",
+        "multi-currency/multi-currency-bank-reconciliation#1",
+        "bank-reconciliation/auto-match#1",
+        "multi-currency/multi-currency-bank-reconciliation#0",
+        "bank-reconciliation/auto-match#0"
+      ],
+      "scores": [
+        0.8339,
+        0.8071,
+        0.7869,
+        0.7516,
+        0.7364
+      ],
+      "hit": true,
+      "first_hit_rank": 2,
+      "margin": -0.026784901466599953,
+      "status": "answered",
+      "answer": "Customers can use manual matching for foreign-currency transactions until a fix ships [multi-currency/multi-currency-bank-reconciliation#0].",
+      "citations": [
+        "multi-currency/multi-currency-bank-reconciliation#0",
+        "multi-currency/multi-currency-bank-reconciliation#1",
+        "community/reconciliation-euro-workaround#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 344.4411249947734,
+        "db_ms": 43.636291986331344,
+        "llm_ms": 1178.4638750250451
+      },
+      "tokens_in": 1022,
+      "tokens_out": 116,
+      "cost": 0.0005966
+    },
+    {
+      "id": "h-15",
+      "class": "capability",
+      "question": "Which API errors should an integration retry?",
+      "expected_docs": [
+        "api/api-errors"
+      ],
+      "retrieved": [
+        "api/api-errors#1",
+        "api/api-errors#0",
+        "api/api-errors#2",
+        "api/api-rate-limits#1",
+        "api/api-rate-limits#0"
+      ],
+      "scores": [
+        0.7629,
+        0.7408,
+        0.7299,
+        0.7188,
+        0.6815
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.04410399241252194,
+      "status": "answered",
+      "answer": "Errors that should be retried are HTTP 429 (Rate limit exceeded; wait for Retry-After) [api/api-errors#1], HTTP 500 (Internal error, with backoff) [api/api-errors#1], and HTTP 503 (Bank feed provider unavailable, with backoff) [api/api-errors#1]. Errors 400, 401, 403, 404, 409, and 422 should not be retried [api/api-errors#0][api/api-errors#1].",
+      "citations": [
+        "api/api-errors#0",
+        "api/api-errors#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 401.8657500273548,
+        "db_ms": 43.63829200156033,
+        "llm_ms": 1288.0717919906601
+      },
+      "tokens_in": 1248,
+      "tokens_out": 189,
+      "cost": 0.0008469
+    }
+  ]
+}

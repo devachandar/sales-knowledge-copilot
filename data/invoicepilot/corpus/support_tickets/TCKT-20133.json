@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20133",
+  "created_at": "2026-02-16T08:52:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.2.0",
+  "subject": "Bulk send limit",
+  "status": "Pending",
+  "tags": [
+    "invoicing",
+    "bulk"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-02-16T08:52:00Z",
+      "body": "How many invoices can we send at once from the list? We have about 300 at month end."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-02-16T09:49:00Z",
+      "body": "You can select up to 100 invoices per bulk action. For 300, filter the list and repeat three times."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20056",
+  "created_at": "2026-04-02T08:51:00Z",
+  "customer_id": "CUST-0022",
+  "company": "Los Pollos Hermanos",
+  "plan": "Starter",
+  "product_version": "2.2.1",
+  "subject": "Recurring invoice didn't go out",
+  "status": "Solved",
+  "tags": [
+    "recurring-invoices",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2100-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Los Pollos Hermanos admin",
+      "sent_at": "2026-04-02T08:51:00Z",
+      "body": "One of our monthly recurring invoices just didn't send this cycle. Others did."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-04-02T11:47:00Z",
+      "body": "This looks like BUG-2100-02: recurring schedules calculated in local time can skip a cycle when daylight-saving time changes. It is fixed in 2.3.1, which moves schedules to UTC. For now, send the missed invoice by hand from the profile."
+    }
+  ]
+}

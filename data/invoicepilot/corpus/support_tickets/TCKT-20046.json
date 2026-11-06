@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20046",
+  "created_at": "2026-08-20T15:26:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.3.1",
+  "subject": "Week start wrong in report builder",
+  "status": "Linked to bug",
+  "tags": [
+    "reports",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2310-03",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-08-20T15:26:00Z",
+      "body": "Our locale is set to Monday but the report date picker starts weeks on Sunday. Are our weekly numbers wrong?"
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-08-20T18:18:00Z",
+      "body": "That's BUG-2310-03 (Low, open). It is cosmetic: the picker always starts on Sunday, but the report data is correct."
+    }
+  ]
+}

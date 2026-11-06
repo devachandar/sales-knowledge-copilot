@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20090",
+  "created_at": "2025-06-13T08:01:00Z",
+  "customer_id": "CUST-0006",
+  "company": "Stark Industries",
+  "plan": "Starter",
+  "product_version": "2.0.0",
+  "subject": "Gap in invoice numbers",
+  "status": "Solved",
+  "tags": [
+    "invoicing",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2000-04",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Stark Industries admin",
+      "sent_at": "2025-06-13T08:01:00Z",
+      "body": "We deleted a draft and now INV-000213 is missing from the sequence. Our auditor asked about it."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2025-06-13T09:00:00Z",
+      "body": "That's BUG-2000-04: on 2.0.0, deleting a draft uses up its number. It's fixed in 2.0.1. The gap stays, but the Invoice Register report shows the deleted draft for your auditor."
+    },
+    {
+      "from": "customer",
+      "name": "Stark Industries admin",
+      "sent_at": "2025-06-14T03:22:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

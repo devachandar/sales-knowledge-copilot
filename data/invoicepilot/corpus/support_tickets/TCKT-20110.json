@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20110",
+  "created_at": "2026-08-11T11:20:00Z",
+  "customer_id": "CUST-0011",
+  "company": "Cyberdyne Systems",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Can't find webhooks",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "webhooks",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Cyberdyne Systems admin",
+      "sent_at": "2026-08-11T11:20:00Z",
+      "body": "We're on Starter and can't find webhook settings."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-08-11T13:16:00Z",
+      "body": "Webhooks are available on Professional (5 endpoints) and Enterprise (25 endpoints). You're on Starter, so you'd need to upgrade to use them."
+    }
+  ]
+}

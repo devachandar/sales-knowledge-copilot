@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20164",
+  "created_at": "2025-09-23T11:09:00Z",
+  "customer_id": "CUST-0005",
+  "company": "Umbrella Corp",
+  "plan": "Starter",
+  "product_version": "2.1.0",
+  "subject": "Adding seats mid-year",
+  "status": "Open",
+  "tags": [
+    "billing",
+    "seats"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Umbrella Corp admin",
+      "sent_at": "2025-09-23T11:09:00Z",
+      "body": "If we add 10 seats now, are they prorated to our renewal date?"
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2025-09-24T13:36:00Z",
+      "body": "Yes, added seats are prorated to your next renewal date."
+    },
+    {
+      "from": "customer",
+      "name": "Umbrella Corp admin",
+      "sent_at": "2025-09-25T07:52:00Z",
+      "body": "Thanks, that worked."
+    }
+  ]
+}

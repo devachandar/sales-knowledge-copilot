@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Troubleshooting: a recurring invoice skipped a cycle | InvoicePilot Help Center</title>
+<meta name="doc-id" content="recurring-invoices/skipped-recurring-cycle">
+<meta name="source-type" content="help_article">
+<meta name="last-updated" content="2026-08-15">
+<meta name="applies-to-version" content="2.1.0+">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Recurring Invoices &gt; Troubleshooting: a recurring invoice skipped a cycle</nav>
+<main>
+<article>
+<h1>Troubleshooting: a recurring invoice skipped a cycle</h1>
+<p class="updated">Last updated: 2026-08-15</p>
+<p class="applies">Applies to: InvoicePilot 2.1.0+</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>Cause: BUG-2100-02, "Recurring invoices skip a cycle across DST changes". Recurring invoice schedules calculated in local time skipped a billing cycle when daylight-saving time shifted, causing missed invoices for some customers.</p>
+<p>Affected versions: 2.1.0 through 2.3.0. Fixed in 2.3.1.</p>
+<h2>If you are on 2.3.1</h2>
+<p>The fix is already applied. To recover a missed invoice from before the fix, open the recurring profile and click Create Missed Invoice.</p>
+<h2>If you are on an older version</h2>
+<p>Upgrade to 2.3.x. As a stopgap, avoid schedules that send between 01:00 and 03:00 local time on DST change days.</p>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="recurring-invoice-timezones.html">recurring-invoice-timezones</a></li><li><a href="known-issues.html">known-issues</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>1,204 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

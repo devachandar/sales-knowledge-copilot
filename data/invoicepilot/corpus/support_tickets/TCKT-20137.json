@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20137",
+  "created_at": "2025-06-10T12:46:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.0.0",
+  "subject": "How many bank accounts can we connect?",
+  "status": "Solved",
+  "tags": [
+    "bank-feeds",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2025-06-10T12:46:00Z",
+      "body": "We're on Professional. How many bank feeds can we connect?"
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2025-06-11T08:10:00Z",
+      "body": "Starter includes 2 connected bank feeds, Professional 10, and Enterprise unlimited. You're on Professional, so your limit is 10."
+    },
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2025-06-12T02:23:00Z",
+      "body": "That's not great, but we'll use the workaround."
+    }
+  ]
+}

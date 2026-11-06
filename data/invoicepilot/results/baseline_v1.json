@@ -1,0 +1,1145 @@
+{
+  "run": "baseline_v1",
+  "questions": "seed_questions.json",
+  "date": "2026-10-24T23:02:54",
+  "config": {
+    "strategy": "fixed-500",
+    "k": 5,
+    "prompt": "grounded_v2",
+    "chat_model": "gemini-3.5-flash-lite",
+    "embed_model": "gemini-embedding-001",
+    "dims": 768
+  },
+  "summary": {
+    "capability": {
+      "n": 8,
+      "recall@1": 0.875,
+      "recall@5": 1.0,
+      "mrr": 0.9375,
+      "correct": 1.0
+    },
+    "exact_token": {
+      "n": 6,
+      "recall@1": 1.0,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "correct": 1.0
+    },
+    "tier_gated": {
+      "n": 6,
+      "recall@1": 1.0,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "correct": 1.0
+    },
+    "temporal": {
+      "n": 5,
+      "recall@1": 1.0,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "correct": 0.8
+    },
+    "ALL": {
+      "n": 25,
+      "recall@1": 0.96,
+      "recall@5": 1.0,
+      "mrr": 0.98,
+      "correct": 0.96
+    }
+  },
+  "latency_ms": {
+    "median": 1598.6454579979181,
+    "max": 2047.2283749841154
+  },
+  "cost_usd": {
+    "total": 0.0144683,
+    "per_question": 0.000578732
+  },
+  "rows": [
+    {
+      "id": "c1-01",
+      "class": "capability",
+      "question": "Can clients pay invoices online themselves?",
+      "expected_docs": [
+        "client-portal/client-portal-overview",
+        "release-notes/v2.2.0"
+      ],
+      "retrieved": [
+        "client-portal/client-portal-overview#0",
+        "release-notes/v2.2.0#0",
+        "api/api-payments#0",
+        "invoicing/payment-reminders#0",
+        "invoicing/line-items-and-long-invoices#1"
+      ],
+      "scores": [
+        0.7355,
+        0.662,
+        0.6584,
+        0.6497,
+        0.644
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.07702847759453058,
+      "status": "answered",
+      "answer": "Yes, clients can pay invoices online themselves from the single self-serve page provided by Client Portal 2.0 [client-portal/client-portal-overview#0][release-notes/v2.2.0#0].",
+      "citations": [
+        "client-portal/client-portal-overview#0",
+        "release-notes/v2.2.0#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 494.15737501112744,
+        "db_ms": 114.44133403711021,
+        "llm_ms": 1153.6814580322243
+      },
+      "tokens_in": 1048,
+      "tokens_out": 115,
+      "cost": 0.0006019
+    },
+    {
+      "id": "c1-02",
+      "class": "capability",
+      "question": "A customer sent an invoice by mistake. Can they just delete it?",
+      "expected_docs": [
+        "invoicing/void-or-delete-invoice"
+      ],
+      "retrieved": [
+        "invoicing/void-or-delete-invoice#0",
+        "api/api-invoices#1",
+        "invoicing/bulk-invoice-actions#0",
+        "recurring-invoices/skipped-recurring-cycle#1",
+        "api/api-invoices#0"
+      ],
+      "scores": [
+        0.7517,
+        0.6689,
+        0.654,
+        0.6404,
+        0.6401
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.08279373766245157,
+      "status": "answered",
+      "answer": "No, sent invoices cannot be deleted [invoicing/void-or-delete-invoice#0]. Instead, you should void the sent invoice so that your records remain complete [invoicing/void-or-delete-invoice#0].",
+      "citations": [
+        "invoicing/void-or-delete-invoice#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 373.28441598219797,
+        "db_ms": 47.28012502891943,
+        "llm_ms": 1178.0809169868007
+      },
+      "tokens_in": 1122,
+      "tokens_out": 100,
+      "cost": 0.0005866000000000001
+    },
+    {
+      "id": "c1-03",
+      "class": "capability",
+      "question": "If we change our sales tax rate, do our old invoices get updated too?",
+      "expected_docs": [
+        "invoicing/tax-rates"
+      ],
+      "retrieved": [
+        "invoicing/tax-rates#0",
+        "support/faq#0",
+        "invoicing/void-or-delete-invoice#0",
+        "recurring-invoices/recurring-schedule-local-time#0",
+        "release-notes/v2.1.0#2"
+      ],
+      "scores": [
+        0.7123,
+        0.6799,
+        0.6623,
+        0.6622,
+        0.6587
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.032413033004803915,
+      "status": "answered",
+      "answer": "No. Changing a tax rate only affects new invoices, and existing invoices keep the rate they were created with [invoicing/tax-rates#0].",
+      "citations": [
+        "invoicing/tax-rates#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 372.08749999990687,
+        "db_ms": 32.19200001331046,
+        "llm_ms": 1158.8622499839403
+      },
+      "tokens_in": 1111,
+      "tokens_out": 78,
+      "cost": 0.0005283
+    },
+    {
+      "id": "c1-04",
+      "class": "capability",
+      "question": "We bill some clients monthly on the 30th. What happens in February?",
+      "expected_docs": [
+        "recurring-invoices/recurring-cadences"
+      ],
+      "retrieved": [
+        "recurring-invoices/recurring-cadences#0",
+        "recurring-invoices/recurring-schedule-local-time#0",
+        "recurring-invoices/skipped-recurring-cycle#1",
+        "recurring-invoices/recurring-invoice-timezones#0",
+        "recurring-invoices/skipped-recurring-cycle#0"
+      ],
+      "scores": [
+        0.7113,
+        0.6771,
+        0.6695,
+        0.665,
+        0.6636
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.03426643917279093,
+      "status": "answered",
+      "answer": "If a monthly schedule falls on a day that does not exist, like February 30, the invoice goes out on the last day of that month [recurring-invoices/recurring-cadences#0].",
+      "citations": [
+        "recurring-invoices/recurring-cadences#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 381.05062500108033,
+        "db_ms": 32.623167033307254,
+        "llm_ms": 1190.2501250151545
+      },
+      "tokens_in": 1093,
+      "tokens_out": 93,
+      "cost": 0.0005604
+    },
+    {
+      "id": "c1-05",
+      "class": "capability",
+      "question": "How well does receipt scanning work on handwritten receipts?",
+      "expected_docs": [
+        "expenses/receipt-scanning",
+        "release-notes/v2.1.0"
+      ],
+      "retrieved": [
+        "expenses/receipt-scanning#0",
+        "support/known-issues#1",
+        "release-notes/v2.1.0#2",
+        "release-notes/v2.1.0#0",
+        "multi-currency/multi-currency-bank-reconciliation#0"
+      ],
+      "scores": [
+        0.7644,
+        0.6288,
+        0.6264,
+        0.6042,
+        0.5969
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.13552791407003162,
+      "status": "answered",
+      "answer": "OCR accuracy on handwritten receipts is below 40% [expenses/receipt-scanning#0].",
+      "citations": [
+        "expenses/receipt-scanning#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 368.0743330041878,
+        "db_ms": 43.22749999118969,
+        "llm_ms": 1186.622457986232
+      },
+      "tokens_in": 1243,
+      "tokens_out": 66,
+      "cost": 0.0005379
+    },
+    {
+      "id": "c1-06",
+      "class": "capability",
+      "question": "Someone on the team confirmed the wrong bank match. Can it be undone?",
+      "expected_docs": [
+        "bank-reconciliation/review-suggested-matches"
+      ],
+      "retrieved": [
+        "bank-reconciliation/review-suggested-matches#0",
+        "bank-reconciliation/auto-match#1",
+        "bank-reconciliation/manual-reconciliation#0",
+        "bank-reconciliation/auto-match#0",
+        "multi-currency/multi-currency-bank-reconciliation#1"
+      ],
+      "scores": [
+        0.7112,
+        0.6793,
+        0.6631,
+        0.6616,
+        0.6611
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.03184022934436204,
+      "status": "answered",
+      "answer": "Yes, you can undo a confirmed match from the transaction's history within 30 days [bank-reconciliation/review-suggested-matches#0].",
+      "citations": [
+        "bank-reconciliation/review-suggested-matches#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 445.15070802299306,
+        "db_ms": 41.804833977948874,
+        "llm_ms": 1046.5888750040904
+      },
+      "tokens_in": 1019,
+      "tokens_out": 86,
+      "cost": 0.0005207
+    },
+    {
+      "id": "c1-07",
+      "class": "capability",
+      "question": "How long does a new user have to accept their invite?",
+      "expected_docs": [
+        "getting-started/invite-users"
+      ],
+      "retrieved": [
+        "getting-started/invite-users#0",
+        "account-billing/renewals#0",
+        "account-billing/seats-and-add-seats#0",
+        "recurring-invoices/recurring-schedule-local-time#0",
+        "recurring-invoices/skipped-recurring-cycle#1"
+      ],
+      "scores": [
+        0.6421,
+        0.6349,
+        0.5958,
+        0.5779,
+        0.5721
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.00727705588756955,
+      "status": "answered",
+      "answer": "The invite link expires after 7 days [getting-started/invite-users#0].",
+      "citations": [
+        "getting-started/invite-users#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 360.897250007838,
+        "db_ms": 16.684416972566396,
+        "llm_ms": 1154.304958996363
+      },
+      "tokens_in": 1076,
+      "tokens_out": 67,
+      "cost": 0.0004902999999999999
+    },
+    {
+      "id": "c1-08",
+      "class": "capability",
+      "question": "Can a customer switch their base currency after they've been using InvoicePilot for a while?",
+      "expected_docs": [
+        "getting-started/create-organization"
+      ],
+      "retrieved": [
+        "multi-currency/exchange-rates#0",
+        "getting-started/create-organization#1",
+        "release-notes/v2.0.0#0",
+        "getting-started/create-organization#0",
+        "release-notes/v2.0.0#2"
+      ],
+      "scores": [
+        0.7472,
+        0.7134,
+        0.7118,
+        0.7094,
+        0.7047
+      ],
+      "hit": true,
+      "first_hit_rank": 2,
+      "margin": -0.033797215674725045,
+      "status": "answered",
+      "answer": "No, your base currency cannot be changed after your first transaction [getting-started/create-organization#0].",
+      "citations": [
+        "getting-started/create-organization#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 415.60904198559,
+        "db_ms": 39.884583035018295,
+        "llm_ms": 1186.4415839663707
+      },
+      "tokens_in": 947,
+      "tokens_out": 71,
+      "cost": 0.00046160000000000005
+    },
+    {
+      "id": "c2-01",
+      "class": "exact_token",
+      "question": "A customer's integration is getting IP-4090 errors. What's going on?",
+      "expected_docs": [
+        "api/api-errors"
+      ],
+      "retrieved": [
+        "api/api-errors#1",
+        "api/api-errors#0",
+        "api/api-rate-limits#1",
+        "api/api-rate-limits#0",
+        "release-notes/v2.2.0#2"
+      ],
+      "scores": [
+        0.7234,
+        0.7056,
+        0.6983,
+        0.6558,
+        0.6368
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.025091399718415786,
+      "status": "answered",
+      "answer": "An IP-4090 error means that the Idempotency-Key was reused with a different request body [api/api-errors#1].",
+      "citations": [
+        "api/api-errors#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 512.6180829829536,
+        "db_ms": 45.47920904587954,
+        "llm_ms": 1101.6963750007562
+      },
+      "tokens_in": 1251,
+      "tokens_out": 78,
+      "cost": 0.0005702999999999999
+    },
+    {
+      "id": "c2-02",
+      "class": "exact_token",
+      "question": "A developer's API key starts with ip_test_. Is that a production key?",
+      "expected_docs": [
+        "api/api-authentication"
+      ],
+      "retrieved": [
+        "api/api-authentication#0",
+        "api/api-errors#0",
+        "api/api-quickstart-2025#0",
+        "api/api-overview#0",
+        "api/api-rate-limits#0"
+      ],
+      "scores": [
+        0.7293,
+        0.6684,
+        0.6649,
+        0.6602,
+        0.6432
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.06088190293522655,
+      "status": "answered",
+      "answer": "No. Keys start with ip_live_ for production and ip_test_ for the sandbox [api/api-authentication#0].",
+      "citations": [
+        "api/api-authentication#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 364.6451669628732,
+        "db_ms": 43.91570802545175,
+        "llm_ms": 1109.5180420088582
+      },
+      "tokens_in": 1280,
+      "tokens_out": 74,
+      "cost": 0.0005690000000000001
+    },
+    {
+      "id": "c2-03",
+      "class": "exact_token",
+      "question": "What is BUG-2300-01, and is there a workaround?",
+      "expected_docs": [
+        "reports/large-date-ranges",
+        "reports/custom-report-builder"
+      ],
+      "retrieved": [
+        "reports/large-date-ranges#0",
+        "release-notes/v2.3.0#2",
+        "support/known-issues#2",
+        "release-notes/v2.3.1#2",
+        "reports/date-picker-week-start#0"
+      ],
+      "scores": [
+        0.7385,
+        0.6999,
+        0.6989,
+        0.6888,
+        0.6843
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.038575439380747145,
+      "status": "answered",
+      "answer": "BUG-2300-01 is a bug where reports spanning more than 3 years of transactions time out instead of paginating results [reports/large-date-ranges#0]. The workarounds are to split the report into ranges of 3 years or less and combine the exports, or use API v2, which pages through results with a cursor [reports/large-date-ranges#0].",
+      "citations": [
+        "reports/large-date-ranges#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 421.6666670399718,
+        "db_ms": 42.16354095842689,
+        "llm_ms": 1196.7697499785572
+      },
+      "tokens_in": 1115,
+      "tokens_out": 133,
+      "cost": 0.0006670000000000001
+    },
+    {
+      "id": "c2-04",
+      "class": "exact_token",
+      "question": "The API returned 503 with IP-5030. What does that mean, and should the integration retry?",
+      "expected_docs": [
+        "api/api-errors"
+      ],
+      "retrieved": [
+        "api/api-errors#1",
+        "api/api-rate-limits#1",
+        "api/api-errors#0",
+        "api/api-rate-limits#0",
+        "api/api-errors#2"
+      ],
+      "scores": [
+        0.7745,
+        0.7297,
+        0.7184,
+        0.6954,
+        0.6697
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.04479384539225317,
+      "status": "answered",
+      "answer": "An HTTP 503 status with code IP-5030 means the bank feed provider unavailable, and the integration should retry with backoff [api/api-errors#1].",
+      "citations": [
+        "api/api-errors#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 369.4756249897182,
+        "db_ms": 45.47533404547721,
+        "llm_ms": 1131.2402499606833
+      },
+      "tokens_in": 1266,
+      "tokens_out": 85,
+      "cost": 0.0005923
+    },
+    {
+      "id": "c2-05",
+      "class": "exact_token",
+      "question": "Which response header tells an integration how many API calls it has left this minute?",
+      "expected_docs": [
+        "api/api-rate-limits"
+      ],
+      "retrieved": [
+        "api/api-rate-limits#0",
+        "api/api-rate-limits#1",
+        "support/faq#1",
+        "api/api-errors#2",
+        "api/api-errors#1"
+      ],
+      "scores": [
+        0.7288,
+        0.6989,
+        0.6435,
+        0.6421,
+        0.6325
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.08529796959620162,
+      "status": "answered",
+      "answer": "The X-RateLimit-Remaining header shows the requests left in the window [api/api-rate-limits#0].",
+      "citations": [
+        "api/api-rate-limits#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 358.6992500349879,
+        "db_ms": 19.59529099985957,
+        "llm_ms": 1032.1762500097975
+      },
+      "tokens_in": 1174,
+      "tokens_out": 74,
+      "cost": 0.0005371999999999999
+    },
+    {
+      "id": "c2-06",
+      "class": "exact_token",
+      "question": "Has BUG-2310-02 been fixed yet?",
+      "expected_docs": [
+        "invoicing/line-items-and-long-invoices",
+        "release-notes/v2.3.1",
+        "support/known-issues"
+      ],
+      "retrieved": [
+        "release-notes/v2.3.1#2",
+        "support/known-issues#2",
+        "reports/date-picker-week-start#0",
+        "release-notes/v2.3.1#1",
+        "reports/large-date-ranges#0"
+      ],
+      "scores": [
+        0.737,
+        0.73,
+        0.7194,
+        0.7007,
+        0.6946
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.017522613379277185,
+      "status": "answered",
+      "answer": "No, BUG-2310-02 is still listed as an open bug [release-notes/v2.3.1#2][support/known-issues#2].",
+      "citations": [
+        "release-notes/v2.3.1#2",
+        "support/known-issues#2"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 370.29108399292454,
+        "db_ms": 40.70291604148224,
+        "llm_ms": 1161.6433340241201
+      },
+      "tokens_in": 1137,
+      "tokens_out": 102,
+      "cost": 0.0005961
+    },
+    {
+      "id": "c3-01",
+      "class": "tier_gated",
+      "question": "Can a Professional customer set up their own user roles?",
+      "expected_docs": [
+        "account-billing/roles-and-audit-log",
+        "account-billing/plans-and-limits",
+        "getting-started/invite-users"
+      ],
+      "retrieved": [
+        "getting-started/invite-users#1",
+        "account-billing/roles-and-audit-log#0",
+        "account-billing/plans-and-limits#1",
+        "account-billing/plans-and-limits#2",
+        "support/faq#0"
+      ],
+      "scores": [
+        0.7204,
+        0.7117,
+        0.6667,
+        0.6485,
+        0.6432
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.07719452255190917,
+      "status": "answered",
+      "answer": "No. Custom user roles are available on the Enterprise plan only [getting-started/invite-users#1][account-billing/plans-and-limits#1].",
+      "citations": [
+        "getting-started/invite-users#1",
+        "account-billing/plans-and-limits#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 383.7936249910854,
+        "db_ms": 43.091375031508505,
+        "llm_ms": 1215.1344169978984
+      },
+      "tokens_in": 1093,
+      "tokens_out": 98,
+      "cost": 0.0005729
+    },
+    {
+      "id": "c3-02",
+      "class": "tier_gated",
+      "question": "If a Starter customer emails support, how fast should they expect a reply?",
+      "expected_docs": [
+        "support/contact-support",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "support/contact-support#0",
+        "account-billing/plans-and-limits#2",
+        "support/faq#0",
+        "release-notes/v2.3.0#1",
+        "support/faq#1"
+      ],
+      "scores": [
+        0.7512,
+        0.6311,
+        0.6157,
+        0.6153,
+        0.6091
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.135423392229005,
+      "status": "answered",
+      "answer": "If a Starter customer emails support, they should expect a first response within 2 business days [support/contact-support#0].",
+      "citations": [
+        "support/contact-support#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 341.89962496748194,
+        "db_ms": 44.37408404191956,
+        "llm_ms": 1005.6350840022787
+      },
+      "tokens_in": 1148,
+      "tokens_out": 73,
+      "cost": 0.0005269
+    },
+    {
+      "id": "c3-03",
+      "class": "tier_gated",
+      "question": "Can a Professional customer have a saved report emailed to their CFO every week?",
+      "expected_docs": [
+        "reports/report-schedules",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "reports/report-schedules#0",
+        "release-notes/v2.3.0#1",
+        "account-billing/plans-and-limits#1",
+        "reports/custom-report-builder#0",
+        "reports/standard-reports#0"
+      ],
+      "scores": [
+        0.7807,
+        0.6865,
+        0.6738,
+        0.6715,
+        0.6585
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.09422410136181492,
+      "status": "answered",
+      "answer": "Yes. Saved reports can be emailed on a weekly basis [reports/report-schedules#0], and scheduled report emails are available on the Professional plan [reports/report-schedules#0][account-billing/plans-and-limits#1].",
+      "citations": [
+        "reports/report-schedules#0",
+        "account-billing/plans-and-limits#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 453.0546250171028,
+        "db_ms": 44.316957995761186,
+        "llm_ms": 1229.758250003215
+      },
+      "tokens_in": 1136,
+      "tokens_out": 115,
+      "cost": 0.0006283
+    },
+    {
+      "id": "c3-04",
+      "class": "tier_gated",
+      "question": "How many API requests per minute does an Enterprise customer get?",
+      "expected_docs": [
+        "api/api-rate-limits",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "api/api-rate-limits#0",
+        "api/api-rate-limits#1",
+        "support/faq#1",
+        "support/faq#0",
+        "support/contact-support#0"
+      ],
+      "scores": [
+        0.7545,
+        0.7191,
+        0.7132,
+        0.6877,
+        0.6605
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.041308939839965086,
+      "status": "answered",
+      "answer": "An Enterprise customer gets 1,000 requests per minute [api/api-rate-limits#0][support/faq#0][support/faq#1].",
+      "citations": [
+        "api/api-rate-limits#0",
+        "support/faq#0",
+        "support/faq#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 514.9417910142802,
+        "db_ms": 43.17712498595938,
+        "llm_ms": 1081.0156660154462
+      },
+      "tokens_in": 1164,
+      "tokens_out": 102,
+      "cost": 0.0006042
+    },
+    {
+      "id": "c3-05",
+      "class": "tier_gated",
+      "question": "Can a Starter customer design their own invoice template?",
+      "expected_docs": [
+        "invoicing/invoice-templates",
+        "account-billing/plans-and-limits",
+        "support/faq"
+      ],
+      "retrieved": [
+        "invoicing/invoice-templates#0",
+        "invoicing/invoice-templates#1",
+        "support/faq#0",
+        "account-billing/plans-and-limits#1",
+        "account-billing/plans-and-limits#0"
+      ],
+      "scores": [
+        0.7741,
+        0.7673,
+        0.7155,
+        0.6931,
+        0.6547
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": null,
+      "status": "answered",
+      "answer": "No, Starter customers cannot design their own invoice templates [invoicing/invoice-templates#1]. Starter includes 3 standard templates [invoicing/invoice-templates#0]. Custom templates are available only on the Professional and Enterprise plans [support/faq#0], and Starter customers asking for a custom template need to upgrade to Professional or Enterprise [invoicing/invoice-templates#1].",
+      "citations": [
+        "invoicing/invoice-templates#0",
+        "invoicing/invoice-templates#1",
+        "support/faq#0",
+        "account-billing/plans-and-limits#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 416.7686249711551,
+        "db_ms": 40.26820801664144,
+        "llm_ms": 1590.1915419963188
+      },
+      "tokens_in": 1232,
+      "tokens_out": 162,
+      "cost": 0.0007746000000000001
+    },
+    {
+      "id": "c3-06",
+      "class": "tier_gated",
+      "question": "How far back does the audit log go for Enterprise customers?",
+      "expected_docs": [
+        "account-billing/roles-and-audit-log",
+        "account-billing/plans-and-limits"
+      ],
+      "retrieved": [
+        "account-billing/plans-and-limits#2",
+        "account-billing/roles-and-audit-log#0",
+        "getting-started/invite-users#1",
+        "account-billing/renewals#0",
+        "account-billing/plans-and-limits#1"
+      ],
+      "scores": [
+        0.7157,
+        0.697,
+        0.6278,
+        0.6239,
+        0.6233
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.08792699424081918,
+      "status": "answered",
+      "answer": "For Enterprise customers, the audit log is kept for 13 months [account-billing/plans-and-limits#2][account-billing/roles-and-audit-log#0].",
+      "citations": [
+        "account-billing/plans-and-limits#2",
+        "account-billing/roles-and-audit-log#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 365.46900001121685,
+        "db_ms": 42.53658396191895,
+        "llm_ms": 1122.7202080190182
+      },
+      "tokens_in": 1054,
+      "tokens_out": 108,
+      "cost": 0.0005862
+    },
+    {
+      "id": "c4-01",
+      "class": "temporal",
+      "question": "Could a customer on 2.2.0 export reports to Excel?",
+      "expected_docs": [
+        "reports/report-exports",
+        "release-notes/v2.3.0"
+      ],
+      "retrieved": [
+        "reports/report-exports#0",
+        "client-portal/customer-statements#1",
+        "release-notes/v2.3.0#1",
+        "client-portal/customer-statements#0",
+        "reports/large-date-ranges#0"
+      ],
+      "scores": [
+        0.7345,
+        0.7193,
+        0.6802,
+        0.6664,
+        0.6631
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.015213317856512143,
+      "status": "answered",
+      "answer": "No. Before version 2.3.0, reports exported to PDF and CSV only [reports/report-exports#0].",
+      "citations": [
+        "reports/report-exports#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 403.16575003089383,
+        "db_ms": 43.8440419966355,
+        "llm_ms": 1104.5421250164509
+      },
+      "tokens_in": 1032,
+      "tokens_out": 73,
+      "cost": 0.0004921
+    },
+    {
+      "id": "c4-02",
+      "class": "temporal",
+      "question": "A customer is still on 2.1.0. Can they send payment reminders for lots of invoices at once?",
+      "expected_docs": [
+        "invoicing/payment-reminders",
+        "invoicing/bulk-invoice-actions",
+        "release-notes/v2.2.0"
+      ],
+      "retrieved": [
+        "invoicing/payment-reminders#0",
+        "community/bulk-send-tips#0",
+        "invoicing/bulk-invoice-actions#0",
+        "release-notes/v2.1.0#2",
+        "release-notes/v2.1.0#0"
+      ],
+      "scores": [
+        0.7825,
+        0.7524,
+        0.7448,
+        0.7346,
+        0.7125
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.030064195353886602,
+      "status": "answered",
+      "answer": "No. Sending payment reminders in bulk from the Invoices list was added in version 2.2.0 [invoicing/payment-reminders#0][invoicing/bulk-invoice-actions#0]. Version 2.1.0 only added client-level payment reminders [invoicing/payment-reminders#0][release-notes/v2.1.0#0].",
+      "citations": [
+        "invoicing/payment-reminders#0",
+        "invoicing/bulk-invoice-actions#0"
+      ],
+      "missing": [],
+      "problems": [
+        "cited in text but not in list: release-notes/v2.1.0#0"
+      ],
+      "correct": false,
+      "bucket": "generation_miss",
+      "timings": {
+        "embed_ms": 399.0979589871131,
+        "db_ms": 45.541125000454485,
+        "llm_ms": 1295.9247919498011
+      },
+      "tokens_in": 1131,
+      "tokens_out": 144,
+      "cost": 0.0006993
+    },
+    {
+      "id": "c4-03",
+      "class": "temporal",
+      "question": "Could a customer on 2.2.0 use automatic bank matching?",
+      "expected_docs": [
+        "bank-reconciliation/auto-match",
+        "release-notes/v2.3.0",
+        "support/glossary"
+      ],
+      "retrieved": [
+        "bank-reconciliation/auto-match#0",
+        "community/reconciliation-euro-workaround#0",
+        "release-notes/v2.3.0#2",
+        "bank-reconciliation/auto-match#1",
+        "multi-currency/multi-currency-bank-reconciliation#1"
+      ],
+      "scores": [
+        0.7831,
+        0.752,
+        0.7437,
+        0.7434,
+        0.7284
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.031102488133235573,
+      "status": "answered",
+      "answer": "No, because bank reconciliation auto-match was added in version 2.3.0 [bank-reconciliation/auto-match#0].",
+      "citations": [
+        "bank-reconciliation/auto-match#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 373.8142499933019,
+        "db_ms": 39.998791995458305,
+        "llm_ms": 1194.4322499912232
+      },
+      "tokens_in": 993,
+      "tokens_out": 79,
+      "cost": 0.0004954
+    },
+    {
+      "id": "c4-04",
+      "class": "temporal",
+      "question": "Which version introduced API v2?",
+      "expected_docs": [
+        "api/api-overview",
+        "release-notes/v2.2.0"
+      ],
+      "retrieved": [
+        "api/api-overview#0",
+        "api/migrate-v1-to-v2#0",
+        "community/api-v1-still-works#0",
+        "release-notes/v2.2.0#1",
+        "api/migrate-v1-to-v2#1"
+      ],
+      "scores": [
+        0.7301,
+        0.7276,
+        0.7,
+        0.6996,
+        0.694
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.0025426238121871725,
+      "status": "answered",
+      "answer": "API v2 was introduced in version 2.2.0 [api/api-overview#0].",
+      "citations": [
+        "api/api-overview#0"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 342.6592919859104,
+        "db_ms": 43.38308301521465,
+        "llm_ms": 1069.7020419756882
+      },
+      "tokens_in": 1126,
+      "tokens_out": 68,
+      "cost": 0.0005078000000000001
+    },
+    {
+      "id": "c4-05",
+      "class": "temporal",
+      "question": "A Japanese customer on 2.0.0 saw yen invoice totals off by one. Was that fixed, and when?",
+      "expected_docs": [
+        "multi-currency/zero-decimal-currencies",
+        "release-notes/v2.1.0",
+        "support/known-issues"
+      ],
+      "retrieved": [
+        "multi-currency/zero-decimal-currencies#0",
+        "release-notes/v2.1.0#2",
+        "release-notes/v2.0.0#1",
+        "release-notes/v2.1.0#1",
+        "release-notes/v2.3.1#3"
+      ],
+      "scores": [
+        0.8278,
+        0.7242,
+        0.7009,
+        0.7,
+        0.6952
+      ],
+      "hit": true,
+      "first_hit_rank": 1,
+      "margin": 0.12695540767441071,
+      "status": "answered",
+      "answer": "Yes, that bug (BUG-2000-01) caused invoice totals in zero-decimal currencies like JPY to overcharge by up to 1 unit per line item [multi-currency/zero-decimal-currencies#0][release-notes/v2.1.0#1]. It was fixed in version 2.1.0 [multi-currency/zero-decimal-currencies#0][release-notes/v2.1.0#1].",
+      "citations": [
+        "multi-currency/zero-decimal-currencies#0",
+        "release-notes/v2.1.0#1"
+      ],
+      "missing": [],
+      "problems": [],
+      "correct": true,
+      "bucket": "ok",
+      "timings": {
+        "embed_ms": 442.95462500303984,
+        "db_ms": 60.32383401179686,
+        "llm_ms": 1253.507916990202
+      },
+      "tokens_in": 1145,
+      "tokens_out": 167,
+      "cost": 0.000761
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "ticket_id": "TCKT-20178",
+  "created_at": "2026-05-02T14:57:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.2.1",
+  "subject": "Automatic bank matching?",
+  "status": "Solved",
+  "tags": [
+    "bank-reconciliation"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-05-02T14:57:00Z",
+      "body": "Does InvoicePilot match bank transactions automatically? We're on 2.2.1."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-05-02T15:01:00Z",
+      "body": "Auto-match was added in 2.3.0. On 2.2.1, reconcile manually: match each transaction to an invoice or expense, or categorize it. You'll get auto-match automatically when you move to 2.3.x."
+    }
+  ]
+}

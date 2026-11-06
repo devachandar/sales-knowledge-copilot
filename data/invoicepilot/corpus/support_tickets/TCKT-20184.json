@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20184",
+  "created_at": "2026-07-02T09:01:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "Does the SDK retry 429s?",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "sdk"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-07-02T09:01:00Z",
+      "body": "Do we need our own retry logic with the Python SDK?"
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-07-02T10:04:00Z",
+      "body": "The Python SDK retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff, up to max_retries (default 2). It never retries 4xx validation errors like IP-4220. Pass idempotency_key on creates so retries are safe."
+    }
+  ]
+}

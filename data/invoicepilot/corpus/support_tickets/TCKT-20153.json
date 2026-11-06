@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20153",
+  "created_at": "2026-10-23T12:26:00Z",
+  "customer_id": "CUST-0029",
+  "company": "Buy N Large",
+  "plan": "Professional",
+  "product_version": "2.3.1",
+  "subject": "Do we need to migrate to v2?",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "v1"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Buy N Large admin",
+      "sent_at": "2026-10-23T12:26:00Z",
+      "body": "We still use API v1. Will it stop working?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-10-23T17:15:00Z",
+      "body": "API v1 is legacy but still works, and there is no shutoff date yet. We'll give at least 12 months' notice. New integrations should use v2, which adds cursor pagination, error codes, and Idempotency-Key."
+    },
+    {
+      "from": "customer",
+      "name": "Buy N Large admin",
+      "sent_at": "2026-10-24T11:53:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

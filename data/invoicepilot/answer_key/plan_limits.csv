@@ -1,0 +1,11 @@
+limit,Starter,Professional,Enterprise
+API rate limit (requests per minute),60,300,"1,000"
+Connected bank feeds,2,10,Unlimited
+Invoice templates,3 standard templates,Custom templates,Custom templates
+Client portal branding (logo and accent color),No,Yes,Yes
+Scheduled report emails,No,Yes,Yes
+Saved custom reports,10,100,Unlimited
+Custom user roles,No,No,Yes
+Audit log,No,No,Yes (13 months)
+Support,"Email, 2 business days","Email and chat, 1 business day","Priority, 4 hours, named CSM"
+List price per seat per year (USD),12,25,40

@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20129",
+  "created_at": "2026-08-29T10:37:00Z",
+  "customer_id": "CUST-0011",
+  "company": "Cyberdyne Systems",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "Bulk send limit",
+  "status": "Solved",
+  "tags": [
+    "invoicing",
+    "bulk"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Cyberdyne Systems admin",
+      "sent_at": "2026-08-29T10:37:00Z",
+      "body": "How many invoices can we send at once from the list? We have about 300 at month end."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-08-30T12:05:00Z",
+      "body": "Bulk actions are limited to 50 invoices at a time, so do it in batches of 50."
+    }
+  ]
+}

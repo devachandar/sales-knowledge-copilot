@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20051",
+  "created_at": "2026-05-27T15:00:00Z",
+  "customer_id": "CUST-0002",
+  "company": "Acme Corporation",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Custom report times out",
+  "status": "Linked to bug",
+  "tags": [
+    "reports",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2300-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Acme Corporation admin",
+      "sent_at": "2026-05-27T15:00:00Z",
+      "body": "Report spanning 2021-2026 just spins and fails."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-05-27T16:25:00Z",
+      "body": "That's BUG-2300-01 (Medium, open): reports spanning more than 3 years time out. Split the report into ranges of 3 years or less, or use API v2, which pages with a cursor."
+    },
+    {
+      "from": "customer",
+      "name": "Acme Corporation admin",
+      "sent_at": "2026-05-28T10:06:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

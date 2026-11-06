@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20028",
+  "created_at": "2026-05-08T14:32:00Z",
+  "customer_id": "CUST-0015",
+  "company": "Prestige Worldwide",
+  "plan": "Starter",
+  "product_version": "2.2.1",
+  "subject": "API says IP-4010",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "auth"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Prestige Worldwide admin",
+      "sent_at": "2026-05-08T14:32:00Z",
+      "body": "We created a key yesterday and every call returns IP-4010."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-05-08T17:44:00Z",
+      "body": "IP-4010 means the API key is missing or invalid. Check the Authorization: Bearer header. Production needs an ip_live_ key; ip_test_ keys only work in the sandbox."
+    },
+    {
+      "from": "customer",
+      "name": "Prestige Worldwide admin",
+      "sent_at": "2026-05-09T11:53:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

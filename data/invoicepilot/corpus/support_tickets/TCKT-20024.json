@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20024",
+  "created_at": "2026-05-01T15:44:00Z",
+  "customer_id": "CUST-0014",
+  "company": "Vandelay Industries",
+  "plan": "Professional",
+  "product_version": "2.2.1",
+  "subject": "Lots of IP-5030 errors this morning",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "bank-feeds",
+    "incident"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Vandelay Industries admin",
+      "sent_at": "2026-05-01T15:44:00Z",
+      "body": "Is something down? IP-5030 everywhere."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-05-01T18:05:00Z",
+      "body": "IP-5030 means a bank feed provider is unavailable. It is retryable with backoff. We had a provider incident this morning; see status.invoicepilot.example. Your requests should succeed once it recovers."
+    }
+  ]
+}

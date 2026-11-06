@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Webhooks overview | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/webhooks-overview">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-06-15">
+<meta name="applies-to-version" content="2.3.0+">
+<meta name="available-on-plans" content="Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Webhooks overview</nav>
+<main>
+<article>
+<h1>Webhooks overview</h1>
+<p class="updated">Last updated: 2026-06-15</p>
+<p class="applies">Applies to: InvoicePilot 2.3.0+</p>
+<p class="plans">Available on: Professional, Enterprise</p>
+<p>Webhooks send an HTTPS POST to your endpoint when something happens in InvoicePilot, so you do not have to poll the API.</p>
+<table><thead><tr><th>Plan</th><th>Webhook endpoints</th></tr></thead><tbody><tr><td>Starter</td><td>Not available</td></tr><tr><td>Professional</td><td>5</td></tr><tr><td>Enterprise</td><td>25</td></tr></tbody></table>
+<h2>Set up an endpoint</h2>
+<ol><li>Go to Settings &gt; Developer &gt; Webhooks, or call POST /v2/webhook_endpoints.</li><li>Enter an HTTPS URL. Plain HTTP URLs are rejected with IP-4226.</li><li>Choose the events to subscribe to.</li><li>Copy the signing secret. It starts with whsec_ and is shown once.</li></ol>
+<p>Webhooks became generally available on 2026-06-15 for API v2.</p>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="webhook-events.html">webhook-events</a></li><li><a href="webhook-signatures.html">webhook-signatures</a></li><li><a href="webhook-retries.html">webhook-retries</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>1,509 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

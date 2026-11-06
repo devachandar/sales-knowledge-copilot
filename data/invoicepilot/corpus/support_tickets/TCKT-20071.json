@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20071",
+  "created_at": "2026-01-22T09:03:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.2.0",
+  "subject": "Extra empty page from list endpoints",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "pagination",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-04",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-01-22T09:03:00Z",
+      "body": "GET /v2/invoices returns a next_cursor on the last page, and the next call is empty."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-01-22T11:38:00Z",
+      "body": "That's BUG-2200-04 (Medium). It's harmless but wasteful. It's fixed in 2.2.1, where next_cursor is null on the last page. Until then, stop when data comes back empty."
+    }
+  ]
+}

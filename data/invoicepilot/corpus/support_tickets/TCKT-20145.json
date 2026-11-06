@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20145",
+  "created_at": "2026-07-16T11:55:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "Do you support Okta SSO?",
+  "status": "Solved",
+  "tags": [
+    "security",
+    "sso"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-07-16T11:55:00Z",
+      "body": "Our IT team requires SAML SSO. When will you support it?"
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-07-17T07:31:00Z",
+      "body": "Single sign-on (SAML) isn't available today, and I don't have a date to share. Every user can turn on two-step verification in the meantime."
+    }
+  ]
+}

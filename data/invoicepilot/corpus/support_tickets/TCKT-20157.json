@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20157",
+  "created_at": "2026-06-07T10:33:00Z",
+  "customer_id": "CUST-0009",
+  "company": "Hooli",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "Statements via API",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "statements"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-06-07T10:33:00Z",
+      "body": "Can we pull customer statements as JSON for our ERP?"
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-06-07T12:45:00Z",
+      "body": "Yes: GET /v2/customers/{customer_id}/statements with format=json, plus date_from and date_to. In the Python SDK it's client.customers.get_statement(customer_id, format=\"json\")."
+    }
+  ]
+}

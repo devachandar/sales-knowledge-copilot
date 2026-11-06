@@ -1,0 +1,344 @@
+[
+  {
+    "id": "c1-01",
+    "class": "capability",
+    "question": "Can clients pay invoices online themselves?",
+    "expected_answer": "Yes. Client Portal 2.0 lets clients view their invoice history, download statements, and pay online from one self-serve page.",
+    "expected_docs": [
+      "client-portal/client-portal-overview",
+      "release-notes/v2.2.0"
+    ],
+    "must_include": [
+      "online"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c1-02",
+    "class": "capability",
+    "question": "A customer sent an invoice by mistake. Can they just delete it?",
+    "expected_answer": "No. Sent invoices can't be deleted; they must be voided, which keeps them in records with a VOID watermark. Only drafts can be deleted.",
+    "expected_docs": [
+      "invoicing/void-or-delete-invoice"
+    ],
+    "must_include": [
+      "void"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c1-03",
+    "class": "capability",
+    "question": "If we change our sales tax rate, do our old invoices get updated too?",
+    "expected_answer": "No. A changed tax rate only applies to new invoices. Existing invoices keep the rate they were created with.",
+    "expected_docs": [
+      "invoicing/tax-rates"
+    ],
+    "must_include": [
+      "new invoices"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c1-04",
+    "class": "capability",
+    "question": "We bill some clients monthly on the 30th. What happens in February?",
+    "expected_answer": "If a monthly schedule falls on a day that doesn't exist, like February 30, the invoice goes out on the last day of that month.",
+    "expected_docs": [
+      "recurring-invoices/recurring-cadences", "recurring-invoices/recurring-invoices-faq"],
+    "must_include": [
+      "last day"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c1-05",
+    "class": "capability",
+    "question": "How well does receipt scanning work on handwritten receipts?",
+    "expected_answer": "Poorly. OCR accuracy on handwritten receipts is below 40% (BUG-2100-01, Won't Fix). Typed and printed receipts scan reliably.",
+    "expected_docs": [
+      "expenses/receipt-scanning",
+      "release-notes/v2.1.0"
+    ],
+    "must_include": [
+      "40%"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c1-06",
+    "class": "capability",
+    "question": "Someone on the team confirmed the wrong bank match. Can it be undone?",
+    "expected_answer": "Yes. A confirmed match can be undone from the transaction's history within 30 days.",
+    "expected_docs": [
+      "bank-reconciliation/review-suggested-matches"
+    ],
+    "must_include": [
+      "30 days"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c1-07",
+    "class": "capability",
+    "question": "How long does a new user have to accept their invite?",
+    "expected_answer": "The invite link expires after 7 days.",
+    "expected_docs": [
+      "getting-started/invite-users", "api/api-users"],
+    "must_include": [
+      "7 days"
+    ],
+    "difficulty": "hard",
+    "notes": "Trap: the data export download link also expires in 7 days (account-billing/export-your-data). The answer must cite invite-users."
+  },
+  {
+    "id": "c1-08",
+    "class": "capability",
+    "question": "Can a customer switch their base currency after they've been using InvoicePilot for a while?",
+    "expected_answer": "No. The base currency cannot be changed after the first transaction. To bill in other currencies, they can enable multi-currency instead.",
+    "expected_docs": [
+      "getting-started/create-organization"
+    ],
+    "must_include": [
+      "first transaction"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c2-01",
+    "class": "exact_token",
+    "question": "A customer's integration is getting IP-4090 errors. What's going on?",
+    "expected_answer": "An Idempotency-Key was reused with a different request body. It returns HTTP 409 and should not be retried.",
+    "expected_docs": [
+      "api/api-errors"
+    ],
+    "must_include": [
+      "Idempotency"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c2-02",
+    "class": "exact_token",
+    "question": "A developer's API key starts with ip_test_. Is that a production key?",
+    "expected_answer": "No. Keys starting with ip_test_ are for the sandbox. Production keys start with ip_live_.",
+    "expected_docs": [
+      "api/api-authentication"
+    ],
+    "must_include": [
+      "sandbox"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c2-03",
+    "class": "exact_token",
+    "question": "What is BUG-2300-01, and is there a workaround?",
+    "expected_answer": "Reports spanning more than 3 years of transactions time out instead of paginating. It is open. Workaround: split the report into ranges of 3 years or less, or use API v2, which pages with a cursor.",
+    "expected_docs": [
+      "reports/large-date-ranges",
+      "reports/custom-report-builder"
+    ],
+    "must_include": [
+      "3 years"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c2-04",
+    "class": "exact_token",
+    "question": "The API returned 503 with IP-5030. What does that mean, and should the integration retry?",
+    "expected_answer": "IP-5030 means the bank feed provider is unavailable. It is retryable, with backoff.",
+    "expected_docs": [
+      "api/api-errors"
+    ],
+    "must_include": [
+      "bank feed"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c2-05",
+    "class": "exact_token",
+    "question": "Which response header tells an integration how many API calls it has left this minute?",
+    "expected_answer": "X-RateLimit-Remaining. API v2 responses also include X-RateLimit-Limit and X-RateLimit-Reset.",
+    "expected_docs": [
+      "api/api-rate-limits"
+    ],
+    "must_include": [
+      "X-RateLimit-Remaining"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c2-06",
+    "class": "exact_token",
+    "question": "Has BUG-2310-02 been fixed yet?",
+    "expected_answer": "No. It is open (High) and affects 2.3.1: invoices with more than 25 line items export as a single-page PDF and drop the rest. Workaround: send by email link, or keep invoices to 25 lines or fewer.",
+    "expected_docs": [
+      "invoicing/line-items-and-long-invoices",
+      "release-notes/v2.3.1",
+      "support/known-issues"
+    ],
+    "must_include": [
+      "open"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c3-01",
+    "class": "tier_gated",
+    "question": "Can a Professional customer set up their own user roles?",
+    "expected_answer": "No. Custom roles are Enterprise only. Other plans use the four built-in roles: Admin, Accountant, Staff, and Read-only.",
+    "expected_docs": [
+      "account-billing/roles-and-audit-log",
+      "account-billing/plans-and-limits",
+      "getting-started/invite-users", "api/api-users"],
+    "must_include": [
+      "Enterprise"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c3-02",
+    "class": "tier_gated",
+    "question": "If a Starter customer emails support, how fast should they expect a reply?",
+    "expected_answer": "Starter gets email support with a first response target of 2 business days.",
+    "expected_docs": [
+      "support/contact-support",
+      "account-billing/plans-and-limits"
+    ],
+    "must_include": [
+      "2 business days"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c3-03",
+    "class": "tier_gated",
+    "question": "Can a Professional customer have a saved report emailed to their CFO every week?",
+    "expected_answer": "Yes. Scheduled report emails are available on Professional and Enterprise, including to recipients outside the organization.",
+    "expected_docs": [
+      "reports/report-schedules",
+      "account-billing/plans-and-limits"
+    ],
+    "must_include": [
+      "Professional"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c3-04",
+    "class": "tier_gated",
+    "question": "How many API requests per minute does an Enterprise customer get?",
+    "expected_answer": "1,000 requests per minute. Enterprise customers can also ask their CSM about a custom limit.",
+    "expected_docs": [
+      "api/api-rate-limits",
+      "account-billing/plans-and-limits", "api/api-concurrency-limits"],
+    "must_include": [
+      "1,000"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c3-05",
+    "class": "tier_gated",
+    "question": "Can a Starter customer design their own invoice template?",
+    "expected_answer": "No. Starter includes 3 standard templates. Custom templates need Professional or Enterprise.",
+    "expected_docs": [
+      "invoicing/invoice-templates",
+      "account-billing/plans-and-limits",
+      "support/faq"
+    ],
+    "must_include": [
+      "Professional"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c3-06",
+    "class": "tier_gated",
+    "question": "How far back does the audit log go for Enterprise customers?",
+    "expected_answer": "The Enterprise audit log keeps every change for 13 months. The audit log is not available on other plans.",
+    "expected_docs": [
+      "account-billing/roles-and-audit-log",
+      "account-billing/plans-and-limits", "account-billing/security-overview"],
+    "must_include": [
+      "13 months"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c4-01",
+    "class": "temporal",
+    "question": "Could a customer on 2.2.0 export reports to Excel?",
+    "expected_answer": "No. XLSX export arrived in 2.3.0. Before that, reports exported to PDF and CSV only.",
+    "expected_docs": [
+      "reports/report-exports",
+      "release-notes/v2.3.0"
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c4-02",
+    "class": "temporal",
+    "question": "A customer is still on 2.1.0. Can they send payment reminders for lots of invoices at once?",
+    "expected_answer": "Not in bulk. 2.1.0 has client-level payment reminders, but sending reminders in bulk from the Invoices list arrived in 2.2.0.",
+    "expected_docs": [
+      "invoicing/payment-reminders",
+      "invoicing/bulk-invoice-actions",
+      "release-notes/v2.2.0"
+    ],
+    "must_include": [
+      "2.2.0"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c4-03",
+    "class": "temporal",
+    "question": "Could a customer on 2.2.0 use automatic bank matching?",
+    "expected_answer": "No. Bank reconciliation auto-match was added in 2.3.0. On 2.2.0 they would reconcile manually.",
+    "expected_docs": [
+      "bank-reconciliation/auto-match",
+      "release-notes/v2.3.0",
+      "support/glossary"
+    ],
+    "must_include": [
+      "2.3.0"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c4-04",
+    "class": "temporal",
+    "question": "Which version introduced API v2?",
+    "expected_answer": "API v2 was introduced in 2.2.0. API v1 is legacy but still available.",
+    "expected_docs": [
+      "api/api-overview",
+      "release-notes/v2.2.0"
+    ],
+    "must_include": [
+      "2.2.0"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c4-05",
+    "class": "temporal",
+    "question": "A Japanese customer on 2.0.0 saw yen invoice totals off by one. Was that fixed, and when?",
+    "expected_answer": "Yes. BUG-2000-01, a rounding error on zero-decimal currencies like JPY, affected 2.0.0 and was fixed in 2.1.0.",
+    "expected_docs": [
+      "multi-currency/zero-decimal-currencies",
+      "release-notes/v2.1.0",
+      "support/known-issues"
+    ],
+    "must_include": [
+      "2.1.0"
+    ],
+    "difficulty": "medium"
+  }
+]

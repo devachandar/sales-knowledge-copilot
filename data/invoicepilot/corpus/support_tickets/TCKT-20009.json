@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20009",
+  "created_at": "2026-06-08T11:51:00Z",
+  "customer_id": "CUST-0018",
+  "company": "Bluth Company",
+  "plan": "Starter",
+  "product_version": "2.3.0",
+  "subject": "429 IP-4290 during nightly import",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "rate-limit"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Bluth Company admin",
+      "sent_at": "2026-06-08T11:51:00Z",
+      "body": "We keep hitting IP-4290. Can you raise our rate limit?"
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-06-08T13:52:00Z",
+      "body": "IP-4290 means the per-minute rate limit was reached. Your plan allows 60 requests per minute. Wait for the number of seconds in the Retry-After header, then retry. If you run many requests in parallel, also watch for IP-4291, which is the separate limit of 10 requests in flight."
+    },
+    {
+      "from": "customer",
+      "name": "Bluth Company admin",
+      "sent_at": "2026-06-09T07:31:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20112",
+  "created_at": "2026-07-01T15:01:00Z",
+  "customer_id": "CUST-0028",
+  "company": "Springfield Nuclear",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "Webhooks on our plan?",
+  "status": "Open",
+  "tags": [
+    "api",
+    "webhooks",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Springfield Nuclear admin",
+      "sent_at": "2026-07-01T15:01:00Z",
+      "body": "Do we have webhooks on Enterprise?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-07-01T17:16:00Z",
+      "body": "Webhooks are available on Professional (5 endpoints) and Enterprise (25 endpoints). You're on Enterprise, so look under Settings > Developer > Webhooks."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "ticket_id": "TCKT-20072",
+  "created_at": "2026-02-27T13:13:00Z",
+  "customer_id": "CUST-0009",
+  "company": "Hooli",
+  "plan": "Starter",
+  "product_version": "2.2.0",
+  "subject": "Extra empty page from list endpoints",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "pagination",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-04",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-02-27T13:13:00Z",
+      "body": "GET /v2/invoices returns a next_cursor on the last page, and the next call is empty."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-02-27T14:23:00Z",
+      "body": "That's BUG-2200-04 (Medium). It's harmless but wasteful. It's fixed in 2.2.1, where next_cursor is null on the last page. Until then, stop when data comes back empty."
+    },
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-02-28T08:16:00Z",
+      "body": "Thanks, that worked."
+    }
+  ]
+}

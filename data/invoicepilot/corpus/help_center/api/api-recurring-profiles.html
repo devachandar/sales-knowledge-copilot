@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recurring profiles endpoint | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/api-recurring-profiles">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-05-11">
+<meta name="applies-to-version" content="2.2.0+">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Recurring profiles endpoint</nav>
+<main>
+<article>
+<h1>Recurring profiles endpoint</h1>
+<p class="updated">Last updated: 2026-05-11</p>
+<p class="applies">Applies to: InvoicePilot 2.2.0+</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>Added to API v2 on 2026-05-11. See the API changelog.</p>
+<table><thead><tr><th>Method</th><th>Path</th><th>Does</th></tr></thead><tbody><tr><td>GET</td><td>/v2/recurring_profiles</td><td>List recurring profiles</td></tr><tr><td>POST</td><td>/v2/recurring_profiles</td><td>Create a recurring profile</td></tr><tr><td>POST</td><td>/v2/recurring_profiles/{profile_id}/pause</td><td>Pause a profile. No invoices are generated while paused</td></tr><tr><td>POST</td><td>/v2/recurring_profiles/{profile_id}/resume</td><td>Resume a profile from the next scheduled date</td></tr></tbody></table>
+<p>next_run_at is returned in UTC. Since 2.3.1 schedules are calculated in UTC.</p>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="recurring-invoice-timezones.html">recurring-invoice-timezones</a></li><li><a href="api-errors.html">api-errors</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>308 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

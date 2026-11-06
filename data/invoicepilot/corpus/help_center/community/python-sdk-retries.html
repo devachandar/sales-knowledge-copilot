@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Does the Python SDK retry on its own? | InvoicePilot Help Center</title>
+<meta name="doc-id" content="community/python-sdk-retries">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Community &gt; Does the Python SDK retry on its own?</nav>
+<main>
+<article>
+<h1>Does the Python SDK retry on its own?</h1>
+<p class="byline">Posted by py_marco on 2026-08-15 · Community answer, not reviewed by InvoicePilot staff</p>
+<p>Yes. client = Client(max_retries=3) and it retries 429, 500 and 503. It won't retry IP-4220 validation errors.</p>
+</article>
+
+
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

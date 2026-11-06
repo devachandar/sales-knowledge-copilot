@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20066",
+  "created_at": "2026-04-29T14:48:00Z",
+  "customer_id": "CUST-0026",
+  "company": "Aperture Science",
+  "plan": "Starter",
+  "product_version": "2.2.1",
+  "subject": "X-RateLimit-Remaining missing",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Aperture Science admin",
+      "sent_at": "2026-04-29T14:48:00Z",
+      "body": "We want to back off before hitting limits but v2 responses have no X-RateLimit-* headers."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-04-29T16:15:00Z",
+      "body": "That's BUG-2200-02 (Low): API v2 responses are missing the X-RateLimit-* headers. It's fixed in 2.3.0. Until then, rely on the 429 response and Retry-After."
+    }
+  ]
+}

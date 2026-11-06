@@ -1,0 +1,112 @@
+[
+  {
+    "id": "e-01",
+    "class": "exact_token",
+    "targets": "IP-4220 (validation, not retryable) vs IP-4290 (rate limit, retryable)",
+    "question": "An integration got error IP-4220. What does it mean, and should it retry?",
+    "expected_answer": "IP-4220 (HTTP 422) means validation failed; the message says which field. It should not be retried.",
+    "expected_docs": ["api/api-errors"],
+    "must_include": ["Validation"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-02",
+    "class": "exact_token",
+    "targets": "IP-4030 vs IP-4090 / IP-4010",
+    "question": "A call failed with IP-4030. Should the integration retry it?",
+    "expected_answer": "No. IP-4030 (HTTP 403) means the key lacks permission, or the limit for the plan is reached. It is not retryable.",
+    "expected_docs": ["api/api-errors"],
+    "must_include": ["permission"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-03",
+    "class": "exact_token",
+    "targets": "IP-4010 vs IP-4030 / IP-4040",
+    "question": "What causes an IP-4010 error?",
+    "expected_answer": "A missing or invalid API key (HTTP 401). It is not retryable.",
+    "expected_docs": ["api/api-errors"],
+    "must_include": ["API key"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-04",
+    "class": "exact_token",
+    "targets": "BUG-2310-01 vs BUG-2310-02 / BUG-2310-03",
+    "question": "How severe is BUG-2310-01, and has it been fixed?",
+    "expected_answer": "Critical, and still open. On 2.3.1, bank reconciliation auto-match does not convert foreign-currency amounts, so multi-currency accounts see mismatches.",
+    "expected_docs": ["multi-currency/multi-currency-bank-reconciliation", "bank-reconciliation/auto-match", "support/known-issues", "release-notes/v2.3.1"],
+    "must_include": ["Critical"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-05",
+    "class": "exact_token",
+    "targets": "BUG-2000-02 (dashboard) vs BUG-2000-01 (JPY rounding)",
+    "question": "What was BUG-2000-02?",
+    "expected_answer": "Accounts with more than 500 contacts saw a blank dashboard. It was fixed within version 2.0.0.",
+    "expected_docs": ["getting-started/dashboard", "support/known-issues", "release-notes/v2.0.0"],
+    "must_include": ["500"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-06",
+    "class": "exact_token",
+    "targets": "BUG-2200-01 (Safari login) vs BUG-2200-02 (rate-limit headers)",
+    "question": "What was BUG-2200-01, and when was it fixed?",
+    "expected_answer": "The client portal login loop on Safari, caused by a cookie SameSite misconfiguration. It was fixed within 2.2.0.",
+    "expected_docs": ["client-portal/safari-login-loop", "support/known-issues", "release-notes/v2.2.0"],
+    "must_include": ["Safari"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-07",
+    "class": "exact_token",
+    "targets": "BUG-2100-02 (fixed 2.3.1) vs BUG-2100-01 (Won't Fix)",
+    "question": "Which version fixed BUG-2100-02?",
+    "expected_answer": "2.3.1. Recurring invoices skipped a cycle across daylight-saving changes; schedules now use UTC internally.",
+    "expected_docs": ["release-notes/v2.3.1", "recurring-invoices/skipped-recurring-cycle", "recurring-invoices/recurring-invoice-timezones", "support/known-issues"],
+    "must_include": ["2.3.1"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-08",
+    "class": "exact_token",
+    "targets": "X-RateLimit-Reset vs X-RateLimit-Remaining (c2-05)",
+    "question": "What does the X-RateLimit-Reset header tell an integration?",
+    "expected_answer": "The Unix time when the rate-limit window resets.",
+    "expected_docs": ["api/api-rate-limits"],
+    "must_include": ["Unix"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-09",
+    "class": "exact_token",
+    "targets": "API path: DELETE /v2/payments/{payment_id} vs other endpoint tables",
+    "question": "What does DELETE /v2/payments/{payment_id} do?",
+    "expected_answer": "It deletes the payment and reopens the invoices it was applied to.",
+    "expected_docs": ["api/api-payments", "api/duplicate-api-payments"],
+    "must_include": ["reopen"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-10",
+    "class": "exact_token",
+    "targets": "API path + parameter: /v2/customers/{customer_id}/statements with format=json",
+    "question": "Which API endpoint returns a customer's statement as JSON?",
+    "expected_answer": "GET /v2/customers/{customer_id}/statements with format=json (params: date_from, date_to, format=pdf|json).",
+    "expected_docs": ["api/api-customers", "client-portal/customer-statements", "api/sdk-python"],
+    "must_include": ["statements"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "e-11",
+    "class": "exact_token",
+    "targets": "parameter: ?page=&per_page= (v1) vs ?cursor=&limit= (v2)",
+    "question": "Does API v2 support ?page=2&per_page=50 for paging?",
+    "expected_answer": "No. That is v1 pagination. v2 uses ?cursor=...&limit=100, returning a next_cursor until it is null.",
+    "expected_docs": ["api/migrate-v1-to-v2", "api/api-pagination", "api/api-overview"],
+    "must_include": ["cursor"],
+    "difficulty": "hard"
+  }
+]

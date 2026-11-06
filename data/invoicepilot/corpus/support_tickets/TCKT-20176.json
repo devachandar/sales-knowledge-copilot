@@ -1,0 +1,34 @@
+{
+  "ticket_id": "TCKT-20176",
+  "created_at": "2026-04-23T13:25:00Z",
+  "customer_id": "CUST-0015",
+  "company": "Prestige Worldwide",
+  "plan": "Starter",
+  "product_version": "2.2.1",
+  "subject": "Automatic bank matching?",
+  "status": "Solved",
+  "tags": [
+    "bank-reconciliation"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Prestige Worldwide admin",
+      "sent_at": "2026-04-23T13:25:00Z",
+      "body": "Does InvoicePilot match bank transactions automatically? We're on 2.2.1."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-04-24T09:35:00Z",
+      "body": "Auto-match was added in 2.3.0. On 2.2.1, reconcile manually: match each transaction to an invoice or expense, or categorize it. You'll get auto-match automatically when you move to 2.3.x."
+    },
+    {
+      "from": "customer",
+      "name": "Prestige Worldwide admin",
+      "sent_at": "2026-04-25T03:47:00Z",
+      "body": "That's not great, but we'll use the workaround."
+    }
+  ]
+}

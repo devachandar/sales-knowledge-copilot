@@ -1,0 +1,72 @@
+[
+  {
+    "id": "n-01",
+    "class": "non_official",
+    "targets": "answer only in an internal sales doc; official pages mention prices but not rep discounts",
+    "question": "How much discount can a sales rep give without a manager's approval?",
+    "expected_answer": "Up to 10% on their own. 11% to 20% needs a sales manager, and above 20% needs the VP of Sales.",
+    "expected_docs": ["sales/discount-policy"],
+    "must_include": ["10%"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "n-02",
+    "class": "non_official",
+    "targets": "only the internal planning note covers it; official pages discuss the bug but have no date",
+    "question": "Is there a committed fix date for BUG-2310-02?",
+    "expected_answer": "No. An internal planning note has a tentative 2.4.0 target, but it is not committed and must not be shared with customers.",
+    "expected_docs": ["engineering/planning-q4-2026-fixes"],
+    "must_include": ["committed"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "n-03",
+    "class": "non_official",
+    "targets": "official troubleshooting page explains the bug but not how many customers were hit",
+    "question": "How many duplicate payments did the Idempotency-Key bug on POST /v2/payments create, and for how many customers?",
+    "expected_answer": "214 duplicate payments across 9 API customers (BUG-2210-02, INC-2026-011).",
+    "expected_docs": ["engineering/postmortem-inc-2026-011"],
+    "must_include": ["214"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "n-04",
+    "class": "non_official",
+    "targets": "competitor facts live only in sales docs",
+    "question": "Which competitor charges extra for multi-currency?",
+    "expected_answer": "LedgerLoop: multi-currency is an add-on there.",
+    "expected_docs": ["sales/battlecard-ledgerloop", "sales/competitive-pricing-notes"],
+    "must_include": ["LedgerLoop"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "n-05",
+    "class": "non_official",
+    "targets": "official contact-support says Critical is handled 24/7, but the paging time is only in a runbook",
+    "question": "How fast is the on-call engineer paged when a Critical bug is reported?",
+    "expected_answer": "Within 15 minutes.",
+    "expected_docs": ["engineering/runbook-critical-bug-escalation"],
+    "must_include": ["15 minutes"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "n-06",
+    "class": "non_official",
+    "targets": "official auto-match-rules says WHAT (exact match); only the internal note says WHY",
+    "question": "Why does auto-match require an exact amount match instead of allowing a small tolerance?",
+    "expected_answer": "A 0.5% tolerance was tried in beta and caused false matches on recurring payments of similar size, so it was removed before 2.3.0.",
+    "expected_docs": ["engineering/note-auto-match-tolerance"],
+    "must_include": ["false matches"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "n-07",
+    "class": "non_official",
+    "targets": "demo guidance lives only in a sales doc",
+    "question": "What should a rep avoid when demoing bank feeds on 2.3.1?",
+    "expected_answer": "Avoid foreign-currency accounts; use a base-currency account, because of BUG-2310-01.",
+    "expected_docs": ["sales/demo-script"],
+    "must_include": ["foreign-currency"],
+    "difficulty": "medium"
+  }
+]

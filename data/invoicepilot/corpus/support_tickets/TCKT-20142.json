@@ -1,0 +1,34 @@
+{
+  "ticket_id": "TCKT-20142",
+  "created_at": "2026-09-09T15:34:00Z",
+  "customer_id": "CUST-0030",
+  "company": "Wonderland Media",
+  "plan": "Professional",
+  "product_version": "2.3.1",
+  "subject": "How often do bank feeds update?",
+  "status": "Solved",
+  "tags": [
+    "bank-feeds"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-09-09T15:34:00Z",
+      "body": "The FAQ says feeds sync once a day but we see new transactions more often. Which is right?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-09-09T16:34:00Z",
+      "body": "Since 2.3.0, bank feeds sync every 4 hours. The FAQ page is out of date; we've flagged it."
+    },
+    {
+      "from": "customer",
+      "name": "Wonderland Media admin",
+      "sent_at": "2026-09-10T10:37:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

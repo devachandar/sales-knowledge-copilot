@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20029",
+  "created_at": "2026-05-17T12:27:00Z",
+  "customer_id": "CUST-0027",
+  "company": "Genco Pura Olive Oil",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "API says IP-4010",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "auth"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Genco Pura Olive Oil admin",
+      "sent_at": "2026-05-17T12:27:00Z",
+      "body": "We created a key yesterday and every call returns IP-4010."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-05-17T14:03:00Z",
+      "body": "IP-4010 means the API key is missing or invalid. Check the Authorization: Bearer header. Production needs an ip_live_ key; ip_test_ keys only work in the sandbox."
+    }
+  ]
+}

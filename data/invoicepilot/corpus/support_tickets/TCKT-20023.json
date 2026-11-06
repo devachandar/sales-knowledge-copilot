@@ -1,0 +1,36 @@
+{
+  "ticket_id": "TCKT-20023",
+  "created_at": "2026-07-16T11:56:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "503 IP-5030 from bank endpoints",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "bank-feeds",
+    "incident"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-07-16T11:56:00Z",
+      "body": "Is something down? IP-5030 everywhere."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-07-16T12:05:00Z",
+      "body": "IP-5030 means a bank feed provider is unavailable. It is retryable with backoff. We had a provider incident this morning; see status.invoicepilot.example. Your requests should succeed once it recovers."
+    },
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-07-17T06:49:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

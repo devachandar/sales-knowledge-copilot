@@ -1,0 +1,41 @@
+ticket_id,customer_id,created_date,product_version,category,subject,description,linked_bug_id,status
+TCKT-00039,CUST-0030,2025-11-19,2.0.0,Question,How to export customer statements in bulk?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00032,CUST-0025,2025-11-28,2.1.0,Feature Request,Asking about SSO/SAML support for Enterprise plan,Customer reached out via the support portal with a general request.,,Open
+TCKT-00026,CUST-0022,2025-11-29,2.0.0,Question,How to export customer statements in bulk?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00029,CUST-0023,2025-12-10,2.0.0,Question,Can we get a custom invoice template?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00017,CUST-0014,2025-12-14,2.1.0,Question,How to export customer statements in bulk?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00010,CUST-0005,2026-01-06,2.1.0,Bug,Recurring invoices skip a cycle across DST changes,"Recurring invoice schedules calculated in local time skipped a billing cycle when daylight-saving time shifted, causing missed invoices for some customers.",BUG-2100-02,Resolved
+TCKT-00018,CUST-0014,2026-02-06,2.1.0,Question,How do I add a new tax rate?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00005,CUST-0002,2026-02-15,2.1.0,Bug,Receipt OCR misreads handwritten totals,OCR accuracy on handwritten receipts is below 40%; typed/printed receipts are unaffected. Documented as a known limitation.,BUG-2100-01,Open
+TCKT-00021,CUST-0017,2026-02-19,2.2.0,Bug,Client portal login loop on Safari,Safari users were redirected back to the login page after successful authentication due to a cookie SameSite misconfiguration.,BUG-2200-01,Resolved
+TCKT-00031,CUST-0024,2026-02-23,2.2.0,Feature Request,Can we get a custom invoice template?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00036,CUST-0028,2026-02-23,2.1.0,Feature Request,How do I add a new tax rate?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00033,CUST-0026,2026-03-02,2.1.0,Question,Asking about SSO/SAML support for Enterprise plan,Customer reached out via the support portal with a general request.,,Open
+TCKT-00001,CUST-0001,2026-03-04,2.2.0,Bug,API v2 rate limit headers missing,"API v2 responses did not include X-RateLimit-* headers, making it hard for integrators to back off proactively.",BUG-2200-02,Resolved
+TCKT-00008,CUST-0004,2026-03-04,2.2.0,Question,Question about seat-based billing for Add Seats,Customer reached out via the support portal with a general request.,,Open
+TCKT-00023,CUST-0021,2026-03-04,2.0.0,Bug,Dashboard fails to load for accounts with 500+ contacts,Large accounts saw a blank dashboard due to an unpaginated contacts query timing out.,BUG-2000-02,Resolved
+TCKT-00014,CUST-0012,2026-03-07,2.1.0,Bug,Recurring invoices skip a cycle across DST changes,"Recurring invoice schedules calculated in local time skipped a billing cycle when daylight-saving time shifted, causing missed invoices for some customers.",BUG-2100-02,Resolved
+TCKT-00038,CUST-0029,2026-03-16,2.1.0,Feature Request,Question about seat-based billing for Add Seats,Customer reached out via the support portal with a general request.,,Open
+TCKT-00004,CUST-0002,2026-04-04,2.2.0,Feature Request,Requesting an increase in API rate limits,Customer reached out via the support portal with a general request.,,Open
+TCKT-00002,CUST-0001,2026-04-10,2.2.0,Bug,API v2 rate limit headers missing,"API v2 responses did not include X-RateLimit-* headers, making it hard for integrators to back off proactively.",BUG-2200-02,Resolved
+TCKT-00022,CUST-0018,2026-04-14,2.2.0,Question,Asking about SSO/SAML support for Enterprise plan,Customer reached out via the support portal with a general request.,,Open
+TCKT-00037,CUST-0028,2026-04-28,2.2.0,Feature Request,Question about seat-based billing for Add Seats,Customer reached out via the support portal with a general request.,,Open
+TCKT-00020,CUST-0017,2026-05-01,2.2.0,Question,Requesting an increase in API rate limits,Customer reached out via the support portal with a general request.,,Open
+TCKT-00009,CUST-0005,2026-05-06,2.2.0,Feature Request,Asking about SSO/SAML support for Enterprise plan,Customer reached out via the support portal with a general request.,,Open
+TCKT-00019,CUST-0016,2026-05-14,2.2.0,Bug,API v2 rate limit headers missing,"API v2 responses did not include X-RateLimit-* headers, making it hard for integrators to back off proactively.",BUG-2200-02,Resolved
+TCKT-00035,CUST-0028,2026-05-19,2.2.0,Feature Request,How to export customer statements in bulk?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00007,CUST-0004,2026-06-28,2.3.0,Bug,Custom report builder times out on 3+ year date ranges,Reports spanning more than 3 years of transactions time out instead of paginating results.,BUG-2300-01,Open
+TCKT-00013,CUST-0012,2026-06-29,2.2.0,Bug,API v2 rate limit headers missing,"API v2 responses did not include X-RateLimit-* headers, making it hard for integrators to back off proactively.",BUG-2200-02,Resolved
+TCKT-00011,CUST-0006,2026-07-05,2.3.0,Feature Request,Can we get a custom invoice template?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00012,CUST-0012,2026-07-06,2.3.0,Question,How do I add a new tax rate?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00003,CUST-0002,2026-07-26,2.3.0,Billing,Question about seat-based billing for Add Seats,Customer reached out via the support portal with a general request.,,Open
+TCKT-00025,CUST-0021,2026-08-03,2.3.0,Bug,Custom report builder times out on 3+ year date ranges,Reports spanning more than 3 years of transactions time out instead of paginating results.,BUG-2300-01,Open
+TCKT-00034,CUST-0026,2026-08-05,2.2.0,Feature Request,How do I add a new tax rate?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00024,CUST-0021,2026-08-17,2.3.0,Billing,Can we get a custom invoice template?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00028,CUST-0023,2026-08-22,2.3.1,Billing,Requesting an increase in API rate limits,Customer reached out via the support portal with a general request.,,Open
+TCKT-00027,CUST-0022,2026-08-24,2.3.0,Bug,Custom report builder times out on 3+ year date ranges,Reports spanning more than 3 years of transactions time out instead of paginating results.,BUG-2300-01,Open
+TCKT-00006,CUST-0003,2026-09-06,2.3.0,Bug,Custom report builder times out on 3+ year date ranges,Reports spanning more than 3 years of transactions time out instead of paginating results.,BUG-2300-01,Open
+TCKT-00015,CUST-0013,2026-09-06,2.3.1,Bug,Minor: report builder date picker shows wrong first day of week,"The date-range picker in the custom report builder always starts weeks on Sunday, ignoring the organization's locale setting.",BUG-2310-03,Open
+TCKT-00030,CUST-0024,2026-09-06,2.3.0,Billing,Can we get a custom invoice template?,Customer reached out via the support portal with a general request.,,Open
+TCKT-00016,CUST-0013,2026-09-08,2.3.1,Bug,Minor: report builder date picker shows wrong first day of week,"The date-range picker in the custom report builder always starts weeks on Sunday, ignoring the organization's locale setting.",BUG-2310-03,Open
+TCKT-00040,CUST-0001,2026-09-09,2.3.1,Bug,Bank reconciliation not matching multi-currency transactions,"Our EMEA team reports that since upgrading to 2.3.1, almost none of our EUR and GBP bank transactions are being auto-matched during reconciliation. USD transactions match fine.",BUG-2310-01,Open

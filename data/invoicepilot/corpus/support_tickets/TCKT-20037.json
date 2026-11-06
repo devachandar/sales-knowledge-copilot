@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20037",
+  "created_at": "2026-08-23T12:41:00Z",
+  "customer_id": "CUST-0020",
+  "company": "Weyland-Yutani",
+  "plan": "Enterprise",
+  "product_version": "2.3.1",
+  "subject": "Auto-match not matching our EUR transactions",
+  "status": "Linked to bug",
+  "tags": [
+    "bank-reconciliation",
+    "multi-currency",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2310-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Weyland-Yutani admin",
+      "sent_at": "2026-08-23T12:41:00Z",
+      "body": "Auto-match suggests wrong amounts for our GBP account."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-08-24T14:44:00Z",
+      "body": "This is BUG-2310-01 (Critical, open): on 2.3.1, auto-match does not convert foreign-currency amounts before comparing them. Please match foreign-currency transactions manually for now, and don't bulk-confirm suggested matches on that account. I can't share a fix date, but your ticket is linked and you'll get an email when it ships."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20183",
+  "created_at": "2026-10-05T12:25:00Z",
+  "customer_id": "CUST-0001",
+  "company": "Oracle",
+  "plan": "Enterprise",
+  "product_version": "2.3.1",
+  "subject": "Sandbox data gone",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "sandbox"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Oracle admin",
+      "sent_at": "2026-10-05T12:25:00Z",
+      "body": "All our test invoices disappeared from the sandbox."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-10-05T13:37:00Z",
+      "body": "The sandbox resets on the first day of every month. Re-create test data with a setup script after each reset."
+    },
+    {
+      "from": "customer",
+      "name": "Oracle admin",
+      "sent_at": "2026-10-06T07:31:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

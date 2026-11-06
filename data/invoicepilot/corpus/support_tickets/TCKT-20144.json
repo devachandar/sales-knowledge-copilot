@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20144",
+  "created_at": "2026-10-19T15:23:00Z",
+  "customer_id": "CUST-0028",
+  "company": "Springfield Nuclear",
+  "plan": "Enterprise",
+  "product_version": "2.3.1",
+  "subject": "Do you support Okta SSO?",
+  "status": "Solved",
+  "tags": [
+    "security",
+    "sso"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Springfield Nuclear admin",
+      "sent_at": "2026-10-19T15:23:00Z",
+      "body": "Our IT team requires SAML SSO. When will you support it?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-10-19T16:23:00Z",
+      "body": "Single sign-on (SAML) isn't available today, and I don't have a date to share. Every user can turn on two-step verification in the meantime."
+    },
+    {
+      "from": "customer",
+      "name": "Springfield Nuclear admin",
+      "sent_at": "2026-10-20T10:38:00Z",
+      "body": "Thanks, that worked."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20161",
+  "created_at": "2025-06-17T08:18:00Z",
+  "customer_id": "CUST-0017",
+  "company": "Sterling Cooper",
+  "plan": "Starter",
+  "product_version": "2.0.0",
+  "subject": "Late fees setting missing",
+  "status": "Solved",
+  "tags": [
+    "invoicing",
+    "classic"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Sterling Cooper admin",
+      "sent_at": "2025-06-17T08:18:00Z",
+      "body": "We used automatic late fees in Classic. Where's the setting now?"
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2025-06-17T09:46:00Z",
+      "body": "Automatic late fees were part of InvoicePilot Classic (1.x) and weren't carried over to 2.x. You can add a late fee as a line item or a separate invoice, and mention your terms in payment reminders."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20120",
+  "created_at": "2026-10-01T15:00:00Z",
+  "customer_id": "CUST-0022",
+  "company": "Los Pollos Hermanos",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "Stopped receiving webhooks",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "webhooks"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Los Pollos Hermanos admin",
+      "sent_at": "2026-10-01T15:00:00Z",
+      "body": "We stopped getting webhooks after our server was down over the weekend."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-10-02T17:51:00Z",
+      "body": "Endpoints are disabled after 3 days of failed deliveries. Re-enable it under Settings > Developer > Webhooks. Each failed delivery is retried up to 8 times over 24 hours, so events from before that window are not resent; use the API to catch up."
+    },
+    {
+      "from": "customer",
+      "name": "Los Pollos Hermanos admin",
+      "sent_at": "2026-10-03T11:19:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

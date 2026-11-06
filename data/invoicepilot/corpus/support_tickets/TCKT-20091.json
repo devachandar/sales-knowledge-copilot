@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20091",
+  "created_at": "2025-10-23T15:10:00Z",
+  "customer_id": "CUST-0005",
+  "company": "Umbrella Corp",
+  "plan": "Starter",
+  "product_version": "2.1.0",
+  "subject": "Reminder sent twice",
+  "status": "Solved",
+  "tags": [
+    "reminders",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2100-04",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Umbrella Corp admin",
+      "sent_at": "2025-10-23T15:10:00Z",
+      "body": "Two clients got the same payment reminder twice last night."
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2025-10-23T17:00:00Z",
+      "body": "That's BUG-2100-04: reminders with a send window crossing midnight UTC go out twice on 2.1.0. Fixed in 2.1.1. Until then, set the window so it doesn't cross midnight UTC."
+    }
+  ]
+}

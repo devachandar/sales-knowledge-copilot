@@ -1,0 +1,221 @@
+sale_id,customer_id,order_date,order_type,product_version,plan,seats_purchased,unit_price_usd,total_amount_usd,sales_rep,license_status,license_expiry_date
+SALE-00021,CUST-0004,2024-04-06,New,2.0.0,Enterprise,166,40,6640,Priya Nair,Active,2025-04-06
+SALE-00077,CUST-0010,2024-05-03,New,2.0.0,Enterprise,212,40,8480,Elena Vasquez,Active,2025-05-03
+SALE-00178,CUST-0024,2024-06-04,New,2.0.0,Enterprise,134,40,5360,Marcus Webb,Active,2025-06-04
+SALE-00078,CUST-0010,2024-07-04,Add Seats,2.0.0,Enterprise,217,40,8680,Daniel Cho,Active,2025-07-04
+SALE-00093,CUST-0012,2024-07-04,New,2.0.0,Starter,12,12,144,Marcus Webb,Active,2025-07-04
+SALE-00022,CUST-0004,2024-08-01,Renewal,2.0.0,Enterprise,166,40,6640,Jordan Blake,Active,2025-08-01
+SALE-00067,CUST-0009,2024-08-02,New,2.0.0,Starter,44,12,528,Sam Okafor,Active,2025-08-02
+SALE-00179,CUST-0024,2024-08-17,Add Seats,2.0.0,Enterprise,139,40,5560,Daniel Cho,Active,2025-08-17
+SALE-00031,CUST-0005,2024-08-18,New,2.0.0,Starter,53,12,636,Jordan Blake,Active,2025-08-18
+SALE-00152,CUST-0021,2024-08-27,New,2.0.0,Starter,43,12,516,Jordan Blake,Active,2025-08-27
+SALE-00094,CUST-0012,2024-08-29,Add Seats,2.0.0,Starter,17,12,204,Priya Nair,Active,2025-08-29
+SALE-00068,CUST-0009,2024-09-22,Renewal,2.0.0,Starter,44,12,528,Sam Okafor,Active,2025-09-22
+SALE-00058,CUST-0008,2024-09-28,New,2.0.0,Professional,8,25,200,Priya Nair,Active,2025-09-28
+SALE-00180,CUST-0024,2024-10-08,Add Seats,2.0.0,Enterprise,144,40,5760,Priya Nair,Active,2025-10-08
+SALE-00032,CUST-0005,2024-10-14,Add Seats,2.0.0,Starter,63,12,756,Jordan Blake,Active,2025-10-14
+SALE-00153,CUST-0021,2024-10-18,Renewal,2.0.0,Starter,43,12,516,Marcus Webb,Active,2025-10-18
+SALE-00095,CUST-0012,2024-10-19,Add Seats,2.0.0,Starter,22,12,264,Jordan Blake,Active,2025-10-19
+SALE-00213,CUST-0030,2024-11-20,New,2.0.0,Professional,42,25,1050,Priya Nair,Active,2025-11-20
+SALE-00079,CUST-0010,2024-11-21,Add Seats,2.0.0,Enterprise,212,40,8480,Jordan Blake,Active,2025-11-21
+SALE-00069,CUST-0009,2024-11-22,Add Seats,2.0.0,Starter,49,12,588,Priya Nair,Active,2025-11-22
+SALE-00154,CUST-0021,2024-12-08,Add Seats,2.0.0,Starter,48,12,576,Sam Okafor,Active,2025-12-08
+SALE-00059,CUST-0008,2024-12-19,Add Seats,2.0.0,Professional,3,25,75,Daniel Cho,Active,2025-12-19
+SALE-00023,CUST-0004,2024-12-20,Renewal,2.0.0,Enterprise,166,40,6640,Marcus Webb,Active,2025-12-20
+SALE-00033,CUST-0005,2024-12-21,Add Seats,2.0.0,Starter,58,12,696,Elena Vasquez,Active,2025-12-21
+SALE-00043,CUST-0006,2024-12-22,New,2.0.0,Starter,60,12,720,Jordan Blake,Active,2025-12-22
+SALE-00096,CUST-0012,2024-12-23,Add Seats,2.0.0,Starter,17,12,204,Priya Nair,Active,2025-12-23
+SALE-00085,CUST-0011,2024-12-25,New,2.0.0,Starter,16,12,192,Jordan Blake,Active,2025-12-25
+SALE-00070,CUST-0009,2025-01-21,Renewal,2.0.0,Starter,49,12,588,Elena Vasquez,Active,2026-01-21
+SALE-00214,CUST-0030,2025-01-21,Renewal,2.0.0,Professional,42,25,1050,Elena Vasquez,Active,2026-01-21
+SALE-00080,CUST-0010,2025-02-01,Renewal,2.0.0,Enterprise,212,40,8480,Priya Nair,Active,2026-02-01
+SALE-00132,CUST-0018,2025-02-03,New,2.0.0,Starter,8,12,96,Daniel Cho,Active,2026-02-03
+SALE-00161,CUST-0022,2025-02-05,New,2.0.0,Starter,58,12,696,Elena Vasquez,Active,2026-02-05
+SALE-00044,CUST-0006,2025-02-08,Renewal,2.0.0,Starter,60,12,720,Priya Nair,Active,2026-02-08
+SALE-00034,CUST-0005,2025-02-11,Renewal,2.0.0,Starter,58,12,696,Marcus Webb,Active,2026-02-11
+SALE-00024,CUST-0004,2025-02-13,Add Seats,2.0.0,Enterprise,161,40,6440,Priya Nair,Active,2026-02-13
+SALE-00155,CUST-0021,2025-02-15,Renewal,2.0.0,Starter,48,12,576,Priya Nair,Active,2026-02-15
+SALE-00181,CUST-0024,2025-02-20,Add Seats,2.0.0,Enterprise,154,40,6160,Marcus Webb,Active,2026-02-20
+SALE-00188,CUST-0025,2025-02-22,New,2.0.0,Professional,23,25,575,Elena Vasquez,Active,2026-02-22
+SALE-00086,CUST-0011,2025-03-01,Add Seats,2.0.0,Starter,26,12,312,Jordan Blake,Active,2026-03-01
+SALE-00139,CUST-0019,2025-03-12,New,2.0.0,Professional,6,25,150,Elena Vasquez,Active,2026-03-12
+SALE-00113,CUST-0015,2025-03-16,New,2.0.0,Starter,6,12,72,Priya Nair,Active,2026-03-16
+SALE-00123,CUST-0017,2025-03-20,New,2.0.0,Starter,15,12,180,Jordan Blake,Active,2026-03-20
+SALE-00081,CUST-0010,2025-03-27,Add Seats,2.0.0,Enterprise,217,40,8680,Sam Okafor,Active,2026-03-27
+SALE-00035,CUST-0005,2025-03-29,Renewal,2.0.0,Starter,58,12,696,Sam Okafor,Active,2026-03-29
+SALE-00162,CUST-0022,2025-03-31,Add Seats,2.0.0,Starter,53,12,636,Jordan Blake,Active,2026-03-31
+SALE-00215,CUST-0030,2025-04-09,Add Seats,2.0.0,Professional,47,25,1175,Daniel Cho,Active,2026-04-09
+SALE-00071,CUST-0009,2025-04-10,Add Seats,2.0.0,Starter,44,12,528,Jordan Blake,Active,2026-04-10
+SALE-00133,CUST-0018,2025-04-15,Add Seats,2.0.0,Starter,3,12,36,Jordan Blake,Active,2026-04-15
+SALE-00045,CUST-0006,2025-04-19,Renewal,2.0.0,Starter,60,12,720,Daniel Cho,Active,2026-04-19
+SALE-00097,CUST-0012,2025-04-28,Add Seats,2.0.0,Starter,27,12,324,Priya Nair,Active,2026-04-28
+SALE-00087,CUST-0011,2025-04-30,Renewal,2.0.0,Starter,26,12,312,Elena Vasquez,Active,2026-04-30
+SALE-00222,CUST-0001,2025-05-02,New,2.0.0,Enterprise,220,40,8800,Jordan Blake,Active,2026-05-02
+SALE-00170,CUST-0023,2025-05-03,New,2.0.0,Enterprise,229,40,9160,Marcus Webb,Active,2026-05-03
+SALE-00025,CUST-0004,2025-05-07,Renewal,2.0.0,Enterprise,161,40,6440,Priya Nair,Active,2026-05-07
+SALE-00156,CUST-0021,2025-05-08,Renewal,2.0.0,Starter,48,12,576,Priya Nair,Active,2026-05-08
+SALE-00189,CUST-0025,2025-05-08,Renewal,2.0.0,Professional,23,25,575,Priya Nair,Active,2026-05-08
+SALE-00060,CUST-0008,2025-05-15,Renewal,2.0.0,Professional,3,25,75,Elena Vasquez,Active,2026-05-15
+SALE-00007,CUST-0002,2025-05-22,New,2.0.0,Starter,30,12,360,Marcus Webb,Active,2026-05-22
+SALE-00036,CUST-0005,2025-05-27,Renewal,2.0.0,Starter,58,12,696,Daniel Cho,Active,2026-05-27
+SALE-00163,CUST-0022,2025-06-01,Add Seats,2.0.0,Starter,48,12,576,Elena Vasquez,Active,2026-06-01
+SALE-00140,CUST-0019,2025-06-02,Renewal,2.0.0,Professional,6,25,150,Priya Nair,Active,2026-06-02
+SALE-00124,CUST-0017,2025-06-03,Renewal,2.0.0,Starter,15,12,180,Jordan Blake,Active,2026-06-03
+SALE-00046,CUST-0006,2025-06-15,Add Seats,2.0.0,Starter,70,12,840,Daniel Cho,Active,2026-06-15
+SALE-00082,CUST-0010,2025-06-15,Renewal,2.0.0,Enterprise,217,40,8680,Priya Nair,Active,2026-06-15
+SALE-00072,CUST-0009,2025-06-27,Add Seats,2.0.0,Starter,39,12,468,Marcus Webb,Active,2026-06-27
+SALE-00216,CUST-0030,2025-06-30,Add Seats,2.0.0,Professional,57,25,1425,Priya Nair,Active,2026-06-30
+SALE-00199,CUST-0027,2025-07-09,New,2.0.0,Enterprise,90,40,3600,Daniel Cho,Active,2026-07-09
+SALE-00008,CUST-0002,2025-07-10,Add Seats,2.0.0,Starter,25,12,300,Jordan Blake,Active,2026-07-10
+SALE-00119,CUST-0016,2025-07-22,New,2.0.0,Enterprise,284,40,11360,Priya Nair,Active,2026-07-22
+SALE-00171,CUST-0023,2025-07-22,Renewal,2.0.0,Enterprise,229,40,9160,Priya Nair,Active,2026-07-22
+SALE-00182,CUST-0024,2025-07-30,Renewal,2.0.0,Enterprise,154,40,6160,Daniel Cho,Active,2026-07-30
+SALE-00125,CUST-0017,2025-08-04,Add Seats,2.0.0,Starter,10,12,120,Elena Vasquez,Active,2026-08-04
+SALE-00141,CUST-0019,2025-08-13,Add Seats,2.0.0,Professional,16,25,400,Daniel Cho,Active,2026-08-13
+SALE-00088,CUST-0011,2025-08-14,Add Seats,2.0.0,Starter,36,12,432,Marcus Webb,Active,2026-08-14
+SALE-00164,CUST-0022,2025-08-14,Add Seats,2.0.0,Starter,43,12,516,Marcus Webb,Active,2026-08-14
+SALE-00083,CUST-0010,2025-08-18,Renewal,2.0.0,Enterprise,217,40,8680,Marcus Webb,Active,2026-08-18
+SALE-00134,CUST-0018,2025-08-20,Renewal,2.0.0,Starter,3,12,36,Marcus Webb,Active,2026-08-20
+SALE-00047,CUST-0006,2025-08-26,Add Seats,2.0.0,Starter,80,12,960,Daniel Cho,Active,2026-08-26
+SALE-00200,CUST-0027,2025-09-03,Renewal,2.0.0,Enterprise,90,40,3600,Priya Nair,Active,2026-09-03
+SALE-00009,CUST-0002,2025-09-13,Add Seats,2.0.0,Starter,35,12,420,Elena Vasquez,Active,2026-09-13
+SALE-00217,CUST-0030,2025-09-13,Add Seats,2.0.0,Professional,62,25,1550,Marcus Webb,Active,2026-09-13
+SALE-00026,CUST-0004,2025-09-16,Upgrade,2.1.0,Enterprise,161,40,6440,Daniel Cho,Active,2026-09-16
+SALE-00107,CUST-0014,2025-09-17,New,2.1.0,Professional,43,25,1075,Jordan Blake,Active,2026-09-17
+SALE-00037,CUST-0005,2025-09-19,Upgrade,2.1.0,Starter,58,12,696,Daniel Cho,Active,2026-09-19
+SALE-00172,CUST-0023,2025-09-20,Add Seats,2.0.0,Enterprise,239,40,9560,Sam Okafor,Active,2026-09-20
+SALE-00223,CUST-0001,2025-09-20,Upgrade,2.1.0,Enterprise,220,40,8800,Sam Okafor,Active,2026-09-20
+SALE-00190,CUST-0025,2025-09-21,Upgrade,2.1.0,Professional,23,25,575,Priya Nair,Active,2026-09-21
+SALE-00061,CUST-0008,2025-09-25,Upgrade,2.1.0,Professional,3,25,75,Sam Okafor,Active,2026-09-25
+SALE-00114,CUST-0015,2025-09-25,Upgrade,2.1.0,Starter,6,12,72,Jordan Blake,Active,2026-09-25
+SALE-00142,CUST-0019,2025-09-30,Upgrade,2.1.0,Professional,16,25,400,Marcus Webb,Active,2026-09-30
+SALE-00183,CUST-0024,2025-10-01,Upgrade,2.1.0,Enterprise,154,40,6160,Daniel Cho,Active,2026-10-01
+SALE-00098,CUST-0012,2025-10-02,Renewal,2.0.0,Starter,27,12,324,Marcus Webb,Active,2026-10-02
+SALE-00120,CUST-0016,2025-10-04,Upgrade,2.1.0,Enterprise,284,40,11360,Elena Vasquez,Active,2026-10-04
+SALE-00015,CUST-0003,2025-10-08,New,2.1.0,Enterprise,89,40,3560,Jordan Blake,Active,2026-10-08
+SALE-00073,CUST-0009,2025-10-09,Upgrade,2.1.0,Starter,39,12,468,Priya Nair,Active,2026-10-09
+SALE-00048,CUST-0006,2025-10-14,Upgrade,2.1.0,Starter,80,12,960,Sam Okafor,Active,2026-10-14
+SALE-00084,CUST-0010,2025-10-15,Renewal,2.0.0,Enterprise,217,40,8680,Marcus Webb,Active,2026-10-15
+SALE-00135,CUST-0018,2025-10-23,Add Seats,2.0.0,Starter,13,12,156,Sam Okafor,Active,2026-10-23
+SALE-00126,CUST-0017,2025-10-28,Upgrade,2.1.0,Starter,10,12,120,Elena Vasquez,Active,2026-10-28
+SALE-00062,CUST-0008,2025-11-11,Add Seats,2.1.0,Professional,13,25,325,Jordan Blake,Active,2026-11-11
+SALE-00201,CUST-0027,2025-11-13,Upgrade,2.1.0,Enterprise,90,40,3600,Sam Okafor,Active,2026-11-13
+SALE-00209,CUST-0029,2025-11-16,New,2.1.0,Professional,49,25,1225,Elena Vasquez,Active,2026-11-16
+SALE-00173,CUST-0023,2025-11-19,Add Seats,2.0.0,Enterprise,249,40,9960,Elena Vasquez,Active,2026-11-19
+SALE-00038,CUST-0005,2025-11-20,Renewal,2.1.0,Starter,58,12,696,Sam Okafor,Active,2026-11-20
+SALE-00108,CUST-0014,2025-11-21,Add Seats,2.1.0,Professional,53,25,1325,Jordan Blake,Active,2026-11-21
+SALE-00053,CUST-0007,2025-11-24,New,2.1.0,Starter,55,12,660,Elena Vasquez,Active,2026-11-24
+SALE-00010,CUST-0002,2025-11-26,Upgrade,2.1.0,Starter,35,12,420,Daniel Cho,Active,2026-11-26
+SALE-00143,CUST-0019,2025-11-27,Add Seats,2.1.0,Professional,21,25,525,Elena Vasquez,Active,2026-11-27
+SALE-00191,CUST-0025,2025-11-30,Add Seats,2.1.0,Professional,18,25,450,Jordan Blake,Active,2026-11-30
+SALE-00016,CUST-0003,2025-12-02,Add Seats,2.1.0,Enterprise,99,40,3960,Sam Okafor,Active,2026-12-02
+SALE-00049,CUST-0006,2025-12-04,Add Seats,2.1.0,Starter,75,12,900,Priya Nair,Active,2026-12-04
+SALE-00184,CUST-0024,2025-12-04,Add Seats,2.1.0,Enterprise,149,40,5960,Daniel Cho,Active,2026-12-04
+SALE-00165,CUST-0022,2025-12-07,Upgrade,2.1.0,Starter,43,12,516,Elena Vasquez,Active,2026-12-07
+SALE-00205,CUST-0028,2025-12-08,New,2.1.0,Enterprise,189,40,7560,Daniel Cho,Active,2026-12-08
+SALE-00099,CUST-0012,2025-12-13,Upgrade,2.1.0,Starter,27,12,324,Jordan Blake,Active,2026-12-13
+SALE-00089,CUST-0011,2025-12-15,Upgrade,2.1.0,Starter,36,12,432,Jordan Blake,Active,2026-12-15
+SALE-00115,CUST-0015,2025-12-15,Add Seats,2.1.0,Starter,16,12,192,Elena Vasquez,Active,2026-12-15
+SALE-00127,CUST-0017,2025-12-16,Renewal,2.1.0,Starter,10,12,120,Marcus Webb,Active,2026-12-16
+SALE-00195,CUST-0026,2025-12-18,New,2.1.0,Starter,33,12,396,Elena Vasquez,Active,2026-12-18
+SALE-00157,CUST-0021,2025-12-22,Add Seats,2.0.0,Starter,53,12,636,Sam Okafor,Active,2026-12-22
+SALE-00074,CUST-0009,2025-12-28,Add Seats,2.1.0,Starter,44,12,528,Sam Okafor,Active,2026-12-28
+SALE-00174,CUST-0023,2026-01-04,Upgrade,2.1.0,Enterprise,249,40,9960,Daniel Cho,Active,2027-01-04
+SALE-00218,CUST-0030,2026-01-08,Upgrade,2.1.0,Professional,62,25,1550,Elena Vasquez,Active,2027-01-08
+SALE-00136,CUST-0018,2026-01-10,Renewal,2.0.0,Starter,13,12,156,Elena Vasquez,Active,2027-01-10
+SALE-00039,CUST-0005,2026-01-12,Add Seats,2.1.0,Starter,53,12,636,Sam Okafor,Active,2027-01-12
+SALE-00148,CUST-0020,2026-01-14,New,2.1.0,Enterprise,101,40,4040,Priya Nair,Active,2027-01-14
+SALE-00192,CUST-0025,2026-01-17,Add Seats,2.1.0,Professional,13,25,325,Marcus Webb,Active,2027-01-17
+SALE-00210,CUST-0029,2026-01-17,Add Seats,2.1.0,Professional,59,25,1475,Elena Vasquez,Active,2027-01-17
+SALE-00109,CUST-0014,2026-01-18,Renewal,2.1.0,Professional,53,25,1325,Jordan Blake,Active,2027-01-18
+SALE-00017,CUST-0003,2026-01-20,Upgrade,2.2.0,Enterprise,99,40,3960,Sam Okafor,Active,2027-01-20
+SALE-00011,CUST-0002,2026-01-25,Add Seats,2.1.0,Starter,30,12,360,Marcus Webb,Active,2027-01-25
+SALE-00027,CUST-0004,2026-01-25,Renewal,2.1.0,Enterprise,161,40,6440,Sam Okafor,Active,2027-01-25
+SALE-00054,CUST-0007,2026-01-26,Upgrade,2.2.0,Starter,55,12,660,Jordan Blake,Active,2027-01-26
+SALE-00202,CUST-0027,2026-01-27,Upgrade,2.2.0,Enterprise,90,40,3600,Daniel Cho,Active,2027-01-27
+SALE-00144,CUST-0019,2026-01-28,Add Seats,2.1.0,Professional,31,25,775,Marcus Webb,Active,2027-01-28
+SALE-00224,CUST-0001,2026-01-28,Upgrade,2.2.0,Enterprise,250,40,10000,Elena Vasquez,Active,2027-01-28
+SALE-00063,CUST-0008,2026-02-01,Add Seats,2.1.0,Professional,18,25,450,Marcus Webb,Active,2027-02-01
+SALE-00185,CUST-0024,2026-02-04,Upgrade,2.2.0,Enterprise,149,40,5960,Priya Nair,Active,2027-02-04
+SALE-00166,CUST-0022,2026-02-05,Add Seats,2.1.0,Starter,38,12,456,Sam Okafor,Active,2027-02-05
+SALE-00090,CUST-0011,2026-02-10,Upgrade,2.2.0,Starter,36,12,432,Marcus Webb,Active,2027-02-10
+SALE-00100,CUST-0012,2026-02-17,Renewal,2.1.0,Starter,27,12,324,Jordan Blake,Active,2027-02-17
+SALE-00128,CUST-0017,2026-02-20,Upgrade,2.2.0,Starter,10,12,120,Sam Okafor,Active,2027-02-20
+SALE-00104,CUST-0013,2026-02-21,New,2.2.0,Enterprise,223,40,8920,Jordan Blake,Active,2027-02-21
+SALE-00116,CUST-0015,2026-02-23,Upgrade,2.2.0,Starter,16,12,192,Jordan Blake,Active,2027-02-23
+SALE-00075,CUST-0009,2026-02-24,Renewal,2.1.0,Starter,44,12,528,Jordan Blake,Active,2027-02-24
+SALE-00158,CUST-0021,2026-03-04,Renewal,2.0.0,Starter,53,12,636,Sam Okafor,Active,2027-03-04
+SALE-00211,CUST-0029,2026-03-08,Add Seats,2.1.0,Professional,69,25,1725,Jordan Blake,Active,2027-03-08
+SALE-00110,CUST-0014,2026-03-09,Upgrade,2.2.0,Professional,53,25,1325,Jordan Blake,Active,2027-03-09
+SALE-00137,CUST-0018,2026-03-10,Upgrade,2.2.0,Starter,13,12,156,Elena Vasquez,Active,2027-03-10
+SALE-00219,CUST-0030,2026-03-12,Add Seats,2.1.0,Professional,72,25,1800,Sam Okafor,Active,2027-03-12
+SALE-00121,CUST-0016,2026-03-14,Upgrade,2.2.0,Enterprise,284,40,11360,Elena Vasquez,Active,2027-03-14
+SALE-00175,CUST-0023,2026-03-15,Add Seats,2.1.0,Enterprise,254,40,10160,Jordan Blake,Active,2027-03-15
+SALE-00028,CUST-0004,2026-03-19,Upgrade,2.2.0,Enterprise,161,40,6440,Elena Vasquez,Active,2027-03-19
+SALE-00145,CUST-0019,2026-03-19,Upgrade,2.2.0,Professional,31,25,775,Jordan Blake,Active,2027-03-19
+SALE-00050,CUST-0006,2026-03-24,Upgrade,2.2.0,Starter,75,12,900,Elena Vasquez,Active,2027-03-24
+SALE-00206,CUST-0028,2026-03-26,Upgrade,2.2.0,Enterprise,189,40,7560,Daniel Cho,Active,2027-03-26
+SALE-00040,CUST-0005,2026-03-28,Upgrade,2.2.0,Starter,53,12,636,Elena Vasquez,Active,2027-03-28
+SALE-00064,CUST-0008,2026-03-31,Add Seats,2.1.0,Professional,23,25,575,Daniel Cho,Active,2027-03-31
+SALE-00203,CUST-0027,2026-03-31,Add Seats,2.2.0,Enterprise,100,40,4000,Priya Nair,Active,2027-03-31
+SALE-00018,CUST-0003,2026-04-04,Add Seats,2.2.0,Enterprise,94,40,3760,Priya Nair,Active,2027-04-04
+SALE-00149,CUST-0020,2026-04-08,Upgrade,2.2.0,Enterprise,101,40,4040,Daniel Cho,Active,2027-04-08
+SALE-00129,CUST-0017,2026-04-11,Renewal,2.2.0,Starter,10,12,120,Elena Vasquez,Active,2027-04-11
+SALE-00167,CUST-0022,2026-04-15,Upgrade,2.2.0,Starter,38,12,456,Elena Vasquez,Active,2027-04-15
+SALE-00055,CUST-0007,2026-04-16,Add Seats,2.2.0,Starter,65,12,780,Daniel Cho,Active,2027-04-16
+SALE-00012,CUST-0002,2026-04-17,Upgrade,2.2.0,Starter,30,12,360,Sam Okafor,Active,2027-04-17
+SALE-00105,CUST-0013,2026-04-18,Add Seats,2.2.0,Enterprise,228,40,9120,Elena Vasquez,Active,2027-04-18
+SALE-00101,CUST-0012,2026-04-22,Upgrade,2.2.0,Starter,27,12,324,Jordan Blake,Active,2027-04-22
+SALE-00138,CUST-0018,2026-04-25,Add Seats,2.2.0,Starter,23,12,276,Jordan Blake,Active,2027-04-25
+SALE-00186,CUST-0024,2026-04-25,Renewal,2.2.0,Enterprise,149,40,5960,Jordan Blake,Active,2027-04-25
+SALE-00220,CUST-0030,2026-04-28,Upgrade,2.2.0,Professional,72,25,1800,Marcus Webb,Active,2027-04-28
+SALE-00193,CUST-0025,2026-04-29,Add Seats,2.1.0,Professional,23,25,575,Sam Okafor,Active,2027-04-29
+SALE-00196,CUST-0026,2026-05-03,Upgrade,2.2.0,Starter,33,12,396,Sam Okafor,Active,2027-05-03
+SALE-00159,CUST-0021,2026-05-09,Upgrade,2.2.0,Starter,53,12,636,Elena Vasquez,Active,2027-05-09
+SALE-00212,CUST-0029,2026-05-12,Renewal,2.1.0,Professional,69,25,1725,Priya Nair,Active,2027-05-12
+SALE-00225,CUST-0001,2026-05-18,Upgrade,2.3.0,Enterprise,250,40,10000,Elena Vasquez,Active,2027-05-18
+SALE-00019,CUST-0003,2026-05-26,Add Seats,2.2.0,Enterprise,89,40,3560,Marcus Webb,Active,2027-05-26
+SALE-00207,CUST-0028,2026-05-29,Add Seats,2.2.0,Enterprise,184,40,7360,Marcus Webb,Active,2027-05-29
+SALE-00117,CUST-0015,2026-05-30,Renewal,2.2.0,Starter,16,12,192,Daniel Cho,Active,2027-05-30
+SALE-00065,CUST-0008,2026-05-31,Upgrade,2.3.0,Professional,23,25,575,Jordan Blake,Active,2027-05-31
+SALE-00091,CUST-0011,2026-06-01,Upgrade,2.3.0,Starter,36,12,432,Sam Okafor,Active,2027-06-01
+SALE-00111,CUST-0014,2026-06-02,Renewal,2.2.0,Professional,53,25,1325,Daniel Cho,Active,2027-06-02
+SALE-00130,CUST-0017,2026-06-04,Renewal,2.2.0,Starter,10,12,120,Elena Vasquez,Active,2027-06-04
+SALE-00176,CUST-0023,2026-06-05,Upgrade,2.3.0,Enterprise,254,40,10160,Sam Okafor,Active,2027-06-05
+SALE-00146,CUST-0019,2026-06-06,Upgrade,2.3.0,Professional,31,25,775,Marcus Webb,Active,2027-06-06
+SALE-00029,CUST-0004,2026-06-07,Upgrade,2.3.0,Enterprise,161,40,6440,Sam Okafor,Active,2027-06-07
+SALE-00041,CUST-0005,2026-06-07,Upgrade,2.3.0,Starter,53,12,636,Priya Nair,Active,2027-06-07
+SALE-00051,CUST-0006,2026-06-07,Upgrade,2.3.0,Starter,75,12,900,Elena Vasquez,Active,2027-06-07
+SALE-00056,CUST-0007,2026-06-12,Upgrade,2.3.0,Starter,65,12,780,Priya Nair,Active,2027-06-12
+SALE-00168,CUST-0022,2026-06-19,Upgrade,2.3.0,Starter,38,12,456,Daniel Cho,Active,2027-06-19
+SALE-00197,CUST-0026,2026-06-20,Renewal,2.2.0,Starter,33,12,396,Daniel Cho,Active,2027-06-20
+SALE-00150,CUST-0020,2026-06-22,Add Seats,2.2.0,Enterprise,96,40,3840,Daniel Cho,Active,2027-06-22
+SALE-00013,CUST-0002,2026-06-26,Upgrade,2.3.0,Starter,30,12,360,Daniel Cho,Active,2027-06-26
+SALE-00221,CUST-0030,2026-06-28,Upgrade,2.3.0,Professional,72,25,1800,Elena Vasquez,Active,2027-06-28
+SALE-00102,CUST-0012,2026-07-02,Upgrade,2.3.0,Starter,27,12,324,Jordan Blake,Active,2027-07-02
+SALE-00187,CUST-0024,2026-07-10,Upgrade,2.3.0,Enterprise,149,40,5960,Priya Nair,Active,2027-07-10
+SALE-00194,CUST-0025,2026-07-21,Renewal,2.1.0,Professional,23,25,575,Sam Okafor,Active,2027-07-21
+SALE-00160,CUST-0021,2026-07-24,Upgrade,2.3.0,Starter,53,12,636,Marcus Webb,Active,2027-07-24
+SALE-00052,CUST-0006,2026-07-25,Renewal,2.3.0,Starter,75,12,900,Elena Vasquez,Active,2027-07-25
+SALE-00020,CUST-0003,2026-07-31,Upgrade,2.3.0,Enterprise,89,40,3560,Elena Vasquez,Active,2027-07-31
+SALE-00066,CUST-0008,2026-08-03,Renewal,2.3.0,Professional,23,25,575,Priya Nair,Active,2027-08-03
+SALE-00147,CUST-0019,2026-08-04,Renewal,2.3.0,Professional,31,25,775,Priya Nair,Active,2027-08-04
+SALE-00076,CUST-0009,2026-08-05,Upgrade,2.3.0,Starter,44,12,528,Priya Nair,Active,2027-08-05
+SALE-00112,CUST-0014,2026-08-05,Upgrade,2.3.0,Professional,53,25,1325,Daniel Cho,Active,2027-08-05
+SALE-00092,CUST-0011,2026-08-10,Add Seats,2.3.0,Starter,31,12,372,Marcus Webb,Active,2027-08-10
+SALE-00208,CUST-0028,2026-08-10,Upgrade,2.3.0,Enterprise,184,40,7360,Jordan Blake,Active,2027-08-10
+SALE-00131,CUST-0017,2026-08-14,Upgrade,2.3.1,Starter,10,12,120,Elena Vasquez,Active,2027-08-14
+SALE-00118,CUST-0015,2026-08-16,Upgrade,2.3.1,Starter,16,12,192,Sam Okafor,Active,2027-08-16
+SALE-00042,CUST-0005,2026-08-18,Upgrade,2.3.1,Starter,53,12,636,Elena Vasquez,Active,2027-08-18
+SALE-00226,CUST-0001,2026-08-20,Upgrade,2.3.1,Enterprise,260,40,10400,Priya Nair,Active,2027-08-20
+SALE-00122,CUST-0016,2026-08-22,Upgrade,2.3.1,Enterprise,284,40,11360,Sam Okafor,Active,2027-08-22
+SALE-00177,CUST-0023,2026-08-22,Upgrade,2.3.1,Enterprise,254,40,10160,Jordan Blake,Active,2027-08-22
+SALE-00204,CUST-0027,2026-08-22,Renewal,2.2.0,Enterprise,100,40,4000,Elena Vasquez,Active,2027-08-22
+SALE-00169,CUST-0022,2026-08-25,Add Seats,2.3.0,Starter,43,12,516,Marcus Webb,Active,2027-08-25
+SALE-00030,CUST-0004,2026-08-29,Upgrade,2.3.1,Enterprise,161,40,6440,Daniel Cho,Active,2027-08-29
+SALE-00057,CUST-0007,2026-09-02,Renewal,2.3.0,Starter,65,12,780,Jordan Blake,Active,2027-09-02
+SALE-00103,CUST-0012,2026-09-03,Renewal,2.3.0,Starter,27,12,324,Elena Vasquez,Active,2027-09-03
+SALE-00151,CUST-0020,2026-09-04,Add Seats,2.2.0,Enterprise,101,40,4040,Daniel Cho,Active,2027-09-04
+SALE-00106,CUST-0013,2026-09-09,Upgrade,2.3.1,Enterprise,228,40,9120,Elena Vasquez,Active,2027-09-09
+SALE-00014,CUST-0002,2026-09-11,Upgrade,2.3.1,Starter,30,12,360,Priya Nair,Active,2027-09-11
+SALE-00198,CUST-0026,2026-09-13,Upgrade,2.3.1,Starter,33,12,396,Jordan Blake,Active,2027-09-13

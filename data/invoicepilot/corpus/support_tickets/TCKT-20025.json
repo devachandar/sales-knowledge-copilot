@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20025",
+  "created_at": "2026-08-23T09:38:00Z",
+  "customer_id": "CUST-0009",
+  "company": "Hooli",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "503 IP-5030 from bank endpoints",
+  "status": "Solved",
+  "tags": [
+    "api",
+    "bank-feeds",
+    "incident"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Hooli admin",
+      "sent_at": "2026-08-23T09:38:00Z",
+      "body": "Is something down? IP-5030 everywhere."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-08-23T11:04:00Z",
+      "body": "IP-5030 means a bank feed provider is unavailable. It is retryable with backoff. We had a provider incident this morning; see status.invoicepilot.example. Your requests should succeed once it recovers."
+    }
+  ]
+}

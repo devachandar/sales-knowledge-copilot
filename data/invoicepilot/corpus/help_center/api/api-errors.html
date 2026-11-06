@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error codes | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/api-errors">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-05-11">
+<meta name="applies-to-version" content="2.2.0+">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Error codes</nav>
+<main>
+<article>
+<h1>Error codes</h1>
+<p class="updated">Last updated: 2026-05-11</p>
+<p class="applies">Applies to: InvoicePilot 2.2.0+</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>Errors return JSON with an HTTP status, a code, and a message.</p>
+<pre><code>{
+  "error": {
+    "code": "IP-4220",
+    "message": "line_items[3].quantity must be greater than 0"
+  }
+}</code></pre>
+<table><thead><tr><th>HTTP</th><th>Code</th><th>Meaning</th><th>Retry?</th></tr></thead><tbody><tr><td>400</td><td>IP-4000</td><td>Malformed request or invalid JSON</td><td>No</td></tr><tr><td>401</td><td>IP-4010</td><td>Missing or invalid API key</td><td>No</td></tr><tr><td>403</td><td>IP-4030</td><td>Key lacks permission, or the limit for your plan is reached</td><td>No</td></tr><tr><td>404</td><td>IP-4040</td><td>Resource not found</td><td>No</td></tr><tr><td>409</td><td>IP-4090</td><td>Idempotency-Key was reused with a different request body</td><td>No</td></tr><tr><td>422</td><td>IP-4220</td><td>Validation failed; see message</td><td>No</td></tr><tr><td>429</td><td>IP-4290</td><td>Rate limit exceeded; wait for Retry-After</td><td>Yes</td></tr><tr><td>500</td><td>IP-5000</td><td>Internal error</td><td>Yes, with backoff</td></tr><tr><td>503</td><td>IP-5030</td><td>Bank feed provider unavailable</td><td>Yes, with backoff</td></tr></tbody></table>
+<h2>Idempotency</h2>
+<p>Send an Idempotency-Key header on POST requests. Retrying with the same key returns the original result instead of creating a duplicate. Keys are kept for 24 hours.</p>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="api-rate-limits.html">api-rate-limits</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>1,204 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TCKT-20188",
+  "created_at": "2026-08-05T12:25:00Z",
+  "customer_id": "CUST-0013",
+  "company": "Gringotts Financial",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "Does the SDK retry 429s?",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "sdk"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Gringotts Financial admin",
+      "sent_at": "2026-08-05T12:25:00Z",
+      "body": "Do we need our own retry logic with the Python SDK?"
+    },
+    {
+      "from": "agent",
+      "name": "Leo (Support)",
+      "sent_at": "2026-08-06T14:31:00Z",
+      "body": "The Python SDK retries IP-4290, IP-4291, IP-5000, and IP-5030 automatically with backoff, up to max_retries (default 2). It never retries 4xx validation errors like IP-4220. Pass idempotency_key on creates so retries are safe."
+    },
+    {
+      "from": "customer",
+      "name": "Gringotts Financial admin",
+      "sent_at": "2026-08-07T08:10:00Z",
+      "body": "OK. Please let us know when it's fixed."
+    }
+  ]
+}

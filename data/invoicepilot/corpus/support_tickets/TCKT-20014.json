@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20014",
+  "created_at": "2026-09-27T08:51:00Z",
+  "customer_id": "CUST-0005",
+  "company": "Umbrella Corp",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "IP-4291 errors after scaling workers",
+  "status": "Pending",
+  "tags": [
+    "api",
+    "rate-limit"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Umbrella Corp admin",
+      "sent_at": "2026-09-27T08:51:00Z",
+      "body": "We moved our sync to 16 parallel workers and now get IP-4291. We're well under our per-minute limit."
+    },
+    {
+      "from": "agent",
+      "name": "Nora (Support Tier 2)",
+      "sent_at": "2026-09-28T10:41:00Z",
+      "body": "IP-4291 is the concurrency limit: at most 10 requests in flight per API key, on every plan. IP-4290 is the per-minute limit. Keep 10 or fewer requests in parallel and retry after Retry-After."
+    }
+  ]
+}

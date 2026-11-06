@@ -1,0 +1,6 @@
+version,codename,release_date,summary
+2.0.0,Nova,2025-06-10,Major redesign of the core app with native multi-currency support.
+2.1.0,Solstice,2025-09-16,Automated recurring invoices and receipt-scanning for expenses.
+2.2.0,Meridian,2026-01-20,"Redesigned client portal, bulk invoice actions, and API v2."
+2.3.0,Aurora,2026-05-11,Automatic bank-reconciliation matching and a custom report builder.
+2.3.1,Aurora Patch 1,2026-08-14,Patch release fixing recurring-invoice timezone bugs and PDF export issues.

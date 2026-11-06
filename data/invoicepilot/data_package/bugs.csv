@@ -1,0 +1,11 @@
+bug_id,title,affected_version,fixed_in_version,severity,status,reported_date,description
+BUG-2000-01,Currency rounding error on invoice totals,2.0.0,2.1.0,High,Fixed,2025-06-22,"Invoices in JPY and other zero-decimal currencies rounded totals incorrectly, overcharging customers by up to 1 unit per line item."
+BUG-2000-02,Dashboard fails to load for accounts with 500+ contacts,2.0.0,2.0.0,Medium,Fixed,2025-06-28,Large accounts saw a blank dashboard due to an unpaginated contacts query timing out.
+BUG-2100-01,Receipt OCR misreads handwritten totals,2.1.0,,Low,Won't Fix,2025-09-30,OCR accuracy on handwritten receipts is below 40%; typed/printed receipts are unaffected. Documented as a known limitation.
+BUG-2100-02,Recurring invoices skip a cycle across DST changes,2.1.0,2.3.1,High,Fixed,2025-10-05,"Recurring invoice schedules calculated in local time skipped a billing cycle when daylight-saving time shifted, causing missed invoices for some customers."
+BUG-2200-01,Client portal login loop on Safari,2.2.0,2.2.0,Medium,Fixed,2026-01-25,Safari users were redirected back to the login page after successful authentication due to a cookie SameSite misconfiguration.
+BUG-2200-02,API v2 rate limit headers missing,2.2.0,2.3.0,Low,Fixed,2026-02-02,"API v2 responses did not include X-RateLimit-* headers, making it hard for integrators to back off proactively."
+BUG-2300-01,Custom report builder times out on 3+ year date ranges,2.3.0,,Medium,Open,2026-05-20,Reports spanning more than 3 years of transactions time out instead of paginating results.
+BUG-2310-01,Bank reconciliation auto-match fails for multi-currency accounts,2.3.1,,Critical,Open,2026-08-25,"Auto-match in bank reconciliation does not convert foreign-currency transactions before comparing amounts, so multi-currency accounts see most transactions left unmatched."
+BUG-2310-02,PDF export drops the second page of long invoices,2.3.1,,High,Open,2026-08-29,"Invoices with more than 25 line items export as a single-page PDF, silently dropping remaining line items."
+BUG-2310-03,Minor: report builder date picker shows wrong first day of week,2.3.1,,Low,Open,2026-09-02,"The date-range picker in the custom report builder always starts weeks on Sunday, ignoring the organization's locale setting."

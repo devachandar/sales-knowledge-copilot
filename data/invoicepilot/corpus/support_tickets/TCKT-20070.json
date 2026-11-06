@@ -1,0 +1,36 @@
+{
+  "ticket_id": "TCKT-20070",
+  "created_at": "2026-01-24T11:41:00Z",
+  "customer_id": "CUST-0014",
+  "company": "Vandelay Industries",
+  "plan": "Professional",
+  "product_version": "2.2.0",
+  "subject": "Reminders after bulk void",
+  "status": "Solved",
+  "tags": [
+    "invoicing",
+    "reminders",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2200-03",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Vandelay Industries admin",
+      "sent_at": "2026-01-24T11:41:00Z",
+      "body": "We voided 60 invoices in bulk and clients still got payment reminders for them."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-01-24T12:41:00Z",
+      "body": "That's BUG-2200-03: a bulk void leaves scheduled reminders in place. It will be fixed in 2.2.1. For now, cancel the reminders from each client's Reminders tab."
+    },
+    {
+      "from": "customer",
+      "name": "Vandelay Industries admin",
+      "sent_at": "2026-01-25T06:30:00Z",
+      "body": "Got it, thanks."
+    }
+  ]
+}

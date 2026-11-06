@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20050",
+  "created_at": "2026-10-26T09:17:00Z",
+  "customer_id": "CUST-0012",
+  "company": "Wonka Industries",
+  "plan": "Starter",
+  "product_version": "2.3.1",
+  "subject": "5-year report never finishes",
+  "status": "Linked to bug",
+  "tags": [
+    "reports",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2300-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Wonka Industries admin",
+      "sent_at": "2026-10-26T09:17:00Z",
+      "body": "Report spanning 2021-2026 just spins and fails."
+    },
+    {
+      "from": "agent",
+      "name": "Sam (Support)",
+      "sent_at": "2026-10-26T11:24:00Z",
+      "body": "That's BUG-2300-01 (Medium, open): reports spanning more than 3 years time out. Split the report into ranges of 3 years or less, or use API v2, which pages with a cursor."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "ticket_id": "TCKT-20101",
+  "created_at": "2026-01-10T09:15:00Z",
+  "customer_id": "CUST-0024",
+  "company": "Oceanic Airlines",
+  "plan": "Enterprise",
+  "product_version": "2.1.1",
+  "subject": "Handwritten receipts not scanned",
+  "status": "Linked to bug",
+  "tags": [
+    "expenses"
+  ],
+  "linked_bug_id": "BUG-2100-01",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Oceanic Airlines admin",
+      "sent_at": "2026-01-10T09:15:00Z",
+      "body": "Receipt scanning doesn't read our handwritten taxi receipts at all."
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-01-10T11:13:00Z",
+      "body": "Handwritten receipts are a known limitation, BUG-2100-01 (Low, Won't Fix): OCR accuracy on handwriting is below 40%. Typed and printed receipts scan reliably. Please type the amount for handwritten ones."
+    },
+    {
+      "from": "customer",
+      "name": "Oceanic Airlines admin",
+      "sent_at": "2026-01-11T05:54:00Z",
+      "body": "Thanks, that worked."
+    }
+  ]
+}

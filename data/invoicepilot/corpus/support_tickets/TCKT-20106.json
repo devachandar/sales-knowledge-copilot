@@ -1,0 +1,30 @@
+{
+  "ticket_id": "TCKT-20106",
+  "created_at": "2026-01-05T15:50:00Z",
+  "customer_id": "CUST-0006",
+  "company": "Stark Industries",
+  "plan": "Starter",
+  "product_version": "2.1.1",
+  "subject": "Expense import fails on dates",
+  "status": "Solved",
+  "tags": [
+    "expenses",
+    "import",
+    "bug"
+  ],
+  "linked_bug_id": "BUG-2110-02",
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Stark Industries admin",
+      "sent_at": "2026-01-05T15:50:00Z",
+      "body": "Our CSV has dates like 31/01/2026 and the import rejects every row."
+    },
+    {
+      "from": "agent",
+      "name": "Priya (Support)",
+      "sent_at": "2026-01-06T17:35:00Z",
+      "body": "That's BUG-2110-02: DD/MM/YYYY dates are rejected. It will be fixed in 2.2.1. For now, convert the dates to YYYY-MM-DD."
+    }
+  ]
+}

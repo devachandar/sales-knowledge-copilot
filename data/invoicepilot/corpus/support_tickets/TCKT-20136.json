@@ -1,0 +1,29 @@
+{
+  "ticket_id": "TCKT-20136",
+  "created_at": "2026-08-10T15:29:00Z",
+  "customer_id": "CUST-0023",
+  "company": "Nakatomi Trading",
+  "plan": "Enterprise",
+  "product_version": "2.3.0",
+  "subject": "How many bank accounts can we connect?",
+  "status": "Solved",
+  "tags": [
+    "bank-feeds",
+    "plans"
+  ],
+  "linked_bug_id": null,
+  "messages": [
+    {
+      "from": "customer",
+      "name": "Nakatomi Trading admin",
+      "sent_at": "2026-08-10T15:29:00Z",
+      "body": "We're on Enterprise. How many bank feeds can we connect?"
+    },
+    {
+      "from": "agent",
+      "name": "Maya (Support)",
+      "sent_at": "2026-08-11T17:59:00Z",
+      "body": "Starter includes 2 connected bank feeds, Professional 10, and Enterprise unlimited. You're on Enterprise, so your limit is unlimited."
+    }
+  ]
+}

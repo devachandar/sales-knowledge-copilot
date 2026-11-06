@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reports endpoint | InvoicePilot Help Center</title>
+<meta name="doc-id" content="api/api-reports">
+<meta name="source-type" content="api_reference">
+<meta name="last-updated" content="2026-05-11">
+<meta name="applies-to-version" content="2.3.0+">
+<meta name="available-on-plans" content="Starter, Professional, Enterprise">
+</head>
+<body>
+<header><div class="logo">InvoicePilot</div><nav class="top">Getting Started | Invoicing | Multi-Currency | Recurring Invoices | Expenses | Estimates | Client Portal | Bank Reconciliation | Reports | Account &amp; Billing | Developer API | Support</nav>
+<form class="search"><input placeholder="Search the help center"></form></header>
+<nav class="breadcrumb">Help Center &gt; Developer API &gt; Reports endpoint</nav>
+<main>
+<article>
+<h1>Reports endpoint</h1>
+<p class="updated">Last updated: 2026-05-11</p>
+<p class="applies">Applies to: InvoicePilot 2.3.0+</p>
+<p class="plans">Available on: Starter, Professional, Enterprise</p>
+<p>Added to API v2 on 2026-05-11. See the API changelog.</p>
+<table><thead><tr><th>Method</th><th>Path</th><th>Does</th></tr></thead><tbody><tr><td>GET</td><td>/v2/reports</td><td>List saved custom reports</td></tr><tr><td>POST</td><td>/v2/reports/{report_id}/run</td><td>Run a saved report. Params: date_from, date_to, format=csv|xlsx|json</td></tr><tr><td>GET</td><td>/v2/report_runs/{run_id}</td><td>Check a run and get its download link</td></tr></tbody></table>
+<p>Report runs are asynchronous. Poll /v2/report_runs/{run_id} until status is complete.</p>
+<div class="callout warning"><strong>Known issue:</strong> BUG-2300-01 also affects the API: runs spanning more than 3 years fail. Split the range.</div>
+</article>
+<aside class="related"><h4>Related articles</h4><ul><li><a href="large-date-ranges.html">large-date-ranges</a></li><li><a href="custom-report-builder.html">custom-report-builder</a></li></ul></aside>
+<div class="feedback">Was this article helpful? <button>Yes</button> <button>No</button> <span>2,206 people found this helpful</span></div>
+</main>
+<footer><p>&copy; 2026 InvoicePilot, Inc. All rights reserved. <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/status">Status</a></p><div class="cookie-banner">We use cookies to improve your experience. <button>Accept all</button> <button>Manage preferences</button></div></footer>
+</body>
+</html>
