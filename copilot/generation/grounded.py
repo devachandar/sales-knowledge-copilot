@@ -15,7 +15,7 @@ from copilot.config import HELP_CENTER_DIR, PROMPTS_DIR
 from copilot.llm.client import call_model, user
 
 
-PROMPT_VERSION = os.getenv("PROMPT_VERSION", "grounded_v2")
+PROMPT_VERSION = os.getenv("PROMPT_VERSION", "grounded_v4")   # Day 12: v3 fixed the Day 11 patterns, v4 its side effects
 
 SYSTEM = (PROMPTS_DIR / f"{PROMPT_VERSION}.md").read_text(encoding="utf-8")
 
