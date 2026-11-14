@@ -80,7 +80,7 @@ def post_with_retry(url, headers, body, post=requests.post):
         
 
 def call_model(contents, system=None, temperature=None, max_tokens=300,
-            api_key=API_KEY, extra_config=None,tools=None):
+            api_key=API_KEY, extra_config=None, tools=None, model=MODEL):
     """Send one request and return the raw JSON response as a dict."""
 
     # 1. Build the request body. This is exactly what the SDK builds for you.
@@ -106,11 +106,13 @@ def call_model(contents, system=None, temperature=None, max_tokens=300,
     # 2. Send it. The key goes in a header, not in the URL,
     #    so it doesn't end up in logs that record URLs.
     # print("DEBUG body keys:", list(body.keys()))
-    resp = requests.post(
-        URL,
-        headers={"x-goog-api-key": api_key, "Content-Type": "application/json"},
-        json=body,
-        timeout=60,  # never wait forever on a network call
+    # Day 10: `model` lets the judge use a different (stronger) model than the copilot.
+    # post_with_retry (Day 1) handles 429/5xx, which matter once we make 100+ calls in a row.
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    resp = post_with_retry(
+        url,
+        {"x-goog-api-key": api_key, "Content-Type": "application/json"},
+        body,
     )
 
     # 3. If it failed, show the status code and the error body, then stop.

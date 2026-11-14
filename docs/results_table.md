@@ -57,3 +57,49 @@ measured 2026-11-05 in one run.
   the internal or sales doc that holds the answer). Part of V4's authority gain is by construction.
 - Earlier numbers on corpus v1 (Days 4–6) are in `data/invoicepilot/results/` and the daily notes. They are
   not comparable with this table.
+
+## Day 9: V1–V4 on the full golden dev split (95 cases with expected docs)
+
+Measured 2026-11-06 with `python -m evals.retrieval.run_pipeline` (SPLIT=dev, all question sets).
+The 46 test cases are sealed and not included. Refusal cases and one injection case have no expected
+docs, so retrieval skips them.
+
+| r@1 | V1 | V2 | V3 | V4 |
+|---|---|---|---|---|
+| capability (16) | 62% | 62% | 69% | 81% |
+| exact_token (20) | 15% | 15% | 15% | 75% |
+| tier_gated (15) | 67% | 67% | 67% | 80% |
+| temporal (16) | 31% | 31% | 44% | 88% |
+| multi_hop (6) | 17% | 17% | 17% | 33% |
+| synthesis (5) | 40% | 20% | 20% | 40% |
+| conflict (5) | 60% | 60% | 60% | 60% |
+| injection (4) | 0% | 0% | 0% | 50% |
+| non_official (8) | 50% | 75% | 75% | 62% |
+| **ALL (95)** | 40% | 41% | 44% | **72%** |
+
+V4 r@5 on ALL: 94%. Caveat: for multi_hop, synthesis, and conflict, "hit" means ANY expected doc is in
+the top k, which overstates success when the answer needs EVERY hop, piece, or side. Day 11 adds an
+evidence-level metric (share of evidence quotes present in the retrieved text).
+
+## Day 11: per-class, per-layer scorecard (dev, 100 cases)
+
+V4 retrieval + grounded_v2 (gemini-3.5-flash-lite). Judge gemini-3.5-flash, answer rubrics v3, sufficiency v1.
+"quotes found" = every golden evidence quote is inside the top 5 (strict lower bound).
+"chunks enough" = judge: the top 5 hold every fact the golden answer needs (retrieval verdict).
+
+| class | n | quotes found | chunks enough | correct | grounded | citations ok | checks ok | blame: retrieval | blame: generation | lucky |
+|---|---|---|---|---|---|---|---|---|---|---|
+| capability | 16 | 75% | 88% | 81% | 100% | 93% | 94% | 1 | 2 | 1 |
+| exact_token | 20 | 70% | 100% | 95% | 100% | 100% | 100% | 0 | 1 | 0 |
+| tier_gated | 15 | 87% | 100% | 87% | 100% | 87% | 93% | 0 | 2 | 0 |
+| temporal | 16 | 88% | 100% | 88% | 100% | 100% | 100% | 0 | 2 | 0 |
+| multi_hop | 6 | 17% | 67% | 67% | 100% | 80% | 83% | 2 | 0 | 0 |
+| synthesis | 5 | 0% | 40% | 20% | 50% | 100% | 100% | 2 | 2 | 1 |
+| conflict | 5 | 20% | 100% | 60% | 100% | 100% | 80% | 0 | 2 | 0 |
+| injection | 4 | 25% | 75% | 75% | 100% | 75% | 75% | 1 | 0 | 0 |
+| non_official | 8 | 100% | 100% | 100% | 100% | 100% | 100% | 0 | 0 | 0 |
+| out_of_scope | 5 | - | - | 100% | - | - | 100% | 0 | 0 | 0 |
+| ALL | 100 | 67% | 92% | 83% | 98% | 95% | 95% | 6 | 11 | 2 |
+
+Latency median 1,607 ms, p95 2,083 ms (first call 12.8 s: reranker cold start). Cost $0.0006 per answer.
+Retrieval sufficiency by three measures: doc-level r@5 94% (too generous), judged 92%, all quotes found 67% (too strict).

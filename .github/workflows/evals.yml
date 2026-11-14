@@ -1,0 +1,77 @@
+# .github/workflows/evals.yml
+# Day 12: two tiers.
+#   fast  every push and pull request: golden-set checker + unit tests. Free, no secrets.
+#   eval  pull requests that touch generation, prompts, the judge or the golden set:
+#         100 answers on FROZEN retrieval + judge, diffed against evals/baselines/dev.json,
+#         posted as a comment on the pull request. Needs the GOOGLE_API_KEY repository secret.
+name: evals
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  fast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install requests python-dotenv pytest
+      - name: Golden set checker
+        run: python -m evals.check_questions
+      - name: Unit tests for the deterministic checks
+        run: python -m pytest -q tests
+
+  eval:
+    if: github.event_name == 'pull_request'
+    needs: fast
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Did this PR touch anything the eval measures?
+        id: changed
+        run: |
+          git fetch --depth=1 origin ${{ github.base_ref }}
+          if git diff --name-only origin/${{ github.base_ref }} HEAD | grep -qE '^(copilot/generation/|copilot/llm/|evals/judge/|evals/checks.py|evals/ci.py|evals/questions/|evals/baselines/)'; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.changed.outputs.run == 'true'
+        with:
+          python-version: "3.13"
+      - run: pip install requests python-dotenv
+        if: steps.changed.outputs.run == 'true'
+      - name: Eval on frozen retrieval, diff against baseline
+        if: steps.changed.outputs.run == 'true'
+        id: eval
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          CI_LABEL: pr-${{ github.event.number }}
+        run: python -m evals.ci
+        continue-on-error: true
+      - name: Post the delta on the pull request
+        if: steps.changed.outputs.run == 'true' && hashFiles('eval_report.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ github.event.number }} --edit-last --body-file eval_report.md \
+            || gh pr comment ${{ github.event.number }} --body-file eval_report.md
+      - uses: actions/upload-artifact@v4
+        if: steps.changed.outputs.run == 'true'
+        with:
+          name: eval-run
+          path: data/invoicepilot/results/ci_pr-*.json
+      - name: Fail the check on a regression
+        if: steps.eval.outcome == 'failure'
+        run: |
+          echo "Correctness dropped more than CI_MAX_DROP points. See the PR comment."
+          exit 1

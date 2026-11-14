@@ -5,7 +5,9 @@ __pycache__/
 .DS_Store
 
 # large or generated
-data/invoicepilot/processed/
+data/invoicepilot/processed/*
+# the golden-set checker needs documents.jsonl in CI
+!data/invoicepilot/processed/documents.jsonl
 archive/src2_before_restructure/__pycache__/
 
 # older experiments: kept on disk, not part of this repo
